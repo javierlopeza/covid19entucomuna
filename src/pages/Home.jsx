@@ -7,12 +7,13 @@ import mincienciaFetcher from '../clients/minciencia-fetcher';
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { dataPorComuna: {} };
+    this.state = { dataPorComuna: {}, totalesNacionales: {} };
   }
 
   async componentDidMount() {
     const dataPorComuna = await mincienciaFetcher.getAllDataPorComuna();
-    this.setState({ dataPorComuna });
+    const totalesNacionales = await mincienciaFetcher.getTotalesNacionales();
+    this.setState({ dataPorComuna, totalesNacionales });
   }
 
   render() {

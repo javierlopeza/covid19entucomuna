@@ -66,11 +66,18 @@ async function getAllDataPorComuna() {
   return allDataPorComuna;
 }
 
+async function getTotalesNacionales() {
+  const { data } = await getCsv(env.totalesNacionalesCsvUrl);
+  const totalesNacionales = _.mapKeys(data, value => value.Fecha);
+  _.keys(totalesNacionales).forEach((key) => {
+    delete totalesNacionales[key].Fecha;
+  });
+  return totalesNacionales;
+}
+
 const mincienciaFetcher = {
   getAllDataPorComuna,
-  getConfirmadosPorComuna,
-  getNuevosPorComuna,
-  getActivosPorComuna,
+  getTotalesNacionales,
 };
 
 export default mincienciaFetcher;
