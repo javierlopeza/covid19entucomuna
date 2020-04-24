@@ -37,6 +37,13 @@ function groupHistoryOfComunaData(regiones, dataName, startsWithToken) {
   });
 }
 
+function moveTotalesToRegiones(regiones) {
+  _.forEach(regiones, ({ comunas }, region) => {
+    regiones[region].total = comunas.Total;
+    delete comunas.Total;
+  });
+}
+
 async function getConfirmadosPorComuna() {
   const { data } = await getCsv(env.confirmadosPorComunaCsvUrl);
   const regiones = groupByRegionAndComuna(data);
@@ -63,6 +70,7 @@ async function getAllDataPorComuna() {
   const nuevosPorComuna = await getNuevosPorComuna();
   const activosPorComuna = await getActivosPorComuna();
   const allDataPorComuna = _.merge(confirmadosPorComuna, nuevosPorComuna, activosPorComuna);
+  moveTotalesToRegiones(allDataPorComuna);
   return allDataPorComuna;
 }
 
