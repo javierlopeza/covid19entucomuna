@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "lodash": "^4.17.15",
+    "papaparse": "^5.2.0",
     "react": "^16.8.6",
     "react-app-rewire-hot-loader": "^2.0.1",
     "react-app-rewired": "^2.1.3",
