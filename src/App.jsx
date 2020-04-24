@@ -7,6 +7,8 @@ import theme from './styles/theme';
 import GlobalStyle from './styles/global';
 
 import Home from './pages/Home';
+import Region from './pages/Region';
+import Comuna from './pages/Comuna';
 
 const App = () => (
   <ThemeProvider theme={theme}>
@@ -15,6 +17,8 @@ const App = () => (
       <div>
         <AppLogo to="/">Coronavirus Chile</AppLogo>
         <Route exact path="/" component={Home} />
+        <Route exact path="/regiones/:region" component={Region} />
+        <Route exact path="/regiones/:region/comunas/:comuna" component={Comuna} />
       </div>
     </Router>
   </ThemeProvider>
