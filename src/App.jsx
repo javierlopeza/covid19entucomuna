@@ -1,6 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import theme from './styles/theme';
@@ -13,8 +13,7 @@ const App = () => (
     <Router>
       <GlobalStyle />
       <div>
-        <h1>App</h1>
-        <Link to="/">Home</Link>
+        <AppLogo to="/">Coronavirus Chile</AppLogo>
         <Route exact path="/" component={Home} />
       </div>
     </Router>
@@ -22,3 +21,8 @@ const App = () => (
 );
 
 export default process.env.NODE_ENV === 'development' ? hot(App) : App;
+
+const AppLogo = styled(Link)`
+  color: lightseagreen;
+  font-size: 3em;
+`;
