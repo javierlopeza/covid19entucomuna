@@ -2,6 +2,7 @@ import Papa from 'papaparse';
 import _ from 'lodash';
 import env from '../environment';
 import renameKeys from '../utils/renameKeys';
+import chartData from '../utils/chartData';
 
 async function getCsv(url) {
   return new Promise((resolve, reject) => {
@@ -80,7 +81,7 @@ async function getTotalesNacionales() {
   _.keys(totalesNacionales).forEach((key) => {
     delete totalesNacionales[key].Fecha;
   });
-  return totalesNacionales;
+  return chartData.transformDataForChart(totalesNacionales);
 }
 
 const mincienciaFetcher = {
