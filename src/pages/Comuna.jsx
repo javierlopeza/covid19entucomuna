@@ -3,11 +3,14 @@ import styled from 'styled-components';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import mincienciaFetcher from '../clients/minciencia-fetcher';
+import CVLineChart from '../components/CVLineChart';
 
 class Comuna extends Component {
   constructor(props) {
     super(props);
-    this.state = { region: null, comuna: null, dataComuna: {} };
+    this.state = {
+      region: null, comuna: null, dataComuna: {}, totalesComuna: [],
+    };
   }
 
   async componentDidMount() {
@@ -19,7 +22,10 @@ class Comuna extends Component {
     }
     try {
       const dataComuna = dataComunasRegion[comuna];
-      this.setState({ region, comuna, dataComuna });
+      const totalesComuna = dataComuna.totales;
+      this.setState({
+        region, comuna, dataComuna, totalesComuna,
+      });
     } catch (err) {
       const { history } = this.props;
       history.push('/');
@@ -28,9 +34,12 @@ class Comuna extends Component {
 
   render() {
     const { history } = this.props;
-    const { region, comuna, dataComuna } = this.state;
+    const {
+      region, comuna, dataComuna, totalesComuna,
+    } = this.state;
     return (
       <div>
+        {!!totalesComuna.length && <CVLineChart data={totalesComuna} />}
         <button onClick={() => history.goBack()}>Go Back</button>
         {JSON.stringify(dataComuna)}
       </div>

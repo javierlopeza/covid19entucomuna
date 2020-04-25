@@ -52,6 +52,20 @@ function moveTotalesToRegiones(regiones) {
   });
 }
 
+function buildComunasTotales(regiones) {
+  _.forEach(regiones, ({ comunas }, region) => {
+    _.forEach(comunas, (dataComuna, comuna) => {
+      comunas[comuna].totales = chartData.transformDataForChart(
+        _.pick(dataComuna, [
+          // 'Casos confirmados',
+          // 'Casos nuevos',
+          'Casos activos',
+        ]),
+      );
+    });
+  });
+}
+
 async function getConfirmadosPorComuna() {
   const { data } = await getCsv(env.confirmadosPorComunaCsvUrl);
   const regiones = groupByRegionAndComuna(data);
@@ -83,6 +97,7 @@ async function getAllDataPorComuna() {
     activosPorComuna,
   );
   moveTotalesToRegiones(allDataPorComuna);
+  buildComunasTotales(allDataPorComuna);
   return allDataPorComuna;
 }
 
