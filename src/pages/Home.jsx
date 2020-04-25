@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import _ from 'lodash';
-import { Link } from 'react-router-dom';
 import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
 import PageTitle from '../components/PageTitle';
+import PlacesContainer from '../components/PlacesContainer';
+import PlaceLink from '../components/PlaceLink';
 
 class Home extends Component {
   constructor(props) {
@@ -28,36 +28,25 @@ class Home extends Component {
         dataPorComuna,
       };
       return (
-        <Link key={region} to={to}>
+        <PlaceLink key={region} to={to}>
           {region}
-        </Link>
+        </PlaceLink>
       );
     });
     return (
       <CenteredContainer>
-        <PageTitle>
-          Chile
-        </PageTitle>
         <ChartContainer>
+          <PageTitle>
+            Chile
+          </PageTitle>
           { !!totalesNacionales.length && <CVLineChart data={totalesNacionales} />}
         </ChartContainer>
-        <ItemsContainer>
+        <PlacesContainer totalPlaces={regiones.length}>
           {regiones}
-        </ItemsContainer>
+        </PlacesContainer>
       </CenteredContainer>
     );
   }
 }
 
 export default Home;
-
-const ItemsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-
-  @media (min-width: 30em) {
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-columns: 1fr;
-    grid-auto-flow: column;
-  }
-`;

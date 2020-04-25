@@ -42,11 +42,11 @@ class Comuna extends Component {
     } = this.state;
     return (
       <CenteredContainer>
-        <PageTitle>
-          {region && comuna && `Región ${region} - ${comuna}`}
-        </PageTitle>
         <button onClick={() => history.goBack()}>Go Back</button>
         <ChartContainer>
+          <PageTitle>
+            {region && comuna && `Región ${region} - ${comuna}`}
+          </PageTitle>
           {!!totalesComuna.length && <CVLineChart data={totalesComuna} />}
         </ChartContainer>
         {JSON.stringify(dataComuna)}
