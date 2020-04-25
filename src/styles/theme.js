@@ -1,3 +1,5 @@
+import device from './device';
+
 export default {
   colors: {
     blue: {
@@ -7,4 +9,5 @@ export default {
       light: '#ffa3a3',
     },
   },
+  device,
 };
