@@ -4,6 +4,9 @@ import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
+import ChartContainer from '../components/ChartContainer';
+import CenteredContainer from '../components/CenteredContainer';
+import PageTitle from '../components/PageTitle';
 
 class Comuna extends Component {
   constructor(props) {
@@ -38,11 +41,16 @@ class Comuna extends Component {
       region, comuna, dataComuna, totalesComuna,
     } = this.state;
     return (
-      <div>
-        {!!totalesComuna.length && <CVLineChart data={totalesComuna} />}
+      <CenteredContainer>
+        <PageTitle>
+          {region && comuna && `Región ${region} - ${comuna}`}
+        </PageTitle>
         <button onClick={() => history.goBack()}>Go Back</button>
+        <ChartContainer>
+          {!!totalesComuna.length && <CVLineChart data={totalesComuna} />}
+        </ChartContainer>
         {JSON.stringify(dataComuna)}
-      </div>
+      </CenteredContainer>
     );
   }
 }

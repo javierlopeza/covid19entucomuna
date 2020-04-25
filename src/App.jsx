@@ -9,13 +9,16 @@ import GlobalStyle from './styles/global';
 import Home from './pages/Home';
 import Region from './pages/Region';
 import Comuna from './pages/Comuna';
+import CenteredContainer from './components/CenteredContainer';
 
 const App = () => (
   <ThemeProvider theme={theme}>
     <Router>
       <GlobalStyle />
       <div>
-        <AppLogo to="/">Coronavirus Chile</AppLogo>
+        <CenteredContainer>
+          <AppLogo to="/">Coronavirus Chile</AppLogo>
+        </CenteredContainer>
         <Route exact path="/" component={Home} />
         <Route exact path="/regiones/:region" component={Region} />
         <Route exact path="/regiones/:region/comunas/:comuna" component={Comuna} />
