@@ -1,20 +1,25 @@
 import React from 'react';
 import {
-  LineChart,
-  Line,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
 } from 'recharts';
+import moment from '../utils/date';
+
+const valueFormatter = value => value.toLocaleString();
+
+const dateFormatter = dateStr => moment(dateStr).format('DD-MMMM');
 
 const CVLineChart = (props) => {
   const { data } = props;
   return (
-    <LineChart
-      width={1000}
-      height={600}
+    <AreaChart
+      width={800}
+      height={400}
       data={data}
       margin={{
         top: 30,
@@ -23,19 +28,33 @@ const CVLineChart = (props) => {
         bottom: 30,
       }}
     >
-      <XAxis dataKey="date" />
-      <YAxis />
+      <defs>
+        <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="10%" stopColor="#8884d8" stopOpacity={0.8} />
+          <stop offset="100%" stopColor="#8884d8" stopOpacity={0} />
+        </linearGradient>
+      </defs>
+      <XAxis dataKey="date" tickFormatter={dateFormatter} />
+      <YAxis tickFormatter={valueFormatter} />
       <CartesianGrid strokeDasharray="3 3" />
-      <Tooltip />
+      <Tooltip labelFormatter={dateFormatter} formatter={valueFormatter} />
       <Legend />
-      <Line
-        type="monotone"
+      <Area
         dataKey="Casos activos"
+        unit=" personas"
+        legendType="line"
+        type="monotone"
         stroke="#8884d8"
-        activeDot={{ r: 8 }}
-        isAnimationActive
+        dot={{
+          fill: 'white', r: 2, stroke: '#8884d8', strokeWidth: 2,
+        }}
+        activeDot={{
+          fill: '#8884d8', r: 6, stroke: 'white', strokeWidth: 2,
+        }}
+        fillOpacity={1}
+        fill="url(#chartGradient)"
       />
-    </LineChart>
+    </AreaChart>
   );
 };
 
