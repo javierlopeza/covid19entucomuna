@@ -9,6 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+import styled, { css } from 'styled-components';
 import moment from '../utils/date';
 
 const valueFormatter = value => value.toLocaleString();
@@ -19,17 +20,7 @@ const CVLineChart = (props) => {
   const { data } = props;
   return (
     <ResponsiveContainer>
-      <AreaChart
-        width={800}
-        height={400}
-        data={data}
-        margin={{
-          top: 30,
-          right: 30,
-          left: 20,
-          bottom: 30,
-        }}
-      >
+      <CustomChart data={data}>
         <defs>
           <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
             <stop offset="10%" stopColor="#8884d8" stopOpacity={0.8} />
@@ -43,7 +34,7 @@ const CVLineChart = (props) => {
         <Legend />
         <Area
           dataKey="Casos activos"
-          unit=" personas"
+          // unit=" personas"
           legendType="line"
           type="monotone"
           stroke="#8884d8"
@@ -56,9 +47,23 @@ const CVLineChart = (props) => {
           fillOpacity={1}
           fill="url(#chartGradient)"
         />
-      </AreaChart>
+      </CustomChart>
     </ResponsiveContainer>
   );
 };
 
 export default CVLineChart;
+
+const CustomChart = styled(AreaChart)`
+  .recharts-cartesian-axis-tick-value tspan,
+  .recharts-default-tooltip * {
+    font-size: 14px;
+
+    ${({ theme: { device } }) => css`
+    @media ${device.laptop} {
+      font-size: 18px;
+    }
+  `}
+
+  }
+`;
