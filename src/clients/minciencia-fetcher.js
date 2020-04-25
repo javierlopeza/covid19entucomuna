@@ -40,7 +40,14 @@ function groupHistoryOfComunaData(regiones, dataName, startsWithToken) {
 
 function moveTotalesToRegiones(regiones) {
   _.forEach(regiones, ({ comunas }, region) => {
-    regiones[region].total = comunas.Total;
+    regiones[region].totales = chartData.transformDataForChart(
+      _.pick(comunas.Total, [
+        'Casos confirmados',
+        'Casos nuevos',
+        'Casos activos',
+      ]),
+    );
+    regiones[region].poblacion = comunas.Total.Poblacion;
     delete comunas.Total;
   });
 }
@@ -48,21 +55,21 @@ function moveTotalesToRegiones(regiones) {
 async function getConfirmadosPorComuna() {
   const { data } = await getCsv(env.confirmadosPorComunaCsvUrl);
   const regiones = groupByRegionAndComuna(data);
-  groupHistoryOfComunaData(regiones, 'historialConfirmados', '2020');
+  groupHistoryOfComunaData(regiones, 'Casos confirmados', '2020');
   return regiones;
 }
 
 async function getNuevosPorComuna() {
   const { data } = await getCsv(env.nuevosPorComunaCsvUrl);
   const regiones = groupByRegionAndComuna(data);
-  groupHistoryOfComunaData(regiones, 'historialNuevos', 'SE');
+  groupHistoryOfComunaData(regiones, 'Casos nuevos', 'SE');
   return regiones;
 }
 
 async function getActivosPorComuna() {
   const { data } = await getCsv(env.activosPorComunaCsvUrl);
   const regiones = groupByRegionAndComuna(data);
-  groupHistoryOfComunaData(regiones, 'historialActivos', '2020');
+  groupHistoryOfComunaData(regiones, 'Casos activos', '2020');
   return regiones;
 }
 
@@ -70,7 +77,11 @@ async function getAllDataPorComuna() {
   const confirmadosPorComuna = await getConfirmadosPorComuna();
   const nuevosPorComuna = await getNuevosPorComuna();
   const activosPorComuna = await getActivosPorComuna();
-  const allDataPorComuna = _.merge(confirmadosPorComuna, nuevosPorComuna, activosPorComuna);
+  const allDataPorComuna = _.merge(
+    confirmadosPorComuna,
+    nuevosPorComuna,
+    activosPorComuna,
+  );
   moveTotalesToRegiones(allDataPorComuna);
   return allDataPorComuna;
 }

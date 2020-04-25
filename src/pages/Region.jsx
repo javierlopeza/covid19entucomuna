@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import mincienciaFetcher from '../clients/minciencia-fetcher';
+import CVLineChart from '../components/CVLineChart';
 
 class Region extends Component {
   constructor(props) {
     super(props);
-    this.state = { region: null, dataComunasRegion: {} };
+    this.state = { region: null, dataComunasRegion: {}, totalesRegionales: [] };
   }
 
   async componentDidMount() {
@@ -18,7 +19,8 @@ class Region extends Component {
     }
     try {
       const dataComunasRegion = dataPorComuna[region].comunas;
-      this.setState({ region, dataComunasRegion });
+      const totalesRegionales = dataPorComuna[region].totales;
+      this.setState({ region, dataComunasRegion, totalesRegionales });
     } catch (err) {
       const { history } = this.props;
       history.push('/');
@@ -27,7 +29,7 @@ class Region extends Component {
 
   render() {
     const { history } = this.props;
-    const { region, dataComunasRegion } = this.state;
+    const { region, dataComunasRegion, totalesRegionales } = this.state;
     const comunas = _.keys(dataComunasRegion).map((comuna) => {
       const to = {
         pathname: `/regiones/${region}/comunas/${comuna}`,
@@ -37,6 +39,7 @@ class Region extends Component {
     });
     return (
       <div>
+        { !!totalesRegionales.length && <CVLineChart data={totalesRegionales} />}
         <button onClick={() => history.goBack()}>Go Back</button>
         {comunas}
       </div>
