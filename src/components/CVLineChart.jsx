@@ -60,6 +60,11 @@ const CustomChart = styled(AreaChart)`
       font-size: 18px;
     }
   `}
+  }
 
+  .recharts-yAxis .recharts-cartesian-axis-tick:first-child {
+    text {
+      transform: translateY(-5px);
+    }
   }
 `;
