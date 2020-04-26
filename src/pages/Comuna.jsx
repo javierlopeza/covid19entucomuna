@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled, { css } from 'styled-components';
 import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
@@ -62,17 +63,44 @@ class Comuna extends Component {
           </PageTitle>
           {!!totalesComuna.length && <CVLineChart data={totalesComuna} />}
         </ChartContainer>
-        <p>
-          {!!secondToLastData
-            && `En ${comuna}, entre el ${formatter.dateFormatter(secondToLastData.date)} y el ${formatter.dateFormatter(lastData.date)}, los casos activos ${formatter.valueChangeTextFormatter(secondToLastData['Casos activos'], lastData['Casos activos'])}.`}
-        </p>
-        <p>
-          {!!tasaActivos
-            && `Por cada 100 mil habitantes, hay ${tasaActivos.toFixed(0)} casos activos.`}
-        </p>
+        <InfoTextsContainer>
+          {!!secondToLastData && (
+          <InfoText>
+            {`En ${comuna}, entre el ${formatter.dateFormatter(secondToLastData.date)} y el ${formatter.dateFormatter(lastData.date)}, los casos activos ${formatter.valueChangeTextFormatter(secondToLastData['Casos activos'], lastData['Casos activos'])}.`}
+          </InfoText>
+          )}
+          {!!tasaActivos && (
+          <InfoText>
+            { `Por cada 100 mil habitantes, hay ${tasaActivos.toFixed(0)} casos activos.`}
+          </InfoText>
+          )}
+        </InfoTextsContainer>
       </CenteredContainer>
     );
   }
 }
 
 export default Comuna;
+
+const InfoTextsContainer = styled.div`
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  ${({ theme: { device } }) => css`
+    @media ${device.laptop} {
+      width: 75%;
+    }
+  `}
+`;
+
+const InfoText = styled.p`
+  margin: 10px;
+  text-align: center;
+`;
