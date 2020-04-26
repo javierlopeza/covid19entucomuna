@@ -7,6 +7,7 @@ import CenteredContainer from '../components/CenteredContainer';
 import PageTitle from '../components/PageTitle';
 import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
+import scrollToTop from '../utils/scrollToTop';
 
 class Region extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class Region extends Component {
   }
 
   async componentDidMount() {
+    scrollToTop();
     const { match: { params: { region } } } = this.props;
     let { location: { dataPorComuna } } = this.props;
     if (!dataPorComuna) {

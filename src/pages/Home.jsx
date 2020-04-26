@@ -7,6 +7,7 @@ import CenteredContainer from '../components/CenteredContainer';
 import PageTitle from '../components/PageTitle';
 import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
+import scrollToTop from '../utils/scrollToTop';
 
 class Home extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class Home extends Component {
   }
 
   async componentDidMount() {
+    scrollToTop();
     const dataPorComuna = await mincienciaFetcher.getAllDataPorComuna();
     const totalesNacionales = await mincienciaFetcher.getTotalesNacionales();
     this.setState({ dataPorComuna, totalesNacionales });

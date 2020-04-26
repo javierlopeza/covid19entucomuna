@@ -5,6 +5,7 @@ import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
 import PageTitle from '../components/PageTitle';
 import formatter from '../utils/formatter';
+import scrollToTop from '../utils/scrollToTop';
 
 class Comuna extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class Comuna extends Component {
   }
 
   async componentDidMount() {
+    scrollToTop();
     const {
       match: {
         params: { region, comuna },
