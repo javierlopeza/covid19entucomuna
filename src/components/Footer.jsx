@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 const Footer = () => (
   <Container>
+    <Credit>Fuente: Ministerio de Salud</Credit>
+    <br />
     <Credit>Desarrollado por Javier López</Credit>
     <Credit>Diseñado por Antonia Daher</Credit>
   </Container>
@@ -15,7 +17,7 @@ const Container = styled.div`
   bottom: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 4em;
+  height: 6em;
   padding: 1em 0;
   display: flex;
   flex-direction: column;
@@ -24,4 +26,5 @@ const Container = styled.div`
 
 const Credit = styled.span`
   font-size: 0.75em;
+  line-height: 1.25em;
 `;

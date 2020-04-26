@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import _ from 'lodash';
-import { Link } from 'react-router-dom';
 import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';

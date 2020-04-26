@@ -44,5 +44,5 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  padding-bottom: 4em;
+  padding-bottom: 6em;
 `;
