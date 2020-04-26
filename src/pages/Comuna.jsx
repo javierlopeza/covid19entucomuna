@@ -46,7 +46,6 @@ class Comuna extends Component {
   }
 
   render() {
-    const { history } = this.props;
     const {
       region, comuna, dataComuna, totalesComuna,
     } = this.state;
@@ -55,7 +54,6 @@ class Comuna extends Component {
     const tasaActivos = (lastData['Casos activos'] / dataComuna.Poblacion) * 100000;
     return (
       <CenteredContainer>
-        <button onClick={() => history.goBack()}>Go Back</button>
         <ChartContainer>
           <PageTitle>
             {region && comuna && `Región ${region} - ${comuna}`}

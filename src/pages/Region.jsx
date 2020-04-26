@@ -31,7 +31,6 @@ class Region extends Component {
   }
 
   render() {
-    const { history } = this.props;
     const { region, dataComunasRegion, totalesRegionales } = this.state;
     const comunas = _.keys(dataComunasRegion).map((comuna) => {
       const to = {
@@ -42,7 +41,6 @@ class Region extends Component {
     });
     return (
       <CenteredContainer>
-        <button onClick={() => history.goBack()}>Go Back</button>
         <ChartContainer>
           <PageTitle>
             {region && `Región ${region}`}
