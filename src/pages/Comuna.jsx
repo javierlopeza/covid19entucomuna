@@ -7,6 +7,7 @@ import CenteredContainer from '../components/CenteredContainer';
 import PageTitle from '../components/PageTitle';
 import formatter from '../utils/formatter';
 import scrollToTop from '../utils/scrollToTop';
+import ValueChangeText from '../components/ValueChangeText';
 
 class Comuna extends Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class Comuna extends Component {
     const lastData = !!totalesComuna.length && totalesComuna.slice(-1)[0];
     const secondToLastData = !!totalesComuna.length && totalesComuna.slice(-2)[0];
     const tasaActivos = (lastData['Casos activos'] / dataComuna.Poblacion) * 100000;
+    const valueChangeText = <ValueChangeText data={[secondToLastData['Casos activos'], lastData['Casos activos']]} />;
     return (
       <CenteredContainer>
         <ChartContainer>
@@ -66,7 +68,8 @@ class Comuna extends Component {
         <InfoTextsContainer>
           {!!secondToLastData && (
           <InfoText>
-            {`En ${comuna}, entre el ${formatter.dateFormatter(secondToLastData.date)} y el ${formatter.dateFormatter(lastData.date)}, los casos activos ${formatter.valueChangeTextFormatter(secondToLastData['Casos activos'], lastData['Casos activos'])}.`}
+            {`En ${comuna}, entre el ${formatter.dateFormatter(secondToLastData.date)} y el ${formatter.dateFormatter(lastData.date)}, los casos activos `}
+            {valueChangeText}
           </InfoText>
           )}
           {!!tasaActivos && (
