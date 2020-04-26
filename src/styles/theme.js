@@ -3,11 +3,12 @@ import device from './device';
 export default {
   colors: {
     blue: {
-      light: '#d1e7ff',
+      light: '#f5fbff',
+      normal: 'blue',
+      dark: '',
     },
-    red: {
-      light: '#ffa3a3',
-    },
+    red: 'red',
+    green: 'green',
   },
   device,
 };

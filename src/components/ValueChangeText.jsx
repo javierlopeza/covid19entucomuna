@@ -25,8 +25,8 @@ const ValueChangeText = ({ data }) => {
 export default ValueChangeText;
 
 const Colored = styled.span`
-  ${({ color }) => css`
-    color: ${color};
+  ${({ theme, color }) => css`
+    color: ${theme.colors[color]};
   `}
   font-weight: 200;
 `;

@@ -5,7 +5,7 @@ const ChartContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  height: 300px;
+  height: 320px;
   width: 100%;
   ${({ theme: { device } }) => css`
     @media ${device.laptop} {
