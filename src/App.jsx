@@ -40,7 +40,7 @@ const LogoContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 1em 0;
-  width: 100%;
+  width: 95%;
   ${({ theme: { device } }) => css`
     @media ${device.laptop} {
       width: 75%;

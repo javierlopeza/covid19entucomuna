@@ -96,7 +96,7 @@ const InfoTextsContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 100%;
+  width: 95%;
   ${({ theme: { device } }) => css`
     @media ${device.laptop} {
       width: 75%;
