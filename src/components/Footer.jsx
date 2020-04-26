@@ -18,7 +18,7 @@ const Container = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: 6em;
-  padding: 1em 0;
+  padding: 1.5em 0;
   display: flex;
   flex-direction: column;
   align-items: center;
