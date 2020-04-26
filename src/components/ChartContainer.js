@@ -16,6 +16,8 @@ const ChartContainer = styled.div`
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+
+  ${({ theme }) => theme.baseShadow}
 `;
 
 export default ChartContainer;
