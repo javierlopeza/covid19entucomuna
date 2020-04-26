@@ -3,9 +3,17 @@ import styled from 'styled-components';
 
 const Footer = () => (
   <Container>
-    <Credit>Fuente: Ministerio de Salud</Credit>
+    <Credit>
+      Fuente:
+      {' '}
+      <CreditLink href="http://www.minciencia.gob.cl/covid19" target="_blank">Ministerio de Salud</CreditLink>
+    </Credit>
     <br />
-    <Credit>Desarrollado por Javier López</Credit>
+    <Credit>
+      Desarrollado por
+      {' '}
+      <CreditLink href="https://github.com/javierlopeza" target="_blank">Javier López</CreditLink>
+    </Credit>
     <Credit>Diseñado por Antonia Daher</Credit>
   </Container>
 );
@@ -27,4 +35,13 @@ const Container = styled.div`
 const Credit = styled.span`
   font-size: 0.65em;
   line-height: 1.25em;
+`;
+
+const CreditLink = styled.a`
+  color: inherit;
+  font-size: inherit;
+
+  :hover {
+    font-weight: 200;
+  }
 `;

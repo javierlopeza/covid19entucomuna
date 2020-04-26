@@ -1,6 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider, css } from 'styled-components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import theme from './styles/theme';
@@ -19,7 +19,9 @@ const App = () => (
       <Container>
         <Content>
           <CenteredContainer>
-            <AppLogo to="/">Coronavirus Chile</AppLogo>
+            <LogoContainer>
+              <Logo to="/">Coronavirus en Chile</Logo>
+            </LogoContainer>
           </CenteredContainer>
           <Route exact path="/" component={Home} />
           <Route exact path="/regiones/:region" component={Region} />
@@ -33,9 +35,33 @@ const App = () => (
 
 export default process.env.NODE_ENV === 'development' ? hot(App) : App;
 
-const AppLogo = styled(Link)`
-  color: lightseagreen;
-  font-size: 3em;
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
+  width: 100%;
+  ${({ theme: { device } }) => css`
+    @media ${device.laptop} {
+      width: 75%;
+    }
+    ${theme.baseShadow}
+  `}
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+`;
+
+const Logo = styled(Link)`
+  color: #ff788f;
+  font-weight: 400;
+  font-size: 1.5em;
+
+  ${({ theme: { device } }) => css`
+    @media ${device.laptop} {
+      font-size: 2em;
+    }
+  `}
 `;
 
 const Container = styled.div`
