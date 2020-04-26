@@ -10,11 +10,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import styled, { css } from 'styled-components';
-import moment from '../utils/date';
-
-const valueFormatter = value => value.toLocaleString();
-
-const dateFormatter = dateStr => moment(dateStr).format('DD-MMMM');
+import formatter from '../utils/formatter';
 
 const CVLineChart = (props) => {
   const { data } = props;
@@ -27,10 +23,10 @@ const CVLineChart = (props) => {
             <stop offset="100%" stopColor="#8884d8" stopOpacity={0} />
           </linearGradient>
         </defs>
-        <XAxis dataKey="date" tickFormatter={dateFormatter} />
-        <YAxis tickFormatter={valueFormatter} />
+        <XAxis dataKey="date" tickFormatter={formatter.dateFormatter} />
+        <YAxis tickFormatter={formatter.valueFormatter} />
         <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip labelFormatter={dateFormatter} formatter={valueFormatter} />
+        <Tooltip labelFormatter={formatter.dateFormatter} formatter={formatter.valueFormatter} />
         <Legend />
         <Area
           dataKey="Casos activos"
