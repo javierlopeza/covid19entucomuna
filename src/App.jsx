@@ -20,7 +20,7 @@ const App = () => (
         <Content>
           <CenteredContainer>
             <LogoContainer>
-              <Logo to="/">Coronavirus en Chile</Logo>
+              <Logo to="/">COVID-19 en tu comuna</Logo>
             </LogoContainer>
           </CenteredContainer>
           <Route exact path="/" component={Home} />
@@ -55,9 +55,12 @@ const LogoContainer = styled.div`
 const Logo = styled(Link)`
   color: #ff788f;
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 1.25em;
 
   ${({ theme: { device } }) => css`
+    @media ${device.mobileM} {
+      font-size: 1.45em;
+    }
     @media ${device.laptop} {
       font-size: 2em;
     }
