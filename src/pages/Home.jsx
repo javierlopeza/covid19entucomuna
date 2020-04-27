@@ -35,6 +35,9 @@ class Home extends Component {
         </PlaceLink>
       );
     });
+    const indexMetropolitana = _.findIndex(regiones, ['key', 'Metropolitana']);
+    const metropolitana = regiones.splice(indexMetropolitana, 1);
+    regiones.unshift(metropolitana);
     return (
       <CenteredContainer>
         <ChartContainer>
