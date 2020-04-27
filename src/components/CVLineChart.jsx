@@ -55,15 +55,23 @@ const CVLineChart = (props) => {
 export default CVLineChart;
 
 const CustomChart = styled(AreaChart)`
+  margin-left: -5px;
+
+  ${({ theme: { device } }) => css`
+    @media ${device.laptop} {
+      margin: 0;
+    }
+  `}
+
   .recharts-cartesian-axis-tick-value tspan,
   .recharts-default-tooltip * {
     font-size: 14px;
 
     ${({ theme: { device } }) => css`
-    @media ${device.laptop} {
-      font-size: 18px;
-    }
-  `}
+      @media ${device.laptop} {
+        font-size: 18px;
+      }
+    `}
   }
 
   .recharts-yAxis .recharts-cartesian-axis-tick:first-child {
