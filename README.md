@@ -1,5 +1,9 @@
 # Coronavirus Chile
 
+Simple and user-friendly analysis of active coronavirus cases by region and by comuna in Chile.
+
+Publicly available at [COVID-19 en tu comuna](https://coronavirus-chile-production.herokuapp.com/).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
