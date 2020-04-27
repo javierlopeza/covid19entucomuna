@@ -14,7 +14,11 @@ const Footer = () => (
       {' '}
       <CreditLink href="https://github.com/javierlopeza" target="_blank">Javier López</CreditLink>
     </Credit>
-    <Credit>Diseñado por Antonia Daher</Credit>
+    <Credit>
+      Diseñado por
+      {' '}
+      <CreditLink href="https://www.instagram.com/antoniadaher/" target="_blank">Antonia Daher</CreditLink>
+    </Credit>
   </Container>
 );
 
