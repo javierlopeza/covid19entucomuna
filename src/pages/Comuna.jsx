@@ -8,6 +8,7 @@ import PageTitle from '../components/PageTitle';
 import formatter from '../utils/formatter';
 import scrollToTop from '../utils/scrollToTop';
 import ValueChangeText from '../components/ValueChangeText';
+import fixComunaName from '../utils/fixComunaName';
 
 class Comuna extends Component {
   constructor(props) {
@@ -61,14 +62,14 @@ class Comuna extends Component {
       <CenteredContainer>
         <ChartContainer>
           <PageTitle>
-            {region && comuna && `Región ${region} - ${comuna}`}
+            {region && comuna && `Región ${region} - ${fixComunaName(comuna)}`}
           </PageTitle>
           {!!totalesComuna.length && <CVLineChart data={totalesComuna} />}
         </ChartContainer>
         <InfoTextsContainer>
           {!!secondToLastData && (
           <InfoText>
-            {`En ${comuna}, entre el ${formatter.dateFormatter(secondToLastData.date)} y el ${formatter.dateFormatter(lastData.date)}, los casos activos `}
+            {`En ${fixComunaName(comuna)}, entre el ${formatter.dateFormatter(secondToLastData.date)} y el ${formatter.dateFormatter(lastData.date)}, los casos activos `}
             {valueChangeText}
           </InfoText>
           )}

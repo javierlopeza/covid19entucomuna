@@ -8,6 +8,7 @@ import PageTitle from '../components/PageTitle';
 import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
 import scrollToTop from '../utils/scrollToTop';
+import fixComunaName from '../utils/fixComunaName';
 
 class Region extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class Region extends Component {
         pathname: `/regiones/${region}/comunas/${comuna}`,
         dataComunasRegion,
       };
-      return <PlaceLink key={comuna} to={to}>{comuna}</PlaceLink>;
+      return <PlaceLink key={comuna} to={to}>{fixComunaName(comuna)}</PlaceLink>;
     });
     return (
       <CenteredContainer>
