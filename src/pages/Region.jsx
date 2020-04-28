@@ -11,11 +11,15 @@ import PlaceLink from '../components/PlaceLink';
 import scrollToTop from '../utils/scrollToTop';
 import fixComunaName from '../utils/fixComunaName';
 import formatter from '../utils/formatter';
+import MetricsCards from '../components/MetricsCards';
+import metricsIcons from '../assets/images/metrics';
 
 class Region extends Component {
   constructor(props) {
     super(props);
-    this.state = { region: null, dataComunasRegion: {}, totalesRegionales: [] };
+    this.state = {
+      region: null, dataRegion: {}, dataComunasRegion: {}, totalesRegionales: [], lastData: null,
+    };
   }
 
   async componentDidMount() {
@@ -26,9 +30,13 @@ class Region extends Component {
       dataPorComuna = await mincienciaFetcher.getAllDataPorComuna();
     }
     try {
-      const dataComunasRegion = dataPorComuna[region].comunas;
-      const totalesRegionales = dataPorComuna[region].totales;
-      this.setState({ region, dataComunasRegion, totalesRegionales });
+      const dataRegion = dataPorComuna[region];
+      const dataComunasRegion = dataRegion.comunas;
+      const totalesRegionales = dataRegion.totales;
+      const lastData = totalesRegionales.slice(-1)[0];
+      this.setState({
+        region, dataRegion, dataComunasRegion, totalesRegionales, lastData,
+      });
     } catch (err) {
       const { history } = this.props;
       history.push('/');
@@ -36,7 +44,9 @@ class Region extends Component {
   }
 
   render() {
-    const { region, dataComunasRegion, totalesRegionales } = this.state;
+    const {
+      region, dataRegion, dataComunasRegion, totalesRegionales, lastData,
+    } = this.state;
     const comunas = _.keys(dataComunasRegion).map((comuna) => {
       const to = {
         pathname: `/regiones/${region}/comunas/${comuna}`,
@@ -44,7 +54,6 @@ class Region extends Component {
       };
       return <PlaceLink key={comuna} to={to}>{fixComunaName(comuna)}</PlaceLink>;
     });
-    const lastData = totalesRegionales.slice(-1)[0];
     return (
       <>
         {
@@ -56,6 +65,48 @@ class Region extends Component {
           )
         }
         <CenteredContainer>
+          {
+            !!lastData && (
+              <MetricsCards.Container>
+                <MetricsCards.Card>
+                  <MetricsCards.Icon src={metricsIcons.poblacion} />
+                  <MetricsCards.TextContainer>
+                    <MetricsCards.Label>Población</MetricsCards.Label>
+                    <MetricsCards.Value>
+                      {formatter.valueFormatter(dataRegion.poblacion)}
+                    </MetricsCards.Value>
+                  </MetricsCards.TextContainer>
+                </MetricsCards.Card>
+                <MetricsCards.Card>
+                  <MetricsCards.Icon src={metricsIcons.activos} />
+                  <MetricsCards.TextContainer>
+                    <MetricsCards.Label>Activos</MetricsCards.Label>
+                    <MetricsCards.Value>
+                      {formatter.valueFormatter(lastData['Casos activos'])}
+                    </MetricsCards.Value>
+                  </MetricsCards.TextContainer>
+                </MetricsCards.Card>
+                <MetricsCards.Card>
+                  <MetricsCards.Icon src={metricsIcons.recuperados} />
+                  <MetricsCards.TextContainer>
+                    <MetricsCards.Label>Recuperados</MetricsCards.Label>
+                    <MetricsCards.Value>
+                      {formatter.valueFormatter(dataRegion.confirmados.value - dataRegion.fallecidos.value - lastData['Casos activos'])}
+                    </MetricsCards.Value>
+                  </MetricsCards.TextContainer>
+                </MetricsCards.Card>
+                <MetricsCards.Card>
+                  <MetricsCards.Icon src={metricsIcons.fallecidos} />
+                  <MetricsCards.TextContainer>
+                    <MetricsCards.Label>Fallecidos</MetricsCards.Label>
+                    <MetricsCards.Value>
+                      {formatter.valueFormatter(dataRegion.fallecidos.value)}
+                    </MetricsCards.Value>
+                  </MetricsCards.TextContainer>
+                </MetricsCards.Card>
+              </MetricsCards.Container>
+            )
+          }
           <ChartContainer>
             <PageTitle>
               {region && `Región ${region}`}
