@@ -1,6 +1,6 @@
 {
     "name": "coronavirus-chile",
-    "description": "",
+    "description": "Simple and user-friendly analysis of coronavirus cases by region and by comuna in Chile.",
     "scripts": {},
     "env": {
       "REACT_APP_CONFIRMADOS_POR_COMUNA_CSV_URL": {
