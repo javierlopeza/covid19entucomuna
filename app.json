@@ -2,7 +2,20 @@
     "name": "coronavirus-chile",
     "description": "",
     "scripts": {},
-    "env": {},
+    "env": {
+      "REACT_APP_CONFIRMADOS_POR_COMUNA_CSV_URL": {
+        "required": true
+      },
+      "REACT_APP_NUEVOS_POR_COMUNA_CSV_URL": {
+        "required": true
+      },
+      "REACT_APP_ACTIVOS_POR_COMUNA_CSV_URL": {
+        "required": true
+      },
+      "REACT_APP_TOTALES_NACIONALES_CSV_URL": {
+        "required": true
+      }
+    },
     "formation": {
       "web": {
         "quantity": 1
