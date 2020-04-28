@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import { Helmet } from 'react-helmet';
 import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
@@ -43,17 +44,26 @@ class Region extends Component {
       return <PlaceLink key={comuna} to={to}>{fixComunaName(comuna)}</PlaceLink>;
     });
     return (
-      <CenteredContainer>
-        <ChartContainer>
-          <PageTitle>
-            {region && `Región ${region}`}
-          </PageTitle>
-          { !!totalesRegionales.length && <CVLineChart data={totalesRegionales} />}
-        </ChartContainer>
-        <PlacesContainer totalPlaces={comunas.length}>
-          {comunas}
-        </PlacesContainer>
-      </CenteredContainer>
+      <>
+        {
+          !!region && (
+          <Helmet>
+            <title>{`COVID-19 Región ${region}`}</title>
+          </Helmet>
+          )
+        }
+        <CenteredContainer>
+          <ChartContainer>
+            <PageTitle>
+              {region && `Región ${region}`}
+            </PageTitle>
+            { !!totalesRegionales.length && <CVLineChart data={totalesRegionales} />}
+          </ChartContainer>
+          <PlacesContainer totalPlaces={comunas.length}>
+            {comunas}
+          </PlacesContainer>
+        </CenteredContainer>
+      </>
     );
   }
 }

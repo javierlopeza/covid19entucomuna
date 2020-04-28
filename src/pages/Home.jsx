@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import { Helmet } from 'react-helmet';
 import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
@@ -39,17 +40,22 @@ class Home extends Component {
     const metropolitana = regiones.splice(indexMetropolitana, 1);
     regiones.unshift(metropolitana);
     return (
-      <CenteredContainer>
-        <ChartContainer>
-          <PageTitle>
+      <>
+        <Helmet>
+          <title>COVID-19 en tu comuna</title>
+        </Helmet>
+        <CenteredContainer>
+          <ChartContainer>
+            <PageTitle>
             Chile
-          </PageTitle>
-          { !!totalesNacionales.length && <CVLineChart data={totalesNacionales} />}
-        </ChartContainer>
-        <PlacesContainer totalPlaces={regiones.length}>
-          {regiones}
-        </PlacesContainer>
-      </CenteredContainer>
+            </PageTitle>
+            { !!totalesNacionales.length && <CVLineChart data={totalesNacionales} />}
+          </ChartContainer>
+          <PlacesContainer totalPlaces={regiones.length}>
+            {regiones}
+          </PlacesContainer>
+        </CenteredContainer>
+      </>
     );
   }
 }

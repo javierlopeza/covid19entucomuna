@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
+import { Helmet } from 'react-helmet';
 import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
@@ -59,27 +60,36 @@ class Comuna extends Component {
     const tasaActivos = (lastData['Casos activos'] / dataComuna.Poblacion) * 100000;
     const valueChangeText = <ValueChangeText data={[secondToLastData['Casos activos'], lastData['Casos activos']]} />;
     return (
-      <CenteredContainer>
-        <ChartContainer>
-          <PageTitle>
-            {region && comuna && `Región ${region} - ${fixComunaName(comuna)}`}
-          </PageTitle>
-          {!!totalesComuna.length && <CVLineChart data={totalesComuna} />}
-        </ChartContainer>
-        <InfoTextsContainer>
-          {!!secondToLastData && (
-          <InfoText>
-            {`En ${fixComunaName(comuna)}, entre el ${formatter.dateFormatter(secondToLastData.date)} y el ${formatter.dateFormatter(lastData.date)}, los casos activos `}
-            {valueChangeText}
-          </InfoText>
-          )}
-          {!!tasaActivos && (
-          <InfoText>
-            { `Por cada 100 mil habitantes, hay ${tasaActivos.toFixed(0)} casos activos.`}
-          </InfoText>
-          )}
-        </InfoTextsContainer>
-      </CenteredContainer>
+      <>
+        {
+        !!comuna && (
+        <Helmet>
+          <title>{`COVID-19 en ${fixComunaName(comuna)}`}</title>
+        </Helmet>
+        )
+      }
+        <CenteredContainer>
+          <ChartContainer>
+            <PageTitle>
+              {region && comuna && `Región ${region} - ${fixComunaName(comuna)}`}
+            </PageTitle>
+            {!!totalesComuna.length && <CVLineChart data={totalesComuna} />}
+          </ChartContainer>
+          <InfoTextsContainer>
+            {!!secondToLastData && (
+            <InfoText>
+              {`En ${fixComunaName(comuna)}, entre el ${formatter.dateFormatter(secondToLastData.date)} y el ${formatter.dateFormatter(lastData.date)}, los casos activos `}
+              {valueChangeText}
+            </InfoText>
+            )}
+            {!!tasaActivos && (
+            <InfoText>
+              { `Por cada 100 mil habitantes, hay ${tasaActivos.toFixed(0)} casos activos.`}
+            </InfoText>
+            )}
+          </InfoTextsContainer>
+        </CenteredContainer>
+      </>
     );
   }
 }
