@@ -73,6 +73,13 @@ function addFallecidosToRegiones(regiones, fallecidos) {
   });
 }
 
+function addConfirmadosToRegiones(regiones, confirmados) {
+  _.keys(regiones).forEach((region) => {
+    const date = _.max(_.keys(confirmados[region]));
+    regiones[region].confirmados = { date, value: confirmados[region][date] };
+  });
+}
+
 async function getConfirmadosPorComuna() {
   const { data } = await getCsv(env.confirmadosPorComunaCsvUrl);
   const regiones = groupByRegionAndComuna(data);
@@ -104,6 +111,16 @@ async function getFallecidosPorRegion() {
   return regiones;
 }
 
+async function getConfirmadosPorRegion() {
+  const { data } = await getCsv(env.confirmadosPorRegionCsvUrl);
+  data.splice(_.findIndex(data, ['Region', 'Total']), 1);
+  const regiones = _.mapKeys(data, value => value.Region);
+  _.keys(regiones).forEach((key) => {
+    delete regiones[key].Region;
+  });
+  return regiones;
+}
+
 async function getAllDataPorComuna() {
   const confirmadosPorComuna = await getConfirmadosPorComuna();
   const nuevosPorComuna = await getNuevosPorComuna();
@@ -117,6 +134,8 @@ async function getAllDataPorComuna() {
   buildComunasTotales(allDataPorComuna);
   const fallecidosPorRegion = await getFallecidosPorRegion();
   addFallecidosToRegiones(allDataPorComuna, fallecidosPorRegion);
+  const confirmadosPorRegion = await getConfirmadosPorRegion();
+  addConfirmadosToRegiones(allDataPorComuna, confirmadosPorRegion);
   return allDataPorComuna;
 }
 
