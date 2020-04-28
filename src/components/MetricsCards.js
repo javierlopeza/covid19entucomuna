@@ -57,7 +57,7 @@ const TextContainer = styled.div`
 `;
 
 const Icon = styled.img`
-  height: 75%;
+  height: 100%;
   margin-right: 1em;
 `;
 

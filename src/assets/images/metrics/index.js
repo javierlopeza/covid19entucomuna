@@ -1,7 +1,7 @@
-import poblacion from './poblacion.png';
-import activos from './activos.png';
-import recuperados from './recuperados.png';
-import fallecidos from './fallecidos.png';
+import poblacion from './poblacion.svg';
+import activos from './activos.svg';
+import recuperados from './recuperados.svg';
+import fallecidos from './fallecidos.svg';
 
 export default {
   poblacion,
