@@ -5,6 +5,7 @@ const ChartContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
+  box-sizing: border-box;
   height: 320px;
   width: 95%;
   ${({ theme: { device } }) => css`

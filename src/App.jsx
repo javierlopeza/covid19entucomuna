@@ -40,6 +40,7 @@ const LogoContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 1em 0;
+  box-sizing: border-box;
   width: 95%;
   ${({ theme: { device } }) => css`
     @media ${device.laptop} {
@@ -50,6 +51,7 @@ const LogoContainer = styled.div`
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  text-align: center;
 `;
 
 const Logo = styled(Link)`
@@ -73,5 +75,5 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  padding-bottom: 6em;
+  padding-bottom: 5em;
 `;

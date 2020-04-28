@@ -4,7 +4,7 @@ import theme from './theme';
 export default createGlobalStyle`
   body {
     margin: 0;
-    padding: 0 5%;
+    padding: 0;
     background-color: ${theme.colors.blue.light};
   }
   * {
