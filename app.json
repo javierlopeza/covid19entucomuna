@@ -14,6 +14,9 @@
       },
       "REACT_APP_TOTALES_NACIONALES_CSV_URL": {
         "required": true
+      },
+      "REACT_APP_FALLECIDOS_POR_REGION_CSV_URL": {
+        "required": true
       }
     },
     "formation": {
