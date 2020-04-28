@@ -10,6 +10,7 @@ import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
 import scrollToTop from '../utils/scrollToTop';
 import fixComunaName from '../utils/fixComunaName';
+import formatter from '../utils/formatter';
 
 class Region extends Component {
   constructor(props) {
@@ -43,12 +44,14 @@ class Region extends Component {
       };
       return <PlaceLink key={comuna} to={to}>{fixComunaName(comuna)}</PlaceLink>;
     });
+    const lastData = totalesRegionales.slice(-1)[0];
     return (
       <>
         {
           !!region && (
           <Helmet>
-            <title>{`COVID-19 Región ${region}`}</title>
+            <title>{`COVID-19 en tu comuna - Región ${region}`}</title>
+            <meta name="description" content={`En la Región ${region} se registran ${formatter.valueFormatter(lastData['Casos activos'])} casos activos al ${formatter.dateFormatter(lastData.date)}.`} />
           </Helmet>
           )
         }

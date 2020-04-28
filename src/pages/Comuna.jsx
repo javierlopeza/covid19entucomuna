@@ -62,12 +62,13 @@ class Comuna extends Component {
     return (
       <>
         {
-        !!comuna && (
-        <Helmet>
-          <title>{`COVID-19 en ${fixComunaName(comuna)}`}</title>
-        </Helmet>
-        )
-      }
+          !!comuna && (
+          <Helmet>
+            <title>{`COVID-19 en tu comuna - ${fixComunaName(comuna)}`}</title>
+            <meta name="description" content={`En ${comuna} se registran ${formatter.valueFormatter(lastData['Casos activos'])} casos activos al ${formatter.dateFormatter(lastData.date)}, con una tasa de ${tasaActivos.toFixed(0)} casos activos por cada 100 mil habitantes.`} />
+          </Helmet>
+          )
+        }
         <CenteredContainer>
           <ChartContainer>
             <PageTitle>

@@ -9,6 +9,7 @@ import PageTitle from '../components/PageTitle';
 import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
 import scrollToTop from '../utils/scrollToTop';
+import formatter from '../utils/formatter';
 
 class Home extends Component {
   constructor(props) {
@@ -39,11 +40,17 @@ class Home extends Component {
     const indexMetropolitana = _.findIndex(regiones, ['key', 'Metropolitana']);
     const metropolitana = regiones.splice(indexMetropolitana, 1);
     regiones.unshift(metropolitana);
+    const lastData = totalesNacionales.slice(-1)[0];
     return (
       <>
-        <Helmet>
-          <title>COVID-19 en tu comuna</title>
-        </Helmet>
+        {
+          !!lastData && (
+          <Helmet>
+            <title>COVID-19 en tu comuna</title>
+            <meta name="description" content={`En Chile se registran ${formatter.valueFormatter(lastData['Casos activos'])} casos activos al ${formatter.dateFormatter(lastData.date)}.`} />
+          </Helmet>
+          )
+        }
         <CenteredContainer>
           <ChartContainer>
             <PageTitle>
