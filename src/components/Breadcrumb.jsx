@@ -43,10 +43,12 @@ const Item = styled(Link)`
   text-align: center;
   margin: 0.1em;
 
-  :hover {
-    opacity: 1;
+  @media (hover) {    
+    :hover {
+      opacity: 1;
+    }
   }
-  &:last-child {
+  :last-child {
     opacity: 1;
   }
 
