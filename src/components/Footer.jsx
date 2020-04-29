@@ -19,7 +19,7 @@ const Footer = () => (
     </CreditWithIcon>
     <CreditWithIcon>
       <CreditIcon src={LinkedIn} alt="LinkedIn" />
-      <Credit>
+      <Credit style={{ position: 'relative', top: '2px' }}>
         <CreditLink href="https://cl.linkedin.com/in/antonia-daher-5a416a192" target="_blank">Antonia Daher</CreditLink>
       </Credit>
     </CreditWithIcon>
@@ -42,6 +42,7 @@ const Container = styled.div`
 
 const CreditWithIcon = styled.div`
   display: flex;
+  justify-content: center;
   margin-bottom: 5px;
 `;
 
