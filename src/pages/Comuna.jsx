@@ -108,6 +108,7 @@ const InfoTextsContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
+  box-sizing: border-box;
   width: 95%;
   ${({ theme: { device } }) => css`
     @media ${device.laptop} {
