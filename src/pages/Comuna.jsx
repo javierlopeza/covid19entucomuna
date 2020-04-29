@@ -10,6 +10,7 @@ import formatter from '../utils/formatter';
 import scrollToTop from '../utils/scrollToTop';
 import ValueChangeText from '../components/ValueChangeText';
 import fixComunaName from '../utils/fixComunaName';
+import Breadcrumb from '../components/Breadcrumb';
 
 class Comuna extends Component {
   constructor(props) {
@@ -70,9 +71,22 @@ class Comuna extends Component {
           )
         }
         <CenteredContainer>
+          <div>
+            <Breadcrumb.Container>
+              <Breadcrumb.Item to="/">
+                Chile
+              </Breadcrumb.Item>
+              <Breadcrumb.Item to={`/regiones/${region}`}>
+                {region && `Región ${region}`}
+              </Breadcrumb.Item>
+              <Breadcrumb.Item to={`/regiones/${region}/comunas/${comuna}`}>
+                {comuna && fixComunaName(comuna)}
+              </Breadcrumb.Item>
+            </Breadcrumb.Container>
+          </div>
           <ChartContainer>
             <ChartTitle>
-              {region && comuna && `Región ${region} - ${fixComunaName(comuna)}`}
+              Casos Activos
             </ChartTitle>
             {!!totalesComuna.length && <CVLineChart data={totalesComuna} />}
           </ChartContainer>

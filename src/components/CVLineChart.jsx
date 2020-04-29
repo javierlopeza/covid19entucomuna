@@ -6,7 +6,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from 'recharts';
 import styled, { css } from 'styled-components';
@@ -27,10 +26,6 @@ const CVLineChart = (props) => {
         <YAxis tickFormatter={formatter.valueFormatter} />
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip labelFormatter={formatter.dateFormatter} formatter={formatter.valueFormatter} />
-        <Legend wrapperStyle={{
-          paddingTop: '10px',
-        }}
-        />
         <Area
           dataKey="Casos activos"
           // unit=" personas"

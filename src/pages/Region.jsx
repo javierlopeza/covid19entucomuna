@@ -13,6 +13,7 @@ import fixComunaName from '../utils/fixComunaName';
 import formatter from '../utils/formatter';
 import MetricsCards from '../components/MetricsCards';
 import metricsIcons from '../assets/images/metrics';
+import Breadcrumb from '../components/Breadcrumb';
 
 class Region extends Component {
   constructor(props) {
@@ -65,6 +66,16 @@ class Region extends Component {
           )
         }
         <CenteredContainer>
+          <div>
+            <Breadcrumb.Container>
+              <Breadcrumb.Item to="/">
+                Chile
+              </Breadcrumb.Item>
+              <Breadcrumb.Item to={`/regiones/${region}`}>
+                {region && `Región ${region}`}
+              </Breadcrumb.Item>
+            </Breadcrumb.Container>
+          </div>
           {
             !!lastData && (
               <MetricsCards.Container>
@@ -109,7 +120,7 @@ class Region extends Component {
           }
           <ChartContainer>
             <ChartTitle>
-              {region && `Región ${region}`}
+              Casos Activos
             </ChartTitle>
             { !!totalesRegionales.length && <CVLineChart data={totalesRegionales} />}
           </ChartContainer>

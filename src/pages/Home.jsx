@@ -12,6 +12,7 @@ import formatter from '../utils/formatter';
 import MetricsCards from '../components/MetricsCards';
 import metricsIcons from '../assets/images/metrics';
 import ChartTitle from '../components/ChartTitle';
+import Breadcrumb from '../components/Breadcrumb';
 
 class Home extends Component {
   constructor(props) {
@@ -54,6 +55,13 @@ class Home extends Component {
           )
         }
         <CenteredContainer>
+          <div>
+            <Breadcrumb.Container>
+              <Breadcrumb.Item to="/">
+                Chile
+              </Breadcrumb.Item>
+            </Breadcrumb.Container>
+          </div>
           {
             !!lastData && (
               <MetricsCards.Container>
@@ -96,7 +104,7 @@ class Home extends Component {
           }
           <ChartContainer>
             <ChartTitle>
-              Chile
+              Casos Activos
             </ChartTitle>
             { !!totalesNacionales.length && <CVLineChart data={totalesNacionales} />}
           </ChartContainer>
