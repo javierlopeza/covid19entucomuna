@@ -10,7 +10,7 @@ import formatter from '../utils/formatter';
 import scrollToTop from '../utils/scrollToTop';
 import ValueChangeText from '../components/ValueChangeText';
 import fixComunaName from '../utils/fixComunaName';
-import { Loader } from '../components/Loader';
+import LoaderSpinner from '../components/LoaderSpinner';
 
 class Comuna extends Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class Comuna extends Component {
   render() {
     const { loading } = this.state;
     if (loading) {
-      return <Loader />;
+      return <LoaderSpinner />;
     }
     const {
       region, comuna, dataComuna, totalesComuna,

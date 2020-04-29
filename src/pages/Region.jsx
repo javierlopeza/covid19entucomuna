@@ -13,7 +13,7 @@ import fixComunaName from '../utils/fixComunaName';
 import formatter from '../utils/formatter';
 import MetricsCards from '../components/MetricsCards';
 import metricsIcons from '../assets/images/metrics';
-import { Loader } from '../components/Loader';
+import LoaderSpinner from '../components/LoaderSpinner';
 
 class Region extends Component {
   constructor(props) {
@@ -52,7 +52,7 @@ class Region extends Component {
   render() {
     const { loading } = this.state;
     if (loading) {
-      return <Loader />;
+      return <LoaderSpinner />;
     }
     const {
       region, dataRegion, dataComunasRegion, totalesRegionales, lastData,
