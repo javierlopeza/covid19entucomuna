@@ -40,11 +40,11 @@ const Card = styled.div`
   font-size: 0.75em;
   ${({ theme: { device } }) => css`
     @media ${device.mobileM} {
-      padding: 20px;
+      padding: 16px;
     }
     @media ${device.mobileL} {
+      padding: 20px;
       font-size: 0.9em;
-
     }
   `}
 `;
