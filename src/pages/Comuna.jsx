@@ -5,7 +5,7 @@ import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
-import PageTitle from '../components/PageTitle';
+import ChartTitle from '../components/ChartTitle';
 import formatter from '../utils/formatter';
 import scrollToTop from '../utils/scrollToTop';
 import ValueChangeText from '../components/ValueChangeText';
@@ -71,9 +71,9 @@ class Comuna extends Component {
         }
         <CenteredContainer>
           <ChartContainer>
-            <PageTitle>
+            <ChartTitle>
               {region && comuna && `Región ${region} - ${fixComunaName(comuna)}`}
-            </PageTitle>
+            </ChartTitle>
             {!!totalesComuna.length && <CVLineChart data={totalesComuna} />}
           </ChartContainer>
           <InfoTextsContainer>

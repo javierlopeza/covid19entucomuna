@@ -5,7 +5,7 @@ import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
-import PageTitle from '../components/PageTitle';
+import ChartTitle from '../components/ChartTitle';
 import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
 import scrollToTop from '../utils/scrollToTop';
@@ -108,9 +108,9 @@ class Region extends Component {
             )
           }
           <ChartContainer>
-            <PageTitle>
+            <ChartTitle>
               {region && `Región ${region}`}
-            </PageTitle>
+            </ChartTitle>
             { !!totalesRegionales.length && <CVLineChart data={totalesRegionales} />}
           </ChartContainer>
           <PlacesContainer totalPlaces={comunas.length}>

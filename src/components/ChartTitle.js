@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-const PageTitle = styled.h1`
+const ChartTitle = styled.h1`
     color: #5b78ff;
     font-weight: 400;
+    text-align: center;
 `;
 
-export default PageTitle;
+export default ChartTitle;

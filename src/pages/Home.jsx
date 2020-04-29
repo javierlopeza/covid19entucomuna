@@ -5,13 +5,13 @@ import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
-import PageTitle from '../components/PageTitle';
 import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
 import scrollToTop from '../utils/scrollToTop';
 import formatter from '../utils/formatter';
 import MetricsCards from '../components/MetricsCards';
 import metricsIcons from '../assets/images/metrics';
+import ChartTitle from '../components/ChartTitle';
 
 class Home extends Component {
   constructor(props) {
@@ -95,9 +95,9 @@ class Home extends Component {
             )
           }
           <ChartContainer>
-            <PageTitle>
-            Chile
-            </PageTitle>
+            <ChartTitle>
+              Chile
+            </ChartTitle>
             { !!totalesNacionales.length && <CVLineChart data={totalesNacionales} />}
           </ChartContainer>
           <PlacesContainer totalPlaces={regiones.length}>
