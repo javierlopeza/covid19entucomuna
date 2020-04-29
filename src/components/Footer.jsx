@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import GitHubMark from '../assets/images/github.svg';
+import LinkedIn from '../assets/images/linkedin.svg';
 
 const Footer = () => (
   <Container>
@@ -14,6 +15,12 @@ const Footer = () => (
       <CreditIcon src={GitHubMark} alt="GitHub" />
       <Credit>
         <CreditLink href="https://github.com/javierlopeza/coronavirus-chile" target="_blank">javierlopeza/coronavirus-chile</CreditLink>
+      </Credit>
+    </CreditWithIcon>
+    <CreditWithIcon>
+      <CreditIcon src={LinkedIn} alt="LinkedIn" />
+      <Credit>
+        <CreditLink href="https://cl.linkedin.com/in/antonia-daher-5a416a192" target="_blank">Antonia Daher</CreditLink>
       </Credit>
     </CreditWithIcon>
   </Container>
@@ -35,6 +42,7 @@ const Container = styled.div`
 
 const CreditWithIcon = styled.div`
   display: flex;
+  margin-bottom: 3px;
 `;
 
 const Credit = styled.span`
@@ -51,6 +59,6 @@ const CreditLink = styled.a`
   font-size: inherit;
 
   :hover {
-    font-weight: 200;
+    text-decoration: underline;
   }
 `;
