@@ -75,5 +75,5 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  padding-bottom: 5em;
+  padding-bottom: 6em;
 `;

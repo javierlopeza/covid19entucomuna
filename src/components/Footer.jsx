@@ -33,7 +33,7 @@ const Container = styled.div`
   bottom: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 5em;
+  height: 6em;
   padding: 1.5em 0;
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@ const Container = styled.div`
 
 const CreditWithIcon = styled.div`
   display: flex;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 `;
 
 const Credit = styled.span`
