@@ -22,6 +22,7 @@ const MainContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 1em;
+  width: 95%;
 `;
 
 const Separator = styled.span`

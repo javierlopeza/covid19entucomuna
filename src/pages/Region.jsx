@@ -73,16 +73,14 @@ class Region extends Component {
         </Helmet>
         <CenteredContainer>
           {/* Navigation Breadcrumbs */}
-          <div>
-            <Breadcrumb.Container>
-              <Breadcrumb.Item to="/">
+          <Breadcrumb.Container>
+            <Breadcrumb.Item to="/">
                 Chile
-              </Breadcrumb.Item>
-              <Breadcrumb.Item to={`/regiones/${region}`}>
-                {region && `Región ${region}`}
-              </Breadcrumb.Item>
-            </Breadcrumb.Container>
-          </div>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item to={`/regiones/${region}`}>
+              {region && `Región ${region}`}
+            </Breadcrumb.Item>
+          </Breadcrumb.Container>
           {/* Metrics */}
           <MetricsCards.Container>
             <MetricsCards.Card>

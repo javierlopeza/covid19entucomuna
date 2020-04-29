@@ -75,19 +75,17 @@ class Comuna extends Component {
         </Helmet>
         <CenteredContainer>
           {/* Navigation Breadcrumbs */}
-          <div>
-            <Breadcrumb.Container>
-              <Breadcrumb.Item to="/">
+          <Breadcrumb.Container>
+            <Breadcrumb.Item to="/">
                 Chile
-              </Breadcrumb.Item>
-              <Breadcrumb.Item to={`/regiones/${region}`}>
-                {region && `Región ${region}`}
-              </Breadcrumb.Item>
-              <Breadcrumb.Item to={`/regiones/${region}/comunas/${comuna}`}>
-                {comuna && fixComunaName(comuna)}
-              </Breadcrumb.Item>
-            </Breadcrumb.Container>
-          </div>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item to={`/regiones/${region}`}>
+              {region && `Región ${region}`}
+            </Breadcrumb.Item>
+            <Breadcrumb.Item to={`/regiones/${region}/comunas/${comuna}`}>
+              {comuna && fixComunaName(comuna)}
+            </Breadcrumb.Item>
+          </Breadcrumb.Container>
           {/* Chart */}
           <ChartContainer>
             <ChartTitle>

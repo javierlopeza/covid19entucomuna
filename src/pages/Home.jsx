@@ -61,13 +61,11 @@ class Home extends Component {
         </Helmet>
         <CenteredContainer>
           {/* Navigation Breadcrumbs */}
-          <div>
-            <Breadcrumb.Container>
-              <Breadcrumb.Item to="/">
+          <Breadcrumb.Container>
+            <Breadcrumb.Item to="/">
                 Chile
-              </Breadcrumb.Item>
-            </Breadcrumb.Container>
-          </div>
+            </Breadcrumb.Item>
+          </Breadcrumb.Container>
           {/* Metrics */}
           <MetricsCards.Container>
             <MetricsCards.Card>
