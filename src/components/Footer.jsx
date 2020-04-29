@@ -34,10 +34,12 @@ const Container = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: 6em;
-  padding: 1.5em 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
 `;
 
 const CreditWithIcon = styled.div`
