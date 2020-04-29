@@ -14,12 +14,18 @@ import formatter from '../utils/formatter';
 import MetricsCards from '../components/MetricsCards';
 import metricsIcons from '../assets/images/metrics';
 import Breadcrumb from '../components/Breadcrumb';
+import LoaderSpinner from '../components/LoaderSpinner';
 
 class Region extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      region: null, dataRegion: {}, dataComunasRegion: {}, totalesRegionales: [], lastData: null,
+      region: null,
+      dataRegion: {},
+      dataComunasRegion: {},
+      totalesRegionales: [],
+      lastData: null,
+      loading: true,
     };
   }
 
@@ -36,7 +42,7 @@ class Region extends Component {
       const totalesRegionales = dataRegion.totales;
       const lastData = totalesRegionales.slice(-1)[0];
       this.setState({
-        region, dataRegion, dataComunasRegion, totalesRegionales, lastData,
+        region, dataRegion, dataComunasRegion, totalesRegionales, lastData, loading: false,
       });
     } catch (err) {
       const { history } = this.props;
@@ -45,6 +51,10 @@ class Region extends Component {
   }
 
   render() {
+    const { loading } = this.state;
+    if (loading) {
+      return <LoaderSpinner />;
+    }
     const {
       region, dataRegion, dataComunasRegion, totalesRegionales, lastData,
     } = this.state;
@@ -57,15 +67,12 @@ class Region extends Component {
     });
     return (
       <>
-        {
-          !!region && (
-          <Helmet>
-            <title>{`COVID-19 en tu comuna - Región ${region}`}</title>
-            <meta name="description" content={`En la Región ${region} se registran ${formatter.valueFormatter(lastData['Casos activos'])} casos activos al ${formatter.dateFormatter(lastData.date)}.`} />
-          </Helmet>
-          )
-        }
+        <Helmet>
+          <title>{`COVID-19 en tu comuna - Región ${region}`}</title>
+          <meta name="description" content={`En la Región ${region} se registran ${formatter.valueFormatter(lastData['Casos activos'])} casos activos al ${formatter.dateFormatter(lastData.date)}.`} />
+        </Helmet>
         <CenteredContainer>
+          {/* Navigation Breadcrumbs */}
           <div>
             <Breadcrumb.Container>
               <Breadcrumb.Item to="/">
@@ -76,54 +83,53 @@ class Region extends Component {
               </Breadcrumb.Item>
             </Breadcrumb.Container>
           </div>
-          {
-            !!lastData && (
-              <MetricsCards.Container>
-                <MetricsCards.Card>
-                  <MetricsCards.Icon src={metricsIcons.poblacion} />
-                  <MetricsCards.TextContainer>
-                    <MetricsCards.Label>Población</MetricsCards.Label>
-                    <MetricsCards.Value>
-                      {formatter.valueFormatter(dataRegion.poblacion)}
-                    </MetricsCards.Value>
-                  </MetricsCards.TextContainer>
-                </MetricsCards.Card>
-                <MetricsCards.Card>
-                  <MetricsCards.Icon src={metricsIcons.activos} />
-                  <MetricsCards.TextContainer>
-                    <MetricsCards.Label>Activos</MetricsCards.Label>
-                    <MetricsCards.Value>
-                      {formatter.valueFormatter(lastData['Casos activos'])}
-                    </MetricsCards.Value>
-                  </MetricsCards.TextContainer>
-                </MetricsCards.Card>
-                <MetricsCards.Card>
-                  <MetricsCards.Icon src={metricsIcons.recuperados} />
-                  <MetricsCards.TextContainer>
-                    <MetricsCards.Label>Recuperados</MetricsCards.Label>
-                    <MetricsCards.Value>
-                      {formatter.valueFormatter(dataRegion.confirmados.value - dataRegion.fallecidos.value - lastData['Casos activos'])}
-                    </MetricsCards.Value>
-                  </MetricsCards.TextContainer>
-                </MetricsCards.Card>
-                <MetricsCards.Card>
-                  <MetricsCards.Icon src={metricsIcons.fallecidos} />
-                  <MetricsCards.TextContainer>
-                    <MetricsCards.Label>Fallecidos</MetricsCards.Label>
-                    <MetricsCards.Value>
-                      {formatter.valueFormatter(dataRegion.fallecidos.value)}
-                    </MetricsCards.Value>
-                  </MetricsCards.TextContainer>
-                </MetricsCards.Card>
-              </MetricsCards.Container>
-            )
-          }
+          {/* Metrics */}
+          <MetricsCards.Container>
+            <MetricsCards.Card>
+              <MetricsCards.Icon src={metricsIcons.poblacion} />
+              <MetricsCards.TextContainer>
+                <MetricsCards.Label>Población</MetricsCards.Label>
+                <MetricsCards.Value>
+                  {formatter.valueFormatter(dataRegion.poblacion)}
+                </MetricsCards.Value>
+              </MetricsCards.TextContainer>
+            </MetricsCards.Card>
+            <MetricsCards.Card>
+              <MetricsCards.Icon src={metricsIcons.activos} />
+              <MetricsCards.TextContainer>
+                <MetricsCards.Label>Activos</MetricsCards.Label>
+                <MetricsCards.Value>
+                  {formatter.valueFormatter(lastData['Casos activos'])}
+                </MetricsCards.Value>
+              </MetricsCards.TextContainer>
+            </MetricsCards.Card>
+            <MetricsCards.Card>
+              <MetricsCards.Icon src={metricsIcons.recuperados} />
+              <MetricsCards.TextContainer>
+                <MetricsCards.Label>Recuperados</MetricsCards.Label>
+                <MetricsCards.Value>
+                  {formatter.valueFormatter(dataRegion.confirmados.value - dataRegion.fallecidos.value - lastData['Casos activos'])}
+                </MetricsCards.Value>
+              </MetricsCards.TextContainer>
+            </MetricsCards.Card>
+            <MetricsCards.Card>
+              <MetricsCards.Icon src={metricsIcons.fallecidos} />
+              <MetricsCards.TextContainer>
+                <MetricsCards.Label>Fallecidos</MetricsCards.Label>
+                <MetricsCards.Value>
+                  {formatter.valueFormatter(dataRegion.fallecidos.value)}
+                </MetricsCards.Value>
+              </MetricsCards.TextContainer>
+            </MetricsCards.Card>
+          </MetricsCards.Container>
+          {/* Chart */}
           <ChartContainer>
             <ChartTitle>
               Casos Activos
             </ChartTitle>
-            { !!totalesRegionales.length && <CVLineChart data={totalesRegionales} />}
+            <CVLineChart data={totalesRegionales} />
           </ChartContainer>
+          {/* Comunas */}
           <PlacesContainer totalPlaces={comunas.length}>
             {comunas}
           </PlacesContainer>

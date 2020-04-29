@@ -13,11 +13,14 @@ import MetricsCards from '../components/MetricsCards';
 import metricsIcons from '../assets/images/metrics';
 import ChartTitle from '../components/ChartTitle';
 import Breadcrumb from '../components/Breadcrumb';
+import LoaderSpinner from '../components/LoaderSpinner';
 
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { dataPorComuna: {}, totalesNacionales: [], lastData: null };
+    this.state = {
+      loading: true, dataPorComuna: {}, totalesNacionales: [], lastData: null,
+    };
   }
 
   async componentDidMount() {
@@ -25,10 +28,16 @@ class Home extends Component {
     const dataPorComuna = await mincienciaFetcher.getAllDataPorComuna();
     const totalesNacionales = await mincienciaFetcher.getTotalesNacionales();
     const lastData = totalesNacionales.slice(-1)[0];
-    this.setState({ dataPorComuna, totalesNacionales, lastData });
+    this.setState({
+      dataPorComuna, totalesNacionales, lastData, loading: false,
+    });
   }
 
   render() {
+    const { loading } = this.state;
+    if (loading) {
+      return <LoaderSpinner />;
+    }
     const { dataPorComuna, totalesNacionales, lastData } = this.state;
     const regiones = _.keys(dataPorComuna).map((region) => {
       const to = {
@@ -46,15 +55,12 @@ class Home extends Component {
     regiones.unshift(metropolitana);
     return (
       <>
-        {
-          !!lastData && (
-          <Helmet>
-            <title>COVID-19 en tu comuna</title>
-            <meta name="description" content={`En Chile se registran ${formatter.valueFormatter(lastData['Casos activos'])} casos activos al ${formatter.dateFormatter(lastData.date)}.`} />
-          </Helmet>
-          )
-        }
+        <Helmet>
+          <title>COVID-19 en tu comuna</title>
+          <meta name="description" content={`En Chile se registran ${formatter.valueFormatter(lastData['Casos activos'])} casos activos al ${formatter.dateFormatter(lastData.date)}.`} />
+        </Helmet>
         <CenteredContainer>
+          {/* Navigation Breadcrumbs */}
           <div>
             <Breadcrumb.Container>
               <Breadcrumb.Item to="/">
@@ -62,52 +68,51 @@ class Home extends Component {
               </Breadcrumb.Item>
             </Breadcrumb.Container>
           </div>
-          {
-            !!lastData && (
-              <MetricsCards.Container>
-                <MetricsCards.Card>
-                  <MetricsCards.Icon src={metricsIcons.poblacion} />
-                  <MetricsCards.TextContainer>
-                    <MetricsCards.Label>Población</MetricsCards.Label>
-                    <MetricsCards.Value>19.458.310</MetricsCards.Value>
-                  </MetricsCards.TextContainer>
-                </MetricsCards.Card>
-                <MetricsCards.Card>
-                  <MetricsCards.Icon src={metricsIcons.activos} />
-                  <MetricsCards.TextContainer>
-                    <MetricsCards.Label>Activos</MetricsCards.Label>
-                    <MetricsCards.Value>
-                      {formatter.valueFormatter(lastData['Casos activos'])}
-                    </MetricsCards.Value>
-                  </MetricsCards.TextContainer>
-                </MetricsCards.Card>
-                <MetricsCards.Card>
-                  <MetricsCards.Icon src={metricsIcons.recuperados} />
-                  <MetricsCards.TextContainer>
-                    <MetricsCards.Label>Recuperados</MetricsCards.Label>
-                    <MetricsCards.Value>
-                      {formatter.valueFormatter(lastData['Casos recuperados'])}
-                    </MetricsCards.Value>
-                  </MetricsCards.TextContainer>
-                </MetricsCards.Card>
-                <MetricsCards.Card>
-                  <MetricsCards.Icon src={metricsIcons.fallecidos} />
-                  <MetricsCards.TextContainer>
-                    <MetricsCards.Label>Fallecidos</MetricsCards.Label>
-                    <MetricsCards.Value>
-                      {formatter.valueFormatter(lastData.Fallecidos)}
-                    </MetricsCards.Value>
-                  </MetricsCards.TextContainer>
-                </MetricsCards.Card>
-              </MetricsCards.Container>
-            )
-          }
+          {/* Metrics */}
+          <MetricsCards.Container>
+            <MetricsCards.Card>
+              <MetricsCards.Icon src={metricsIcons.poblacion} />
+              <MetricsCards.TextContainer>
+                <MetricsCards.Label>Población</MetricsCards.Label>
+                <MetricsCards.Value>19.458.310</MetricsCards.Value>
+              </MetricsCards.TextContainer>
+            </MetricsCards.Card>
+            <MetricsCards.Card>
+              <MetricsCards.Icon src={metricsIcons.activos} />
+              <MetricsCards.TextContainer>
+                <MetricsCards.Label>Activos</MetricsCards.Label>
+                <MetricsCards.Value>
+                  {formatter.valueFormatter(lastData['Casos activos'])}
+                </MetricsCards.Value>
+              </MetricsCards.TextContainer>
+            </MetricsCards.Card>
+            <MetricsCards.Card>
+              <MetricsCards.Icon src={metricsIcons.recuperados} />
+              <MetricsCards.TextContainer>
+                <MetricsCards.Label>Recuperados</MetricsCards.Label>
+                <MetricsCards.Value>
+                  {formatter.valueFormatter(lastData['Casos recuperados'])}
+                </MetricsCards.Value>
+              </MetricsCards.TextContainer>
+            </MetricsCards.Card>
+            <MetricsCards.Card>
+              <MetricsCards.Icon src={metricsIcons.fallecidos} />
+              <MetricsCards.TextContainer>
+                <MetricsCards.Label>Fallecidos</MetricsCards.Label>
+                <MetricsCards.Value>
+                  {formatter.valueFormatter(lastData.Fallecidos)}
+                </MetricsCards.Value>
+              </MetricsCards.TextContainer>
+            </MetricsCards.Card>
+          </MetricsCards.Container>
+          {/* Chart */}
           <ChartContainer>
             <ChartTitle>
               Casos Activos
             </ChartTitle>
-            { !!totalesNacionales.length && <CVLineChart data={totalesNacionales} />}
+            <CVLineChart data={totalesNacionales} />
           </ChartContainer>
+          {/* Comunas */}
           <PlacesContainer totalPlaces={regiones.length}>
             {regiones}
           </PlacesContainer>

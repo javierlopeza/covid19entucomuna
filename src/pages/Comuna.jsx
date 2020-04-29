@@ -11,6 +11,7 @@ import scrollToTop from '../utils/scrollToTop';
 import ValueChangeText from '../components/ValueChangeText';
 import fixComunaName from '../utils/fixComunaName';
 import Breadcrumb from '../components/Breadcrumb';
+import LoaderSpinner from '../components/LoaderSpinner';
 
 class Comuna extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class Comuna extends Component {
       comuna: null,
       dataComuna: {},
       totalesComuna: [],
+      loading: true,
     };
   }
 
@@ -45,6 +47,7 @@ class Comuna extends Component {
         comuna,
         dataComuna,
         totalesComuna,
+        loading: false,
       });
     } catch (err) {
       const { history } = this.props;
@@ -53,6 +56,10 @@ class Comuna extends Component {
   }
 
   render() {
+    const { loading } = this.state;
+    if (loading) {
+      return <LoaderSpinner />;
+    }
     const {
       region, comuna, dataComuna, totalesComuna,
     } = this.state;
@@ -62,15 +69,12 @@ class Comuna extends Component {
     const valueChangeText = <ValueChangeText data={[secondToLastData['Casos activos'], lastData['Casos activos']]} />;
     return (
       <>
-        {
-          !!comuna && (
-          <Helmet>
-            <title>{`COVID-19 en tu comuna - ${fixComunaName(comuna)}`}</title>
-            <meta name="description" content={`En ${comuna} se registran ${formatter.valueFormatter(lastData['Casos activos'])} casos activos al ${formatter.dateFormatter(lastData.date)}, con una tasa de ${tasaActivos.toFixed(0)} casos activos por cada 100 mil habitantes.`} />
-          </Helmet>
-          )
-        }
+        <Helmet>
+          <title>{`COVID-19 en tu comuna - ${fixComunaName(comuna)}`}</title>
+          <meta name="description" content={`En ${comuna} se registran ${formatter.valueFormatter(lastData['Casos activos'])} casos activos al ${formatter.dateFormatter(lastData.date)}, con una tasa de ${tasaActivos.toFixed(0)} casos activos por cada 100 mil habitantes.`} />
+        </Helmet>
         <CenteredContainer>
+          {/* Navigation Breadcrumbs */}
           <div>
             <Breadcrumb.Container>
               <Breadcrumb.Item to="/">
@@ -84,24 +88,22 @@ class Comuna extends Component {
               </Breadcrumb.Item>
             </Breadcrumb.Container>
           </div>
+          {/* Chart */}
           <ChartContainer>
             <ChartTitle>
               Casos Activos
             </ChartTitle>
-            {!!totalesComuna.length && <CVLineChart data={totalesComuna} />}
+            <CVLineChart data={totalesComuna} />
           </ChartContainer>
+          {/* Info Texts */}
           <InfoTextsContainer>
-            {!!secondToLastData && (
             <InfoText>
               {`En ${fixComunaName(comuna)}, entre el ${formatter.dateFormatter(secondToLastData.date)} y el ${formatter.dateFormatter(lastData.date)}, los casos activos `}
               {valueChangeText}
             </InfoText>
-            )}
-            {!!tasaActivos && (
             <InfoText>
               { `Por cada 100 mil habitantes, hay ${tasaActivos.toFixed(0)} casos activos.`}
             </InfoText>
-            )}
           </InfoTextsContainer>
         </CenteredContainer>
       </>
