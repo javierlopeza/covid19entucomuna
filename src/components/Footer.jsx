@@ -1,10 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import GitHubMark from '../assets/images/github.svg';
 import LinkedIn from '../assets/images/linkedin.svg';
 
 const Footer = () => (
   <Container>
+    <LongCredit>
+      Los casos activos por región y por comuna son actualizados automáticamente a medida
+      que son publicados en los Informes Epidemiológicos del MINSAL (cada 3-4 días).
+    </LongCredit>
     <Credit>
       Fuente:
       {' '}
@@ -19,7 +23,7 @@ const Footer = () => (
     </CreditWithIcon>
     <CreditWithIcon>
       <CreditIcon src={LinkedIn} alt="LinkedIn" />
-      <Credit style={{ position: 'relative', top: '2px' }}>
+      <Credit style={{ position: 'relative', top: '1px' }}>
         <CreditLink href="https://cl.linkedin.com/in/antonia-daher-5a416a192" target="_blank">Antonia Daher</CreditLink>
       </Credit>
     </CreditWithIcon>
@@ -33,7 +37,7 @@ const Container = styled.div`
   bottom: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 6em;
+  height: 9.5em;
   padding-top: 1em;
   padding-bottom: 1em;
   display: flex;
@@ -50,6 +54,25 @@ const CreditWithIcon = styled.div`
 
 const Credit = styled.span`
   font-size: 0.65em;
+`;
+
+const LongCredit = styled.p`
+  font-style: italic;
+  font-size: 0.65em;
+  text-align: center;
+  width: 80%;
+
+  ${({ theme: { device } }) => css`
+    @media ${device.mobileM} {
+      width: 75%;
+    }
+    @media ${device.mobileL} {
+      width: 65%;
+    }
+    @media ${device.laptop} {
+      width: 30%;
+    }
+  `}
 `;
 
 const CreditIcon = styled.img`
