@@ -64,7 +64,7 @@ const Icon = styled.img`
 const Label = styled.p`
   margin: 0;
   margin-bottom: 5px;
-  font-weight: 200;
+  font-weight: 400;
   font-size: inherit;
 `;
 
