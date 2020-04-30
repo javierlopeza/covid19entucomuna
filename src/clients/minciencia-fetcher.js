@@ -57,8 +57,6 @@ function buildComunasTotales(regiones) {
     _.forEach(comunas, (dataComuna, comuna) => {
       comunas[comuna].totales = chartData.transformDataForChart(
         _.pick(dataComuna, [
-          // 'Casos confirmados',
-          // 'Casos nuevos',
           'Casos activos',
         ]),
       );
@@ -79,21 +77,6 @@ function addConfirmadosToRegiones(regiones, confirmados) {
     regiones[region].confirmados = { date, value: confirmados[region][date] };
   });
 }
-
-async function getConfirmadosPorComuna() {
-  const { data } = await getCsv(env.confirmadosPorComunaCsvUrl);
-  const regiones = groupByRegionAndComuna(data);
-  groupHistoryOfComunaData(regiones, 'Casos confirmados', '2020');
-  return regiones;
-}
-
-async function getNuevosPorComuna() {
-  const { data } = await getCsv(env.nuevosPorComunaCsvUrl);
-  const regiones = groupByRegionAndComuna(data);
-  groupHistoryOfComunaData(regiones, 'Casos nuevos', 'SE');
-  return regiones;
-}
-
 async function getActivosPorComuna() {
   const { data } = await getCsv(env.activosPorComunaCsvUrl);
   const regiones = groupByRegionAndComuna(data);
@@ -122,12 +105,8 @@ async function getConfirmadosPorRegion() {
 }
 
 async function getAllDataPorComuna() {
-  const confirmadosPorComuna = await getConfirmadosPorComuna();
-  const nuevosPorComuna = await getNuevosPorComuna();
   const activosPorComuna = await getActivosPorComuna();
   const allDataPorComuna = _.merge(
-    confirmadosPorComuna,
-    nuevosPorComuna,
     activosPorComuna,
   );
   moveTotalesToRegiones(allDataPorComuna);
