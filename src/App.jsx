@@ -48,14 +48,14 @@ const LogoContainer = styled.div`
     }
     ${theme.baseShadow}
   `}
-  background-color: white;
+  background-color: #ff788f;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
 `;
 
 const Logo = styled(Link)`
-  color: #ff788f;
+  color: white;
   font-weight: 400;
   font-size: 1.25em;
 
