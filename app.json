@@ -14,6 +14,15 @@
       },
       "REACT_APP_CONFIRMADOS_POR_REGION_CSV_URL": {
         "required": true
+      },
+      "REACT_APP_BACKUP_TOTALES_NACIONALES_CSV_URL": {
+        "required": true
+      },
+      "REACT_APP_BACKUP_FALLECIDOS_POR_REGION_CSV_URL": {
+        "required": true
+      },
+      "REACT_APP_BACKUP_CONFIRMADOS_POR_REGION_CSV_URL": {
+        "required": true
       }
     },
     "formation": {
