@@ -3,6 +3,7 @@ import _ from 'lodash';
 import env from '../environment';
 import renameKeys from '../utils/renameKeys';
 import chartData from '../utils/chartData';
+import chooseRepoData from '../utils/chooseRepoData';
 
 async function getCsv(url) {
   return new Promise((resolve, reject) => {
@@ -85,7 +86,9 @@ async function getActivosPorComuna() {
 }
 
 async function getFallecidosPorRegion() {
-  const { data } = await getCsv(env.fallecidosPorRegionCsvUrl);
+  const { data: officialData } = await getCsv(env.fallecidosPorRegionCsvUrl);
+  const { data: backupData } = await getCsv(env.backupFallecidosPorRegionCsvUrl);
+  const data = chooseRepoData(officialData, backupData);
   data.splice(_.findIndex(data, ['Region', 'Total']), 1);
   const regiones = _.mapKeys(data, value => value.Region);
   _.keys(regiones).forEach((key) => {
@@ -95,7 +98,9 @@ async function getFallecidosPorRegion() {
 }
 
 async function getConfirmadosPorRegion() {
-  const { data } = await getCsv(env.confirmadosPorRegionCsvUrl);
+  const { data: officialData } = await getCsv(env.confirmadosPorRegionCsvUrl);
+  const { data: backupData } = await getCsv(env.backupConfirmadosPorRegionCsvUrl);
+  const data = chooseRepoData(officialData, backupData);
   data.splice(_.findIndex(data, ['Region', 'Total']), 1);
   const regiones = _.mapKeys(data, value => value.Region);
   _.keys(regiones).forEach((key) => {
@@ -119,7 +124,9 @@ async function getAllDataPorComuna() {
 }
 
 async function getTotalesNacionales() {
-  const { data } = await getCsv(env.totalesNacionalesCsvUrl);
+  const { data: officialData } = await getCsv(env.totalesNacionalesCsvUrl);
+  const { data: backupData } = await getCsv(env.backupTotalesNacionalesCsvUrl);
+  const data = chooseRepoData(officialData, backupData);
   const totalesNacionales = _.mapKeys(data, value => value.Fecha);
   _.keys(totalesNacionales).forEach((key) => {
     delete totalesNacionales[key].Fecha;
