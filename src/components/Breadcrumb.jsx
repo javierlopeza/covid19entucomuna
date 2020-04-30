@@ -32,7 +32,8 @@ const Separator = styled.span`
 
   margin: 0 0.5em;
   font-size: 0.85em;
-  color: #7c97fc;
+  font-weight: 400;
+  color: #5b78ff;
 `;
 
 const Item = styled(Link)`
