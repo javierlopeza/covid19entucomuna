@@ -79,7 +79,9 @@ function addConfirmadosToRegiones(regiones, confirmados) {
   });
 }
 async function getActivosPorComuna() {
-  const { data } = await getCsv(env.activosPorComunaCsvUrl);
+  const { data: officialData } = await getCsv(env.activosPorComunaCsvUrl);
+  const { data: backupData } = await getCsv(env.backupActivosPorComunaCsvUrl);
+  const data = chooseRepoData(officialData, backupData);
   const regiones = groupByRegionAndComuna(data);
   groupHistoryOfComunaData(regiones, 'Casos activos', '2020');
   return regiones;
