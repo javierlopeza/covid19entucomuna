@@ -15,6 +15,9 @@
       "REACT_APP_CONFIRMADOS_POR_REGION_CSV_URL": {
         "required": true
       },
+      "REACT_APP_BACKUP_ACTIVOS_POR_COMUNA_CSV_URL": {
+        "required": true
+      },
       "REACT_APP_BACKUP_TOTALES_NACIONALES_CSV_URL": {
         "required": true
       },
