@@ -64,7 +64,7 @@ const CustomChart = styled(AreaChart)`
 
     ${({ theme: { device } }) => css`
       @media ${device.laptop} {
-        font-size: 18px;
+        font-size: 16px;
       }
     `}
   }
