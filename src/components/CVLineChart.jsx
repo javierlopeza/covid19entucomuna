@@ -28,6 +28,7 @@ const CVLineChart = (props) => {
         <Tooltip labelFormatter={formatter.dateFormatter} formatter={formatter.valueFormatter} />
         <Area
           dataKey="value"
+          name="Casos Activos"
           legendType="line"
           type="monotone"
           stroke="#5b78ff"
