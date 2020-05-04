@@ -27,8 +27,7 @@ const CVLineChart = (props) => {
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip labelFormatter={formatter.dateFormatter} formatter={formatter.valueFormatter} />
         <Area
-          dataKey="Casos activos"
-          // unit=" personas"
+          dataKey="value"
           legendType="line"
           type="monotone"
           stroke="#5b78ff"

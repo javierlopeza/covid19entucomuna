@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { Helmet } from 'react-helmet';
-import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
@@ -9,22 +8,19 @@ import ChartTitle from '../components/ChartTitle';
 import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
 import scrollToTop from '../utils/scrollToTop';
-import fixComunaName from '../utils/fixComunaName';
 import formatter from '../utils/formatter';
 import MetricsCards from '../components/MetricsCards';
 import metricsIcons from '../assets/images/metrics';
 import Breadcrumb from '../components/Breadcrumb';
 import LoaderSpinner from '../components/LoaderSpinner';
+import getChileData from '../clients/chile-data-fetcher';
 
 class Region extends Component {
   constructor(props) {
     super(props);
     this.state = {
       region: null,
-      dataRegion: {},
-      dataComunasRegion: {},
-      totalesRegionales: [],
-      lastData: null,
+      chileData: {},
       loading: true,
     };
   }
@@ -32,18 +28,12 @@ class Region extends Component {
   async componentDidMount() {
     scrollToTop();
     const { match: { params: { region } } } = this.props;
-    let { location: { dataPorComuna } } = this.props;
-    if (!dataPorComuna) {
-      dataPorComuna = await mincienciaFetcher.getAllDataPorComuna();
+    let { location: { chileData } } = this.props;
+    if (!chileData) {
+      chileData = await getChileData();
     }
     try {
-      const dataRegion = dataPorComuna[region];
-      const dataComunasRegion = dataRegion.comunas;
-      const totalesRegionales = dataRegion.totales;
-      const lastData = totalesRegionales.slice(-1)[0];
-      this.setState({
-        region, dataRegion, dataComunasRegion, totalesRegionales, lastData, loading: false,
-      });
+      this.setState({ region, chileData, loading: false });
     } catch (err) {
       const { history } = this.props;
       history.push('/');
@@ -55,21 +45,19 @@ class Region extends Component {
     if (loading) {
       return <LoaderSpinner />;
     }
-    const {
-      region, dataRegion, dataComunasRegion, totalesRegionales, lastData,
-    } = this.state;
-    const comunas = _.keys(dataComunasRegion).map((comuna) => {
+    const { region, chileData } = this.state;
+    const comunas = _.keys(chileData.regiones[region].comunas).map((comuna) => {
       const to = {
         pathname: `/regiones/${region}/comunas/${comuna}`,
-        dataComunasRegion,
+        chileData,
       };
-      return <PlaceLink key={comuna} to={to}>{fixComunaName(comuna)}</PlaceLink>;
+      return <PlaceLink key={comuna} to={to}>{comuna}</PlaceLink>;
     });
     return (
       <>
         <Helmet>
           <title>{`COVID-19 en tu comuna - Región ${region}`}</title>
-          <meta name="description" content={`En la Región ${region} se registran ${formatter.valueFormatter(lastData['Casos activos'])} casos activos al ${formatter.dateFormatter(lastData.date)}.`} />
+          <meta name="description" content={`En la Región ${region} se registran ${formatter.valueFormatter(chileData.regiones[region].activos.value)} casos activos al ${formatter.dateFormatter(chileData.regiones[region].activos.date)}.`} />
         </Helmet>
         <CenteredContainer>
           {/* Navigation Breadcrumbs */}
@@ -78,7 +66,7 @@ class Region extends Component {
                 Chile
             </Breadcrumb.Item>
             <Breadcrumb.Item to={`/regiones/${region}`}>
-              {region && `Región ${region}`}
+              {`Región ${region}`}
             </Breadcrumb.Item>
           </Breadcrumb.Container>
           {/* Metrics */}
@@ -88,7 +76,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Población</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(dataRegion.poblacion)}
+                  {formatter.valueFormatter(chileData.regiones[region].poblacion)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -97,7 +85,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Activos</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(lastData['Casos activos'])}
+                  {formatter.valueFormatter(chileData.regiones[region].activos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -106,7 +94,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Recuperados</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(dataRegion.confirmados.value - dataRegion.fallecidos.value - lastData['Casos activos'])}
+                  {formatter.valueFormatter(chileData.regiones[region].recuperados.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -115,7 +103,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Fallecidos</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(dataRegion.fallecidos.value)}
+                  {formatter.valueFormatter(chileData.regiones[region].fallecidos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -125,7 +113,7 @@ class Region extends Component {
             <ChartTitle>
               Casos Activos
             </ChartTitle>
-            <CVLineChart data={totalesRegionales} />
+            <CVLineChart data={chileData.regiones[region].series.activos} />
           </ChartContainer>
           {/* Comunas */}
           <PlacesContainer totalPlaces={comunas.length}>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { Helmet } from 'react-helmet';
-import mincienciaFetcher from '../clients/minciencia-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
@@ -9,44 +8,33 @@ import ChartTitle from '../components/ChartTitle';
 import formatter from '../utils/formatter';
 import scrollToTop from '../utils/scrollToTop';
 import ValueChangeText from '../components/ValueChangeText';
-import fixComunaName from '../utils/fixComunaName';
 import Breadcrumb from '../components/Breadcrumb';
 import LoaderSpinner from '../components/LoaderSpinner';
+import getChileData from '../clients/chile-data-fetcher';
 
 class Comuna extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      region: null,
       comuna: null,
-      dataComuna: {},
-      totalesComuna: [],
+      region: null,
+      chileData: {},
       loading: true,
     };
   }
 
   async componentDidMount() {
     scrollToTop();
-    const {
-      match: {
-        params: { region, comuna },
-      },
-    } = this.props;
-    let {
-      location: { dataComunasRegion },
-    } = this.props;
-    if (!dataComunasRegion) {
-      const dataPorComuna = await mincienciaFetcher.getAllDataPorComuna();
-      dataComunasRegion = dataPorComuna[region].comunas;
+    const { match: { params: { region, comuna } } } = this.props;
+    let { location: { chileData } } = this.props;
+    if (!chileData) {
+      chileData = await getChileData();
     }
     try {
-      const dataComuna = dataComunasRegion[comuna];
-      const totalesComuna = dataComuna.totales;
       this.setState({
-        region,
         comuna,
-        dataComuna,
-        totalesComuna,
+        region,
+        chileData,
         loading: false,
       });
     } catch (err) {
@@ -60,47 +48,59 @@ class Comuna extends Component {
     if (loading) {
       return <LoaderSpinner />;
     }
+    const { region, comuna, chileData } = this.state;
     const {
-      region, comuna, dataComuna, totalesComuna,
-    } = this.state;
-    const lastData = !!totalesComuna.length && totalesComuna.slice(-1)[0];
-    const secondToLastData = !!totalesComuna.length && totalesComuna.slice(-2)[0];
-    const tasaActivos = (lastData['Casos activos'] / dataComuna.Poblacion) * 100000;
-    const valueChangeText = <ValueChangeText data={[secondToLastData['Casos activos'], lastData['Casos activos']]} />;
+      tasaActivos,
+      activos: currentActivos,
+      previous: { activos: previousActivos },
+      series,
+    } = chileData.regiones[region].comunas[comuna];
+    const valueChangeText = (
+      <ValueChangeText data={[previousActivos.value, currentActivos.value]} />
+    );
     return (
       <>
         <Helmet>
-          <title>{`COVID-19 en tu comuna - ${fixComunaName(comuna)}`}</title>
-          <meta name="description" content={`En ${comuna} se registran ${formatter.valueFormatter(lastData['Casos activos'])} casos activos al ${formatter.dateFormatter(lastData.date)}, con una tasa de ${tasaActivos.toFixed(0)} casos activos por cada 100 mil habitantes.`} />
+          <title>{`COVID-19 en tu comuna - ${comuna}`}</title>
+          <meta
+            name="description"
+            content={`En ${comuna} se registran ${formatter.valueFormatter(
+              currentActivos.value,
+            )} casos activos al ${formatter.dateFormatter(
+              currentActivos.date,
+            )}, con una tasa de ${tasaActivos.value.toFixed(
+              0,
+            )} casos activos por cada 100 mil habitantes.`}
+          />
         </Helmet>
         <CenteredContainer>
           {/* Navigation Breadcrumbs */}
           <Breadcrumb.Container>
-            <Breadcrumb.Item to="/">
-                Chile
-            </Breadcrumb.Item>
+            <Breadcrumb.Item to="/">Chile</Breadcrumb.Item>
             <Breadcrumb.Item to={`/regiones/${region}`}>
-              {region && `Región ${region}`}
+              {`Región ${region}`}
             </Breadcrumb.Item>
             <Breadcrumb.Item to={`/regiones/${region}/comunas/${comuna}`}>
-              {comuna && fixComunaName(comuna)}
+              {comuna}
             </Breadcrumb.Item>
           </Breadcrumb.Container>
           {/* Chart */}
           <ChartContainer>
-            <ChartTitle>
-              Casos Activos
-            </ChartTitle>
-            <CVLineChart data={totalesComuna} />
+            <ChartTitle>Casos Activos</ChartTitle>
+            <CVLineChart data={series.activos} />
           </ChartContainer>
           {/* Info Texts */}
           <InfoTextsContainer>
             <InfoText>
-              {`En ${fixComunaName(comuna)}, entre el ${formatter.dateFormatter(secondToLastData.date)} y el ${formatter.dateFormatter(lastData.date)}, los casos activos `}
+              {`En ${comuna}, entre el ${formatter.dateFormatter(
+                previousActivos.date,
+              )} y el ${formatter.dateFormatter(
+                currentActivos.date,
+              )}, los casos activos `}
               {valueChangeText}
             </InfoText>
             <InfoText>
-              { `Por cada 100 mil habitantes, hay ${tasaActivos.toFixed(0)} casos activos.`}
+              {`Por cada 100 mil habitantes, hay ${tasaActivos.value.toFixed(0)} casos activos.`}
             </InfoText>
           </InfoTextsContainer>
         </CenteredContainer>
