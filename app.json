@@ -3,30 +3,6 @@
     "description": "Simple and user-friendly analysis of coronavirus cases by region and by comuna in Chile.",
     "scripts": {},
     "env": {
-      "REACT_APP_ACTIVOS_POR_COMUNA_CSV_URL": {
-        "required": true
-      },
-      "REACT_APP_TOTALES_NACIONALES_CSV_URL": {
-        "required": true
-      },
-      "REACT_APP_FALLECIDOS_POR_REGION_CSV_URL": {
-        "required": true
-      },
-      "REACT_APP_CONFIRMADOS_POR_REGION_CSV_URL": {
-        "required": true
-      },
-      "REACT_APP_BACKUP_ACTIVOS_POR_COMUNA_CSV_URL": {
-        "required": true
-      },
-      "REACT_APP_BACKUP_TOTALES_NACIONALES_CSV_URL": {
-        "required": true
-      },
-      "REACT_APP_BACKUP_FALLECIDOS_POR_REGION_CSV_URL": {
-        "required": true
-      },
-      "REACT_APP_BACKUP_CONFIRMADOS_POR_REGION_CSV_URL": {
-        "required": true
-      },
       "REACT_APP_CHILE_DATA_JSON_URL": {
         "required": true
       }
