@@ -8,4 +8,6 @@ export default {
   backupTotalesNacionalesCsvUrl: process.env.REACT_APP_BACKUP_TOTALES_NACIONALES_CSV_URL,
   backupFallecidosPorRegionCsvUrl: process.env.REACT_APP_BACKUP_FALLECIDOS_POR_REGION_CSV_URL,
   backupConfirmadosPorRegionCsvUrl: process.env.REACT_APP_BACKUP_CONFIRMADOS_POR_REGION_CSV_URL,
+
+  chileDataJsonUrl: process.env.REACT_APP_CHILE_DATA_JSON_URL,
 };
