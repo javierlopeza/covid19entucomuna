@@ -15,7 +15,7 @@
     "addons": [],
     "buildpacks": [
       {
-        "url": "mars/create-react-app"
+        "url": "https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz"
       }
     ],
     "stack": "heroku-18"
