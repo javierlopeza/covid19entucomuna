@@ -53,6 +53,7 @@ class Comuna extends Component {
       return <LoaderSpinner />;
     }
     const { region, comuna, chileData } = this.state;
+    const { completeName: regionCompleteName } = chileData.regiones[region];
     const {
       tasaActivos,
       activos: currentActivos,
@@ -82,7 +83,7 @@ class Comuna extends Component {
           <Breadcrumb.Container>
             <Breadcrumb.Item to="/">Chile</Breadcrumb.Item>
             <Breadcrumb.Item to={`/regiones/${region}`}>
-              {`Región ${region}`}
+              {regionCompleteName}
             </Breadcrumb.Item>
             <Breadcrumb.Item to={`/regiones/${region}/comunas/${comuna}`}>
               {comuna}

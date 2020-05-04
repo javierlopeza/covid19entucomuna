@@ -53,11 +53,19 @@ class Region extends Component {
       };
       return <PlaceLink key={comuna} to={to}>{comuna}</PlaceLink>;
     });
+    const {
+      completeName,
+      poblacion,
+      activos,
+      recuperados,
+      fallecidos,
+      series,
+    } = chileData.regiones[region];
     return (
       <>
         <Helmet>
-          <title>{`COVID-19 en tu comuna - Región ${region}`}</title>
-          <meta name="description" content={`En la Región ${region} se registran ${formatter.valueFormatter(chileData.regiones[region].activos.value)} casos activos al ${formatter.dateFormatter(chileData.regiones[region].activos.date)}.`} />
+          <title>{`COVID-19 en tu comuna - ${completeName}`}</title>
+          <meta name="description" content={`En la ${completeName} se registran ${formatter.valueFormatter(activos.value)} casos activos al ${formatter.dateFormatter(activos.date)}.`} />
         </Helmet>
         <CenteredContainer>
           {/* Navigation Breadcrumbs */}
@@ -66,7 +74,7 @@ class Region extends Component {
                 Chile
             </Breadcrumb.Item>
             <Breadcrumb.Item to={`/regiones/${region}`}>
-              {`Región ${region}`}
+              {completeName}
             </Breadcrumb.Item>
           </Breadcrumb.Container>
           {/* Metrics */}
@@ -76,7 +84,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Población</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(chileData.regiones[region].poblacion)}
+                  {formatter.valueFormatter(poblacion)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -85,7 +93,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Activos</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(chileData.regiones[region].activos.value)}
+                  {formatter.valueFormatter(activos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -94,7 +102,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Recuperados</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(chileData.regiones[region].recuperados.value)}
+                  {formatter.valueFormatter(recuperados.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -103,7 +111,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Fallecidos</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(chileData.regiones[region].fallecidos.value)}
+                  {formatter.valueFormatter(fallecidos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -113,7 +121,7 @@ class Region extends Component {
             <ChartTitle>
               Casos Activos
             </ChartTitle>
-            <CVLineChart data={chileData.regiones[region].series.activos} />
+            <CVLineChart data={series.activos} />
           </ChartContainer>
           {/* Comunas */}
           <PlacesContainer totalPlaces={comunas.length}>
