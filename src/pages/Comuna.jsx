@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import styled, { css } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import CVLineChart from '../components/CVLineChart';
@@ -30,14 +31,17 @@ class Comuna extends Component {
     if (!chileData) {
       chileData = await getChileData();
     }
-    try {
+    if (
+      _.keys(chileData.regiones).includes(region)
+      && _.keys(chileData.regiones[region].comunas).includes(comuna)
+    ) {
       this.setState({
         comuna,
         region,
         chileData,
         loading: false,
       });
-    } catch (err) {
+    } else {
       const { history } = this.props;
       history.push('/');
     }
