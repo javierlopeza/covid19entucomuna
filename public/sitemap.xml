@@ -4,6 +4,9 @@
         <loc>https://covid19entucomuna.cl</loc>
     </url>
     <url>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana</loc>
+    </url>
+    <url>
         <loc>https://covid19entucomuna.cl/regiones/Arica%20y%20Parinacota</loc>
     </url>
     <url>
@@ -22,10 +25,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins</loc>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Maule</loc>
@@ -37,7 +37,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos</loc>
@@ -52,253 +52,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Magallanes</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Arica%20y%20Parinacota/comunas/Arica</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Arica%20y%20Parinacota/comunas/Camarones</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Arica%20y%20Parinacota/comunas/General%20Lagos</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Arica%20y%20Parinacota/comunas/Putre</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Alto%20Hospicio</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Camina</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Colchane</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Huara</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Iquique</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Pica</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Pozo%20Almonte</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Antofagasta</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Calama</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Maria%20Elena</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Mejillones</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Ollague</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/San%20Pedro%20de%20Atacama</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Sierra%20Gorda</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Taltal</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Tocopilla</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Alto%20del%20Carmen</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Caldera</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Chanaral</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Copiapo</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Diego%20de%20Almagro</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Freirina</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Huasco</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Tierra%20Amarilla</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Vallenar</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Andacollo</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Canela</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Combarbala</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Coquimbo</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Illapel</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/La%20Higuera</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/La%20Serena</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Los%20Vilos</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Monte%20Patria</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Ovalle</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Paiguano</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Punitaqui</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Rio%20Hurtado</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Salamanca</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Vicuna</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Algarrobo</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Cabildo</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Calera</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Calle%20Larga</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Cartagena</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Casablanca</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Catemu</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Concon</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/El%20Quisco</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/El%20Tabo</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Hijuelas</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Isla%20de%20Pascua</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Juan%20Fernandez</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/La%20Cruz</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/La%20Ligua</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Limache</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Llaillay</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Los%20Andes</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Nogales</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Olmue</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Panquehue</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Papudo</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Petorca</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Puchuncavi</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Putaendo</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Quillota</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Quilpue</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Quintero</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Rinconada</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/San%20Antonio</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/San%20Esteban</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/San%20Felipe</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Santa%20Maria</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Santo%20Domingo</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Valparaiso</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Villa%20Alemana</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Vina%20del%20Mar</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Zapallar</loc>
-    </url>
-    <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Alhue</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Alhu%C3%A9</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Buin</loc>
@@ -316,10 +70,10 @@
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Colina</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Conchali</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Conchal%C3%AD</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Curacavi</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Curacav%C3%AD</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/El%20Bosque</loc>
@@ -328,7 +82,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/El%20Monte</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Estacion%20Central</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Estaci%C3%B3n%20Central</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Huechuraba</loc>
@@ -373,16 +127,16 @@
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Macul</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Maipu</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Maip%C3%BA</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Maria%20Pinto</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Mar%C3%ADa%20Pinto</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Melipilla</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Nunoa</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/%C3%91u%C3%B1oa</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Padre%20Hurtado</loc>
@@ -394,10 +148,10 @@
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Pedro%20Aguirre%20Cerda</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Penaflor</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Pe%C3%B1aflor</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Penalolen</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Pe%C3%B1alol%C3%A9n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Pirque</loc>
@@ -427,10 +181,10 @@
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/San%20Bernardo</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/San%20Joaquin</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/San%20Joaqu%C3%ADn</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/San%20Jose%20de%20Maipo</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/San%20Jos%C3%A9%20de%20Maipo</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/San%20Miguel</loc>
@@ -439,7 +193,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/San%20Pedro</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/San%20Ramon</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/San%20Ram%C3%B3n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Santiago</loc>
@@ -454,103 +208,349 @@
         <loc>https://covid19entucomuna.cl/regiones/Metropolitana/comunas/Vitacura</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Chepica</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Arica%20y%20Parinacota/comunas/Arica</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Chimbarongo</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Arica%20y%20Parinacota/comunas/Camarones</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Codegua</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Arica%20y%20Parinacota/comunas/General%20Lagos</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Coinco</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Arica%20y%20Parinacota/comunas/Putre</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Coltauco</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Alto%20Hospicio</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Donihue</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Cami%C3%B1a</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Graneros</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Colchane</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/La%20Estrella</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Huara</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Las%20Cabras</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Iquique</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Litueche</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Pica</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Lolol</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Tarapac%C3%A1/comunas/Pozo%20Almonte</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Machali</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Antofagasta</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Malloa</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Calama</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Marchihue</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Mar%C3%ADa%20Elena</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Mostazal</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Mejillones</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Nancagua</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Ollag%C3%BCe</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Navidad</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/San%20Pedro%20de%20Atacama</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Olivar</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Sierra%20Gorda</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Palmilla</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Taltal</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Paredones</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Antofagasta/comunas/Tocopilla</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Peralillo</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Alto%20del%20Carmen</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Peumo</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Caldera</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Pichidegua</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Cha%C3%B1aral</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Pichilemu</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Copiap%C3%B3</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Placilla</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Diego%20de%20Almagro</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Pumanque</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Freirina</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Quinta%20de%20Tilcoco</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Huasco</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Rancagua</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Tierra%20Amarilla</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Rengo</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Atacama/comunas/Vallenar</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Requinoa</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Andacollo</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/San%20Fernando</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Canela</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/San%20Vicente</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Combarbal%C3%A1</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/O%E2%80%99Higgins/comunas/Santa%20Cruz</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Coquimbo</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Illapel</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/La%20Higuera</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/La%20Serena</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Los%20Vilos</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Monte%20Patria</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Ovalle</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Paiguano</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Punitaqui</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/R%C3%ADo%20Hurtado</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Salamanca</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Coquimbo/comunas/Vicu%C3%B1a</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Algarrobo</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Cabildo</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Calera</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Calle%20Larga</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Cartagena</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Casablanca</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Catemu</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Conc%C3%B3n</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/El%20Quisco</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/El%20Tabo</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Hijuelas</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Isla%20de%20Pascua</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Juan%20Fern%C3%A1ndez</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/La%20Cruz</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/La%20Ligua</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Limache</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Llaillay</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Los%20Andes</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Nogales</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Olmu%C3%A9</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Panquehue</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Papudo</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Petorca</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Puchuncav%C3%AD</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Putaendo</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Quillota</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Quilpu%C3%A9</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Quintero</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Rinconada</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/San%20Antonio</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/San%20Esteban</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/San%20Felipe</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Santa%20Mar%C3%ADa</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Santo%20Domingo</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Valpara%C3%ADso</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Villa%20Alemana</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Vi%C3%B1a%20del%20Mar</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/Valpara%C3%ADso/comunas/Zapallar</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Ch%C3%A9pica</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Chimbarongo</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Codegua</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Coinco</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Coltauco</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Do%C3%B1ihue</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Graneros</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/La%20Estrella</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Las%20Cabras</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Litueche</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Lolol</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Machal%C3%AD</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Malloa</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Marchihue</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Mostazal</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Nancagua</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Navidad</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Olivar</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Palmilla</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Paredones</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Peralillo</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Peumo</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Pichidegua</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Pichilemu</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Placilla</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Pumanque</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Quinta%20de%20Tilcoco</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Rancagua</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Rengo</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Requ%C3%ADnoa</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/San%20Fernando</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/San%20Vicente</loc>
+    </url>
+    <url>
+        <loc>https://covid19entucomuna.cl/regiones/O%27Higgins/comunas/Santa%20Cruz</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Cauquenes</loc>
@@ -559,31 +559,31 @@
         <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Chanco</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Colbun</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Colb%C3%BAn</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Constitucion</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Constituci%C3%B3n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Curepto</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Curico</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Curic%C3%B3</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Empedrado</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Hualane</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Huala%C3%B1%C3%A9</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Licanten</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Licant%C3%A9n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Linares</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Longavi</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Longav%C3%AD</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Maule</loc>
@@ -610,7 +610,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Retiro</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Rio%20Claro</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/R%C3%ADo%20Claro</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Romeral</loc>
@@ -634,7 +634,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Teno</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Vichuquen</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Vichuqu%C3%A9n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Maule/comunas/Villa%20Alegre</loc>
@@ -646,10 +646,10 @@
         <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Bulnes</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Chillan</loc>
+        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Chill%C3%A1n</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Chillan%20Viejo</loc>
+        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Chill%C3%A1n%20Viejo</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Cobquecura</loc>
@@ -667,7 +667,7 @@
         <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Ninhue</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Niquen</loc>
+        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/%C3%91iqu%C3%A9n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Pemuco</loc>
@@ -679,25 +679,25 @@
         <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Portezuelo</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Quillon</loc>
+        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Quill%C3%B3n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Quirihue</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Ranquil</loc>
+        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/R%C3%A1nquil</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/San%20Carlos</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/San%20Fabian</loc>
+        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/San%20Fabi%C3%A1n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/San%20Ignacio</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/San%20Nicolas</loc>
+        <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/San%20Nicol%C3%A1s</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Treguaco</loc>
@@ -706,7 +706,7 @@
         <loc>https://covid19entucomuna.cl/regiones/%C3%91uble/comunas/Yungay</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Alto%20Biobio</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Alto%20Biob%C3%ADo</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Antuco</loc>
@@ -718,13 +718,13 @@
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Cabrero</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Canete</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Ca%C3%B1ete</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Chiguayante</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Concepcion</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Concepci%C3%B3n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Contulmo</loc>
@@ -739,7 +739,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Florida</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Hualpen</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Hualp%C3%A9n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Hualqui</loc>
@@ -751,16 +751,16 @@
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Lebu</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Los%20Alamos</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Los%20%C3%81lamos</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Los%20Angeles</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Los%20%C3%81ngeles</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Lota</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Mulchen</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Mulch%C3%A9n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Nacimiento</loc>
@@ -784,7 +784,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/San%20Rosendo</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Santa%20Barbara</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Santa%20B%C3%A1rbara</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Santa%20Juana</loc>
@@ -793,10 +793,10 @@
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Talcahuano</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Tirua</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Tir%C3%BAa</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Tome</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Tom%C3%A9</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Tucapel</loc>
@@ -805,100 +805,100 @@
         <loc>https://covid19entucomuna.cl/regiones/Biob%C3%ADo/comunas/Yumbel</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Angol</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Angol</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Carahue</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Carahue</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Cholchol</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Cholchol</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Collipulli</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Collipulli</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Cunco</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Cunco</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Curacautin</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Curacaut%C3%ADn</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Curarrehue</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Curarrehue</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Ercilla</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Ercilla</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Freire</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Freire</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Galvarino</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Galvarino</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Gorbea</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Gorbea</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Lautaro</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Lautaro</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Loncoche</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Loncoche</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Lonquimay</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Lonquimay</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Los%20Sauces</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Los%20Sauces</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Lumaco</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Lumaco</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Melipeuco</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Melipeuco</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Nueva%20Imperial</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Nueva%20Imperial</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Padre%20Las%20Casas</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Padre%20Las%20Casas</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Perquenco</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Perquenco</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Pitrufquen</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Pitrufqu%C3%A9n</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Pucon</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Puc%C3%B3n</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Puren</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Pur%C3%A9n</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Renaico</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Renaico</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Saavedra</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Saavedra</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Temuco</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Temuco</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Teodoro%20Schmidt</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Teodoro%20Schmidt</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Tolten</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Tolt%C3%A9n</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Traiguen</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Traigu%C3%A9n</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Victoria</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Victoria</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Vilcun</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Vilc%C3%BAn</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Araucan%C3%ADa/comunas/Villarrica</loc>
+        <loc>https://covid19entucomuna.cl/regiones/La%20Araucan%C3%ADa/comunas/Villarrica</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/Corral</loc>
@@ -907,7 +907,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/Futrono</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/La%20Union</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/La%20Uni%C3%B3n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/Lago%20Ranco</loc>
@@ -919,7 +919,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/Los%20Lagos</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/Mafil</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/M%C3%A1fil</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/Mariquina</loc>
@@ -931,7 +931,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/Panguipulli</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/Rio%20Bueno</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/R%C3%ADo%20Bueno</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20R%C3%ADos/comunas/Valdivia</loc>
@@ -946,16 +946,16 @@
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Castro</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Chaiten</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Chait%C3%A9n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Chonchi</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Cochamo</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Cocham%C3%B3</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Curaco%20de%20Velez</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Curaco%20de%20V%C3%A9lez</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Dalcahue</loc>
@@ -967,10 +967,10 @@
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Frutillar</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Futaleufu</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Futaleuf%C3%BA</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Hualaihue</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Hualaihu%C3%A9</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Llanquihue</loc>
@@ -979,7 +979,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Los%20Muermos</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Maullin</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Maull%C3%ADn</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Osorno</loc>
@@ -997,7 +997,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Puerto%20Varas</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Puqueldon</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Puqueld%C3%B3n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Purranque</loc>
@@ -1006,10 +1006,10 @@
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Puyehue</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Queilen</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Queil%C3%A9n</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Quellon</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Quell%C3%B3n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Quemchi</loc>
@@ -1018,7 +1018,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Quinchao</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/Rio%20Negro</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/R%C3%ADo%20Negro</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/San%20Juan%20de%20la%20Costa</loc>
@@ -1027,7 +1027,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Los%20Lagos/comunas/San%20Pablo</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Ays%C3%A9n/comunas/Aysen</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Ays%C3%A9n/comunas/Ais%C3%A9n</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Ays%C3%A9n/comunas/Chile%20Chico</loc>
@@ -1048,16 +1048,16 @@
         <loc>https://covid19entucomuna.cl/regiones/Ays%C3%A9n/comunas/Lago%20Verde</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Ays%C3%A9n/comunas/OHiggins</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Ays%C3%A9n/comunas/O%27Higgins</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Ays%C3%A9n/comunas/Rio%20Ibanez</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Ays%C3%A9n/comunas/R%C3%ADo%20Ib%C3%A1%C3%B1ez</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Ays%C3%A9n/comunas/Tortel</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Magallanes/comunas/Antartica</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Magallanes/comunas/Ant%C3%A1rtica</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Magallanes/comunas/Cabo%20de%20Hornos</loc>
@@ -1078,7 +1078,7 @@
         <loc>https://covid19entucomuna.cl/regiones/Magallanes/comunas/Punta%20Arenas</loc>
     </url>
     <url>
-        <loc>https://covid19entucomuna.cl/regiones/Magallanes/comunas/Rio%20Verde</loc>
+        <loc>https://covid19entucomuna.cl/regiones/Magallanes/comunas/R%C3%ADo%20Verde</loc>
     </url>
     <url>
         <loc>https://covid19entucomuna.cl/regiones/Magallanes/comunas/San%20Gregorio</loc>
