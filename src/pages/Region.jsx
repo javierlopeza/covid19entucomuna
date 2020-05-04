@@ -32,9 +32,9 @@ class Region extends Component {
     if (!chileData) {
       chileData = await getChileData();
     }
-    try {
+    if (_.keys(chileData.regiones).includes(region)) {
       this.setState({ region, chileData, loading: false });
-    } catch (err) {
+    } else {
       const { history } = this.props;
       history.push('/');
     }

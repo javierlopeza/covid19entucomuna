@@ -1,7 +1,9 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
 import styled, { ThemeProvider, css } from 'styled-components';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Route, Link, Switch, Redirect,
+} from 'react-router-dom';
 
 import theme from './styles/theme';
 import GlobalStyle from './styles/global';
@@ -23,9 +25,12 @@ const App = () => (
               <Logo to="/">COVID-19 en tu comuna</Logo>
             </LogoContainer>
           </CenteredContainer>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/regiones/:region" component={Region} />
-          <Route exact path="/regiones/:region/comunas/:comuna" component={Comuna} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/regiones/:region" component={Region} />
+            <Route exact path="/regiones/:region/comunas/:comuna" component={Comuna} />
+            <Redirect to="/" />
+          </Switch>
         </Content>
         <Footer />
       </Container>
