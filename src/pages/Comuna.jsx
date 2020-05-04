@@ -12,6 +12,7 @@ import ValueChangeText from '../components/ValueChangeText';
 import Breadcrumb from '../components/Breadcrumb';
 import LoaderSpinner from '../components/LoaderSpinner';
 import getChileData from '../clients/chile-data-fetcher';
+import handlePageChange from '../utils/pageChangeHandler';
 
 class Comuna extends Component {
   constructor(props) {
@@ -65,7 +66,7 @@ class Comuna extends Component {
     );
     return (
       <>
-        <Helmet>
+        <Helmet onChangeClientState={handlePageChange}>
           <title>{`COVID-19 en tu comuna - ${comuna}`}</title>
           <meta
             name="description"

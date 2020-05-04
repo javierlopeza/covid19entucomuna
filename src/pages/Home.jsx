@@ -14,6 +14,7 @@ import metricsIcons from '../assets/images/metrics';
 import ChartTitle from '../components/ChartTitle';
 import Breadcrumb from '../components/Breadcrumb';
 import LoaderSpinner from '../components/LoaderSpinner';
+import handlePageChange from '../utils/pageChangeHandler';
 
 class Home extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class Home extends Component {
     regiones.unshift(metropolitana);
     return (
       <>
-        <Helmet>
+        <Helmet onChangeClientState={handlePageChange}>
           <title>COVID-19 en tu comuna</title>
           <meta name="description" content={`En Chile se registran ${formatter.valueFormatter(chileData.activos.value)} casos activos al ${formatter.dateFormatter(chileData.activos.date)}.`} />
         </Helmet>

@@ -14,6 +14,7 @@ import metricsIcons from '../assets/images/metrics';
 import Breadcrumb from '../components/Breadcrumb';
 import LoaderSpinner from '../components/LoaderSpinner';
 import getChileData from '../clients/chile-data-fetcher';
+import handlePageChange from '../utils/pageChangeHandler';
 
 class Region extends Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class Region extends Component {
     } = chileData.regiones[region];
     return (
       <>
-        <Helmet>
+        <Helmet onChangeClientState={handlePageChange}>
           <title>{`COVID-19 en tu comuna - ${completeName}`}</title>
           <meta name="description" content={`En la ${completeName} se registran ${formatter.valueFormatter(activos.value)} casos activos al ${formatter.dateFormatter(activos.date)}.`} />
         </Helmet>

@@ -3,9 +3,8 @@ import ReactGA from 'react-ga';
 import { hot } from 'react-hot-loader/root';
 import styled, { ThemeProvider, css } from 'styled-components';
 import {
-  Router, Route, Link, Switch, Redirect,
+  BrowserRouter as Router, Route, Link, Switch, Redirect,
 } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 
 import theme from './styles/theme';
 import GlobalStyle from './styles/global';
@@ -16,21 +15,13 @@ import Comuna from './pages/Comuna';
 import CenteredContainer from './components/CenteredContainer';
 import Footer from './components/Footer';
 
-const history = createBrowserHistory();
-
 // Initialize Google Analytics
 const trackingId = 'UA-91729603-2';
 ReactGA.initialize(trackingId);
 
-// Initialize Google Analytics page view tracking
-history.listen((location) => {
-  ReactGA.set({ page: location.pathname }); // Update the user's current page
-  ReactGA.pageview(location.pathname); // Record a pageview for the given page
-});
-
 const App = () => (
   <ThemeProvider theme={theme}>
-    <Router history={history}>
+    <Router>
       <GlobalStyle />
       <Container>
         <Content>
