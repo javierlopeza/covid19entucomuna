@@ -4,7 +4,7 @@
     "scripts": {},
     "env": {
       "REACT_APP_CHILE_DATA_JSON_URL": {
-        "required": true
+        "value": "https://raw.githubusercontent.com/javierlopeza/datos-coronavirus-chile/master/data/chile.json"
       }
     },
     "formation": {
