@@ -12,19 +12,25 @@ const Footer = () => (
     <Credit>
       Fuente:
       {' '}
-      <CreditLink href="http://www.minciencia.gob.cl/covid19" target="_blank">Mesa de Datos COVID-19</CreditLink>
+      <CreditLink href="http://www.minciencia.gob.cl/covid19" target="_blank">
+        Mesa de Datos COVID-19
+      </CreditLink>
     </Credit>
     <br />
     <CreditWithIcon>
       <CreditIcon src={GitHubMark} alt="GitHub" />
       <Credit>
-        <CreditLink href="https://github.com/javierlopeza/coronavirus-chile" target="_blank">javierlopeza/coronavirus-chile</CreditLink>
+        <CreditLink href="https://github.com/javierlopeza/coronavirus-chile" target="_blank">
+          javierlopeza/coronavirus-chile
+        </CreditLink>
       </Credit>
     </CreditWithIcon>
     <CreditWithIcon>
       <CreditIcon src={LinkedIn} alt="LinkedIn" />
       <Credit style={{ position: 'relative', top: '1px' }}>
-        <CreditLink href="https://cl.linkedin.com/in/antonia-daher-5a416a192" target="_blank">Antonia Daher</CreditLink>
+        <CreditLink href="https://cl.linkedin.com/in/antonia-daher-5a416a192" target="_blank">
+          Antonia Daher
+        </CreditLink>
       </Credit>
     </CreditWithIcon>
   </Container>
