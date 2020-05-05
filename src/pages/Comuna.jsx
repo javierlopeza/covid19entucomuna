@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import styled, { css } from 'styled-components';
 import { Helmet } from 'react-helmet';
+import ReactGA from 'react-ga';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
@@ -13,6 +14,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import LoaderSpinner from '../components/LoaderSpinner';
 import getChileData from '../clients/chile-data-fetcher';
 import handlePageChange from '../utils/pageChangeHandler';
+import { CATEGORIES, ACTIONS } from '../ga/events';
 
 class Comuna extends Component {
   constructor(props) {
@@ -41,6 +43,11 @@ class Comuna extends Component {
         region,
         chileData,
         loading: false,
+      });
+      ReactGA.event({
+        category: CATEGORIES.COMUNA,
+        action: ACTIONS.ENTER_PAGE,
+        label: comuna,
       });
     } else {
       const { history } = this.props;
