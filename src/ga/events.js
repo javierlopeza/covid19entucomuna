@@ -1,9 +1,11 @@
 const CATEGORIES = {
   COMUNA: 'COMUNA',
+  CREDIT_LINK: 'CREDIT_LINK',
 };
 
 const ACTIONS = {
   ENTER_PAGE: 'ENTER_PAGE',
+  CLICK: 'CLICK',
 };
 
 export {
