@@ -105,9 +105,11 @@ class Comuna extends Component {
               )}, los casos activos `}
               {valueChangeText}
             </InfoText>
-            <InfoText>
-              {`Por cada 100 mil habitantes, hay ${tasaActivos.value.toFixed(0)} casos activos.`}
-            </InfoText>
+            {!!tasaActivos.value && (
+              <InfoText>
+                {`Por cada 100 mil habitantes, hay ${tasaActivos.value.toFixed(0)} casos activos.`}
+              </InfoText>
+            )}
           </InfoTextsContainer>
         </CenteredContainer>
       </>
