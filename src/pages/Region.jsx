@@ -74,6 +74,7 @@ class Region extends Component {
             <Breadcrumb.Item to="/">
                 Chile
             </Breadcrumb.Item>
+            <Breadcrumb.Separator />
             <Breadcrumb.Item to={`/regiones/${region}`}>
               {completeName}
             </Breadcrumb.Item>

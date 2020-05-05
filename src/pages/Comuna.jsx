@@ -90,9 +90,11 @@ class Comuna extends Component {
           {/* Navigation Breadcrumbs */}
           <Breadcrumb.Container>
             <Breadcrumb.Item to="/">Chile</Breadcrumb.Item>
+            <Breadcrumb.Separator />
             <Breadcrumb.Item to={`/regiones/${region}`}>
               {regionCompleteName}
             </Breadcrumb.Item>
+            <Breadcrumb.Separator />
             <Breadcrumb.Item to={`/regiones/${region}/comunas/${comuna}`}>
               {comuna}
             </Breadcrumb.Item>
