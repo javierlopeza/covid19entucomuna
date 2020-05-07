@@ -14,6 +14,7 @@ import theme from '../styles/theme';
 
 const CVLineChart = (props) => {
   const { data } = props;
+  const showDots = data.length < 30;
   return (
     <ResponsiveContainer>
       <CustomChart data={data}>
@@ -34,7 +35,7 @@ const CVLineChart = (props) => {
           type="monotone"
           stroke={theme.colors.blue.normal}
           strokeWidth={2.5}
-          dot={{
+          dot={showDots && {
             fill: 'white', r: 2.5, stroke: theme.colors.blue.normal, strokeWidth: 2,
           }}
           activeDot={{
