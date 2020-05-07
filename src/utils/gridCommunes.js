@@ -1,4 +1,4 @@
-const rowsForTotalComunas = {
+const rowsForTotalCommunes = {
   1: 1,
   2: 1,
   3: 1,
@@ -21,9 +21,9 @@ const rowsForTotalComunas = {
   52: 13,
 };
 
-function rowsPerColumn(totalComunas) {
+function rowsPerColumn(totalCommunes) {
   try {
-    return rowsForTotalComunas[totalComunas];
+    return rowsForTotalCommunes[totalCommunes];
   } catch {
     return 8;
   }
