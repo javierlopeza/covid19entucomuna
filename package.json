@@ -20,6 +20,7 @@
     "react-loader-spinner": "^3.1.14",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-visibility-sensor": "^5.1.1",
     "recharts": "^1.8.5",
     "styled-components": "^4.3.1"
   },

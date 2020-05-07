@@ -1,15 +1,35 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react';
+import styled, { css } from 'styled-components';
 
-const QuarantineRibbon = ({ text, show }) => (show ? (
-  <Container>
-    <LeftSegment />
-    <TextArea id="text">{text}</TextArea>
-    <BackSegment />
-  </Container>
-) : (
-  <></>
-));
+class QuarantineRibbon extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { explained: false };
+  }
+
+  startTimeoutExplanation() {
+    setTimeout(() => {
+      this.setState({ explained: true });
+    }, 3000);
+  }
+
+  render() {
+    const { text, isVisible } = this.props;
+    const { explained } = this.state;
+    if (isVisible && !explained) {
+      this.startTimeoutExplanation();
+    }
+    return (
+      <Container>
+        <LeftSegment />
+        <TextArea id="text" explain={isVisible && !explained}>
+          {text}
+        </TextArea>
+        <BackSegment />
+      </Container>
+    );
+  }
+}
 
 export default QuarantineRibbon;
 
@@ -32,19 +52,27 @@ const TextArea = styled.div`
   position: absolute;
   top: -3px;
   left: 3px;
-  width: 15px;
   line-height: 18px;
 
   cursor: default;
   font-size: 0.6em;
   font-weight: 400;
-  color: transparent;
   background-color: #ff788f;
   border-radius: 3px;
   text-align: center;
   white-space: nowrap;
 
-  transition: width 200ms ease-in-out, color 100ms ease-in-out;
+  ${({ explain }) => (!explain
+    ? css`
+          width: 15px;
+          color: transparent;
+          transition: width 200ms ease-in-out, color 100ms ease-in-out;
+        `
+    : css`
+          width: 100px;
+          color: white;
+          transition: width 200ms ease-in-out, color 150ms ease-in-out 100ms;
+        `)}
 `;
 
 const LeftSegment = styled.div`

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import { Helmet } from 'react-helmet';
+import VisibilitySensor from 'react-visibility-sensor';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
@@ -55,12 +56,16 @@ class Region extends Component {
         chileData,
       };
       return (
-        <PlaceLink.Container key={comuna}>
-          <QuarantineRibbon show={comunas[comuna].enCuarentena} text="En cuarentena" />
-          <PlaceLink.Button to={to}>
-            {comuna}
-          </PlaceLink.Button>
-        </PlaceLink.Container>
+        <VisibilitySensor key={comuna}>
+          {({ isVisible }) => (
+            <PlaceLink.Container>
+              {comunas[comuna].enCuarentena && <QuarantineRibbon isVisible={isVisible} text="En cuarentena" />}
+              <PlaceLink.Button to={to}>
+                {comuna}
+              </PlaceLink.Button>
+            </PlaceLink.Container>
+          )}
+        </VisibilitySensor>
       );
     });
     const {
