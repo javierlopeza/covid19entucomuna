@@ -5,7 +5,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
-import ChartTitle from '../components/ChartTitle';
+import BoxTitle from '../components/BoxTitle';
 import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
 import QuarantineRibbon from '../components/QuarantineRibbon';
@@ -134,9 +134,9 @@ class Region extends Component {
           </MetricsCards.Container>
           {/* Chart */}
           <ChartContainer>
-            <ChartTitle>
+            <BoxTitle>
               Casos Activos
-            </ChartTitle>
+            </BoxTitle>
             <CVLineChart data={series.activos} />
           </ChartContainer>
           {/* Comunas */}

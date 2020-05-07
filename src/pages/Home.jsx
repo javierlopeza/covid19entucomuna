@@ -11,7 +11,7 @@ import scrollToTop from '../utils/scrollToTop';
 import formatter from '../utils/formatter';
 import MetricsCards from '../components/MetricsCards';
 import metricsIcons from '../assets/images/metrics';
-import ChartTitle from '../components/ChartTitle';
+import BoxTitle from '../components/BoxTitle';
 import Breadcrumb from '../components/Breadcrumb';
 import LoaderSpinner from '../components/LoaderSpinner';
 import handlePageChange from '../utils/pageChangeHandler';
@@ -102,9 +102,9 @@ class Home extends Component {
           </MetricsCards.Container>
           {/* Chart */}
           <ChartContainer>
-            <ChartTitle>
+            <BoxTitle>
               Casos Activos
-            </ChartTitle>
+            </BoxTitle>
             <CVLineChart data={chileData.series.activos} />
           </ChartContainer>
           {/* Comunas */}
