@@ -67,6 +67,7 @@ class Comuna extends Component {
       activos: currentActivos,
       previous: { activos: previousActivos },
       series,
+      quarantine,
     } = chileData.regiones[region].comunas[comuna];
     const valueChangeText = (
       <ValueChangeText data={[previousActivos.value, currentActivos.value]} />
@@ -120,6 +121,15 @@ class Comuna extends Component {
               </InfoText>
             )}
           </InfoTextsContainer>
+          {/* Quarantine */}
+          {!!quarantine.isActive && (
+          <InfoTextsContainer>
+            <BoxTitle warning>Cuarentena</BoxTitle>
+            <InfoText>
+              {quarantine.text}
+            </InfoText>
+          </InfoTextsContainer>
+          )}
         </CenteredContainer>
       </>
     );
