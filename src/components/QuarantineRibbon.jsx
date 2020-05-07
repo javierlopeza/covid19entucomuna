@@ -57,7 +57,7 @@ const TextArea = styled.div`
   cursor: default;
   font-size: 0.6em;
   font-weight: 400;
-  background-color: #ff788f;
+  background-color: ${({ theme }) => theme.colors.red.normal};
   border-radius: 3px;
   text-align: center;
   white-space: nowrap;
@@ -81,7 +81,7 @@ const LeftSegment = styled.div`
   left: -3px;
   width: 10px;
   height: 18px;
-  background-color: #ff788f;
+  background-color: ${({ theme }) => theme.colors.red.normal};
 `;
 
 const BackSegment = styled.div`
