@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import gridCommunes from '../utils/gridCommunes';
 
 const PlacesContainer = styled.div`
-  margin-bottom: 20px;
   display: grid;
   grid-template-columns: 1fr;
 
