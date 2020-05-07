@@ -66,7 +66,7 @@ const LogoContainer = styled.div`
 const Logo = styled(Link)`
   color: white;
   font-weight: 400;
-  font-size: 1.25em;
+  font-size: 1.2em;
   @media ${theme.device.mobileM} {
     font-size: 1.45em;
   }
