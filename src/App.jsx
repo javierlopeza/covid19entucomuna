@@ -11,7 +11,7 @@ import GlobalStyle from './styles/global';
 
 import Home from './pages/Home';
 import Region from './pages/Region';
-import Comuna from './pages/Comuna';
+import Commune from './pages/Commune';
 import CenteredContainer from './components/CenteredContainer';
 import Footer from './components/Footer';
 
@@ -33,7 +33,7 @@ const App = () => (
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/regiones/:region" component={Region} />
-            <Route exact path="/regiones/:region/comunas/:comuna" component={Comuna} />
+            <Route exact path="/regiones/:region/comunas/:commune" component={Commune} />
             <Redirect to="/" />
           </Switch>
         </Content>
