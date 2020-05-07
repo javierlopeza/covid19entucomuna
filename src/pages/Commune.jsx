@@ -144,6 +144,9 @@ const InfoTextsContainer = styled.div`
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
+  :last-child {
+    margin-bottom: 0;
+  }
 
   display: flex;
   flex-direction: column;
