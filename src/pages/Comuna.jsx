@@ -6,7 +6,7 @@ import ReactGA from 'react-ga';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
-import ChartTitle from '../components/ChartTitle';
+import BoxTitle from '../components/BoxTitle';
 import formatter from '../utils/formatter';
 import scrollToTop from '../utils/scrollToTop';
 import ValueChangeText from '../components/ValueChangeText';
@@ -101,7 +101,7 @@ class Comuna extends Component {
           </Breadcrumb.Container>
           {/* Chart */}
           <ChartContainer>
-            <ChartTitle>Casos Activos</ChartTitle>
+            <BoxTitle>Casos Activos</BoxTitle>
             <CVLineChart data={series.activos} />
           </ChartContainer>
           {/* Info Texts */}
