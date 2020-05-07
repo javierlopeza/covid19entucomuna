@@ -133,7 +133,7 @@ const InfoTextsContainer = styled.div`
   ${({ theme }) => theme.baseShadow}
   padding: 20px;
   border-radius: 10px;
-  margin-top: 20px;
+  margin-bottom: 20px;
 
   display: flex;
   flex-direction: column;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import gridComunas from '../utils/gridComunas';
 
 const PlacesContainer = styled.div`
-  margin-top: 15px;
+  margin-bottom: 20px;
   display: grid;
   grid-template-columns: 1fr;
 

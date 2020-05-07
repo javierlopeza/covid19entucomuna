@@ -14,6 +14,7 @@ const ChartContainer = styled.div`
     }
   `}
 
+  margin-bottom: 20px;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
