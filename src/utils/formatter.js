@@ -1,5 +1,5 @@
 import moment from './date';
 
-export const valueFormatter = value => value.toLocaleString('de-DE');
+export const formatValue = value => value.toLocaleString('de-DE');
 
-export const dateFormatter = dateStr => moment(dateStr).format('DD-MMMM');
+export const formatDate = dateStr => moment(dateStr).format('DD-MMMM');
