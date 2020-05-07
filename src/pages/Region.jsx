@@ -50,18 +50,20 @@ class Region extends Component {
     }
     const { region, chileData } = this.state;
     const { comunas } = chileData.regiones[region];
-    const comunasButtons = _.keys(comunas).map((comuna) => {
+    const communesButtons = _.keys(comunas).map((commune) => {
       const to = {
-        pathname: `/regiones/${region}/comunas/${comuna}`,
+        pathname: `/regiones/${region}/comunas/${commune}`,
         chileData,
       };
       return (
-        <VisibilitySensor key={comuna}>
+        <VisibilitySensor key={commune}>
           {({ isVisible }) => (
             <PlaceLink.Container>
-              {comunas[comuna].quarantine.isActive && <QuarantineRibbon isVisible={isVisible} text="En cuarentena" />}
+              {comunas[commune].quarantine.isActive && (
+                <QuarantineRibbon isVisible={isVisible} text="En cuarentena" />
+              )}
               <PlaceLink.Button to={to}>
-                {comuna}
+                {commune}
               </PlaceLink.Button>
             </PlaceLink.Container>
           )}
@@ -140,8 +142,8 @@ class Region extends Component {
             <CVLineChart data={series.activos} />
           </ChartContainer>
           {/* Comunas */}
-          <PlacesContainer totalPlaces={comunasButtons.length}>
-            {comunasButtons}
+          <PlacesContainer totalPlaces={communesButtons.length}>
+            {communesButtons}
           </PlacesContainer>
         </CenteredContainer>
       </>
