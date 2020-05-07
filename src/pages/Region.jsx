@@ -59,7 +59,7 @@ class Region extends Component {
         <VisibilitySensor key={comuna}>
           {({ isVisible }) => (
             <PlaceLink.Container>
-              {comunas[comuna].enCuarentena && <QuarantineRibbon isVisible={isVisible} text="En cuarentena" />}
+              {comunas[comuna].quarantine.isActive && <QuarantineRibbon isVisible={isVisible} text="En cuarentena" />}
               <PlaceLink.Button to={to}>
                 {comuna}
               </PlaceLink.Button>
