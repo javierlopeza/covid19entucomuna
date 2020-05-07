@@ -98,7 +98,7 @@ class Region extends Component {
           {/* Metrics */}
           <MetricsCards.Container>
             <MetricsCards.Card>
-              <MetricsCards.Icon src={metricsIcons.poblacion} />
+              <MetricsCards.Icon src={metricsIcons.population} />
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Población</MetricsCards.Label>
                 <MetricsCards.Value>
@@ -107,7 +107,7 @@ class Region extends Component {
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
             <MetricsCards.Card>
-              <MetricsCards.Icon src={metricsIcons.activos} />
+              <MetricsCards.Icon src={metricsIcons.active} />
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Activos</MetricsCards.Label>
                 <MetricsCards.Value>
@@ -116,7 +116,7 @@ class Region extends Component {
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
             <MetricsCards.Card>
-              <MetricsCards.Icon src={metricsIcons.recuperados} />
+              <MetricsCards.Icon src={metricsIcons.recovered} />
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Recuperados</MetricsCards.Label>
                 <MetricsCards.Value>
@@ -125,7 +125,7 @@ class Region extends Component {
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
             <MetricsCards.Card>
-              <MetricsCards.Icon src={metricsIcons.fallecidos} />
+              <MetricsCards.Icon src={metricsIcons.deaths} />
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Fallecidos</MetricsCards.Label>
                 <MetricsCards.Value>

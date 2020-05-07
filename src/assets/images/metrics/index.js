@@ -1,11 +1,11 @@
-import poblacion from './poblacion.svg';
-import activos from './activos.svg';
-import recuperados from './recuperados.svg';
-import fallecidos from './fallecidos.svg';
+import population from './population.svg';
+import active from './active.svg';
+import recovered from './recovered.svg';
+import deaths from './deaths.svg';
 
 export default {
-  poblacion,
-  activos,
-  recuperados,
-  fallecidos,
+  population,
+  active,
+  recovered,
+  deaths,
 };
