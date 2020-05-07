@@ -48,15 +48,16 @@ class Region extends Component {
       return <LoaderSpinner />;
     }
     const { region, chileData } = this.state;
-    const comunas = _.keys(chileData.regiones[region].comunas).map((comuna) => {
+    const { comunas } = chileData.regiones[region];
+    const comunasButtons = _.keys(comunas).map((comuna) => {
       const to = {
         pathname: `/regiones/${region}/comunas/${comuna}`,
         chileData,
       };
       return (
-        <PlaceLink.Container>
-          <QuarantineRibbon show={Math.random() < 0.9} text="En cuarentena" />
-          <PlaceLink.Button key={comuna} to={to}>
+        <PlaceLink.Container key={comuna}>
+          <QuarantineRibbon show={comunas[comuna].enCuarentena} text="En cuarentena" />
+          <PlaceLink.Button to={to}>
             {comuna}
           </PlaceLink.Button>
         </PlaceLink.Container>
@@ -134,8 +135,8 @@ class Region extends Component {
             <CVLineChart data={series.activos} />
           </ChartContainer>
           {/* Comunas */}
-          <PlacesContainer totalPlaces={comunas.length}>
-            {comunas}
+          <PlacesContainer totalPlaces={comunasButtons.length}>
+            {comunasButtons}
           </PlacesContainer>
         </CenteredContainer>
       </>
