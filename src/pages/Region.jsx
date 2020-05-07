@@ -52,7 +52,16 @@ class Region extends Component {
         pathname: `/regiones/${region}/comunas/${comuna}`,
         chileData,
       };
-      return <PlaceLink key={comuna} to={to}>{comuna}</PlaceLink>;
+      return (
+        <PlaceLink.Container>
+          <PlaceLink.Button key={comuna} to={to}>
+            {comuna}
+          </PlaceLink.Button>
+          <PlaceLink.QuarantineRibbon quarantine={Math.random() < 0.9}>
+            En cuarentena
+          </PlaceLink.QuarantineRibbon>
+        </PlaceLink.Container>
+      );
     });
     const {
       completeName,
