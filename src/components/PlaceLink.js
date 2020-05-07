@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`
@@ -35,62 +35,7 @@ const Button = styled(Link)`
   }
 `;
 
-const QuarantineRibbon = styled.div`
-  ${({ quarantine }) => !quarantine
-    && css`
-      display: none;
-    `}
-
-  position: absolute;
-  top: -3px;
-  left: 3px;
-  width: 15px;
-  line-height: 18px;
-
-  cursor: default;
-  font-size: 0.6em;
-  font-weight: 400;
-  color: transparent;
-  background-color: #ff788f;
-  border-radius: 3px;
-  text-align: center;
-  white-space: nowrap;
-
-  transition: width 200ms ease-in-out, color 100ms ease-in-out;
-
-  :hover {
-    width: 100px;
-    color: white;
-    transition: width 200ms ease-in-out, color 150ms ease-in-out 100ms;
-  }
-
-  ::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -5px;
-    background-color: #ff788f;
-    width: 10px;
-    height: 18px;
-  }
-
-  ::after {
-    content: '';
-    position: absolute;
-    top: 18px;
-    left: -5px;
-    z-index: -1;
-    background-color: #d45973;
-    width: 5px;
-    height: 15px;
-
-    transform-origin: top left;
-    transform: rotate(-45deg);
-  }
-`;
-
 export default {
   Container,
   Button,
-  QuarantineRibbon,
 };

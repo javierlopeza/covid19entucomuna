@@ -7,6 +7,7 @@ import CenteredContainer from '../components/CenteredContainer';
 import ChartTitle from '../components/ChartTitle';
 import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
+import QuarantineRibbon from '../components/QuarantineRibbon';
 import scrollToTop from '../utils/scrollToTop';
 import formatter from '../utils/formatter';
 import MetricsCards from '../components/MetricsCards';
@@ -54,12 +55,10 @@ class Region extends Component {
       };
       return (
         <PlaceLink.Container>
+          <QuarantineRibbon show={Math.random() < 0.9} text="En cuarentena" />
           <PlaceLink.Button key={comuna} to={to}>
             {comuna}
           </PlaceLink.Button>
-          <PlaceLink.QuarantineRibbon quarantine={Math.random() < 0.9}>
-            En cuarentena
-          </PlaceLink.QuarantineRibbon>
         </PlaceLink.Container>
       );
     });
