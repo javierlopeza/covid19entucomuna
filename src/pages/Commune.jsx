@@ -122,7 +122,7 @@ class Commune extends Component {
             )}
           </InfoTextsContainer>
           {/* Quarantine */}
-          {!!quarantine.isActive && (
+          {!!quarantine.text && (
           <InfoTextsContainer>
             <BoxTitle warning>Cuarentena</BoxTitle>
             <InfoText>
