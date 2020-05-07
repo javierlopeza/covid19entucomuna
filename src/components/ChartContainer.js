@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const ChartContainer = styled.div`
   display: flex;
@@ -8,11 +8,9 @@ const ChartContainer = styled.div`
   box-sizing: border-box;
   height: 320px;
   width: 95%;
-  ${({ theme: { device } }) => css`
-    @media ${device.laptop} {
-      width: 75%;
-    }
-  `}
+  @media ${({ theme }) => theme.device.laptop} {
+    width: 75%;
+  }
 
   margin-bottom: 20px;
   background-color: white;

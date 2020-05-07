@@ -25,5 +25,5 @@ const Container = styled.div`
 `;
 
 const Text = styled.p`
-  color: #6b6b6b;
+  color: ${({ theme }) => theme.colors.gray.normal};
 `;

@@ -26,7 +26,7 @@ export default ValueChangeText;
 
 const Colored = styled.span`
   ${({ theme, color }) => css`
-    color: ${theme.colors[color]};
+    color: ${theme.colors[color].dark};
   `}
   font-weight: 200;
 `;

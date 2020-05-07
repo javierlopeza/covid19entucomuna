@@ -8,8 +8,9 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import formatter from '../utils/formatter';
+import theme from '../styles/theme';
 
 const CVLineChart = (props) => {
   const { data } = props;
@@ -31,13 +32,13 @@ const CVLineChart = (props) => {
           name="Casos Activos"
           legendType="line"
           type="monotone"
-          stroke="#5b78ff"
+          stroke={theme.colors.blue.normal}
           strokeWidth={2.5}
           dot={{
-            fill: 'white', r: 2.5, stroke: '#5b78ff', strokeWidth: 2,
+            fill: 'white', r: 2.5, stroke: theme.colors.blue.normal, strokeWidth: 2,
           }}
           activeDot={{
-            fill: '#5b78ff', r: 6, stroke: 'white', strokeWidth: 2,
+            fill: theme.colors.blue.normal, r: 6, stroke: 'white', strokeWidth: 2,
           }}
           fillOpacity={1}
           fill="url(#chartGradient)"
@@ -51,22 +52,16 @@ export default CVLineChart;
 
 const CustomChart = styled(AreaChart)`
   margin-left: -5px;
-
-  ${({ theme: { device } }) => css`
-    @media ${device.laptop} {
-      margin: 0;
-    }
-  `}
+  @media ${theme.device.laptop} {
+    margin: 0;
+  }
 
   .recharts-cartesian-axis-tick-value tspan,
   .recharts-default-tooltip * {
     font-size: 14px;
-
-    ${({ theme: { device } }) => css`
-      @media ${device.laptop} {
-        font-size: 16px;
-      }
-    `}
+    @media ${theme.device.laptop} {
+      font-size: 16px;
+    }
   }
 
   .recharts-yAxis .recharts-cartesian-axis-tick:first-child {

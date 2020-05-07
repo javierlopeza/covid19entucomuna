@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import ReactGA from 'react-ga';
 import CVLineChart from '../components/CVLineChart';
@@ -151,11 +151,9 @@ const InfoTextsContainer = styled.div`
 
   box-sizing: border-box;
   width: 95%;
-  ${({ theme: { device } }) => css`
-    @media ${device.laptop} {
-      width: 75%;
-    }
-  `}
+  @media ${({ theme }) => theme.device.laptop} {
+    width: 75%;
+  }
 `;
 
 const InfoText = styled.p`

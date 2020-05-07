@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import { hot } from 'react-hot-loader/root';
-import styled, { ThemeProvider, css } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import {
   BrowserRouter as Router, Route, Link, Switch, Redirect,
 } from 'react-router-dom';
@@ -49,17 +49,16 @@ const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1em 0;
   box-sizing: border-box;
-  width: 95%;
-  ${({ theme: { device } }) => css`
-    @media ${device.laptop} {
-      width: 75%;
-    }
-    ${theme.baseShadow}
-  `}
-  background-color: #ff788f;
+  margin: 1em 0;
   padding: 20px;
+  width: 95%;
+  @media ${theme.device.laptop} {
+    width: 75%;
+  }
+
+  ${theme.baseShadow}
+  background-color: ${theme.colors.red.normal};
   border-radius: 10px;
   text-align: center;
 `;
@@ -68,15 +67,12 @@ const Logo = styled(Link)`
   color: white;
   font-weight: 400;
   font-size: 1.25em;
-
-  ${({ theme: { device } }) => css`
-    @media ${device.mobileM} {
-      font-size: 1.45em;
-    }
-    @media ${device.laptop} {
-      font-size: 2em;
-    }
-  `}
+  @media ${theme.device.mobileM} {
+    font-size: 1.45em;
+  }
+  @media ${theme.device.laptop} {
+    font-size: 2em;
+  }
 `;
 
 const Container = styled.div`

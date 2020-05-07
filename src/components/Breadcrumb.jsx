@@ -18,13 +18,13 @@ const Separator = styled.span`
   margin: 0 0.5em;
   font-size: 0.85em;
   font-weight: 400;
-  color: #5b78ff;
+  color: ${({ theme }) => theme.colors.blue.normal};
 `;
 
 const Item = styled(Link)`
   font-size: 1.25em;
   font-weight: 400;
-  color: #5b78ff;
+  color: ${({ theme }) => theme.colors.blue.normal};
   opacity: 0.6;
   text-align: center;
   margin: 0.1em;
