@@ -34,7 +34,7 @@ class Home extends Component {
       return <LoaderSpinner />;
     }
     const { chileData } = this.state;
-    const regiones = _.keys(chileData.regiones).map((region) => {
+    const regionsButtons = _.keys(chileData.regiones).map((region) => {
       const to = {
         pathname: `/regiones/${region}`,
         chileData,
@@ -45,14 +45,21 @@ class Home extends Component {
         </PlaceLink.Button>
       );
     });
-    const indexMetropolitana = _.findIndex(regiones, ['key', 'Metropolitana']);
-    const metropolitana = regiones.splice(indexMetropolitana, 1);
-    regiones.unshift(metropolitana);
+    const indexMetropolitana = _.findIndex(regionsButtons, ['key', 'Metropolitana']);
+    const metropolitana = regionsButtons.splice(indexMetropolitana, 1);
+    regionsButtons.unshift(metropolitana);
+    const {
+      poblacion,
+      activos,
+      recuperados,
+      fallecidos,
+      series,
+    } = chileData;
     return (
       <>
         <Helmet onChangeClientState={handlePageChange}>
           <title>COVID-19 en tu comuna</title>
-          <meta name="description" content={`En Chile se registran ${formatter.valueFormatter(chileData.activos.value)} casos activos al ${formatter.dateFormatter(chileData.activos.date)}.`} />
+          <meta name="description" content={`En Chile se registran ${formatter.valueFormatter(activos.value)} casos activos al ${formatter.dateFormatter(activos.date)}.`} />
         </Helmet>
         <CenteredContainer>
           {/* Navigation Breadcrumbs */}
@@ -68,7 +75,7 @@ class Home extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Población</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(chileData.poblacion)}
+                  {formatter.valueFormatter(poblacion)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -77,7 +84,7 @@ class Home extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Activos</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(chileData.activos.value)}
+                  {formatter.valueFormatter(activos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -86,7 +93,7 @@ class Home extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Recuperados</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(chileData.recuperados.value)}
+                  {formatter.valueFormatter(recuperados.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -95,7 +102,7 @@ class Home extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Fallecidos</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(chileData.fallecidos.value)}
+                  {formatter.valueFormatter(fallecidos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -105,11 +112,11 @@ class Home extends Component {
             <BoxTitle>
               Casos Activos
             </BoxTitle>
-            <CVLineChart data={chileData.series.activos} />
+            <CVLineChart data={series.activos} />
           </ChartContainer>
-          {/* Comunas */}
-          <PlacesContainer totalPlaces={regiones.length}>
-            {regiones}
+          {/* Regions */}
+          <PlacesContainer totalPlaces={regionsButtons.length}>
+            {regionsButtons}
           </PlacesContainer>
         </CenteredContainer>
       </>
