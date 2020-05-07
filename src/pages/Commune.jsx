@@ -16,11 +16,11 @@ import getChileData from '../clients/chile-data-fetcher';
 import handlePageChange from '../utils/pageChangeHandler';
 import { CATEGORIES, ACTIONS } from '../ga/events';
 
-class Comuna extends Component {
+class Commune extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comuna: null,
+      commune: null,
       region: null,
       chileData: {},
       loading: true,
@@ -29,17 +29,17 @@ class Comuna extends Component {
 
   async componentDidMount() {
     scrollToTop();
-    const { match: { params: { region, comuna } } } = this.props;
+    const { match: { params: { region, commune } } } = this.props;
     let { location: { chileData } } = this.props;
     if (!chileData) {
       chileData = await getChileData();
     }
     if (
       _.keys(chileData.regiones).includes(region)
-      && _.keys(chileData.regiones[region].comunas).includes(comuna)
+      && _.keys(chileData.regiones[region].comunas).includes(commune)
     ) {
       this.setState({
-        comuna,
+        commune,
         region,
         chileData,
         loading: false,
@@ -47,7 +47,7 @@ class Comuna extends Component {
       ReactGA.event({
         category: CATEGORIES.COMUNA,
         action: ACTIONS.ENTER_PAGE,
-        label: comuna,
+        label: commune,
       });
     } else {
       const { history } = this.props;
@@ -60,28 +60,28 @@ class Comuna extends Component {
     if (loading) {
       return <LoaderSpinner />;
     }
-    const { region, comuna, chileData } = this.state;
+    const { region, commune, chileData } = this.state;
     const { completeName: regionCompleteName } = chileData.regiones[region];
     const {
       tasaActivos,
-      activos: currentActivos,
-      previous: { activos: previousActivos },
+      activos: currentActive,
+      previous: { activos: previousActive },
       series,
       quarantine,
-    } = chileData.regiones[region].comunas[comuna];
+    } = chileData.regiones[region].comunas[commune];
     const valueChangeText = (
-      <ValueChangeText data={[previousActivos.value, currentActivos.value]} />
+      <ValueChangeText data={[previousActive.value, currentActive.value]} />
     );
     return (
       <>
         <Helmet onChangeClientState={handlePageChange}>
-          <title>{`COVID-19 en tu comuna - ${comuna}`}</title>
+          <title>{`COVID-19 en tu comuna - ${commune}`}</title>
           <meta
             name="description"
-            content={`En ${comuna} se registran ${formatter.valueFormatter(
-              currentActivos.value,
+            content={`En ${commune} se registran ${formatter.valueFormatter(
+              currentActive.value,
             )} casos activos al ${formatter.dateFormatter(
-              currentActivos.date,
+              currentActive.date,
             )}, con una tasa de ${tasaActivos.value.toFixed(
               0,
             )} casos activos por cada 100 mil habitantes.`}
@@ -96,8 +96,8 @@ class Comuna extends Component {
               {regionCompleteName}
             </Breadcrumb.Item>
             <Breadcrumb.Separator />
-            <Breadcrumb.Item to={`/regiones/${region}/comunas/${comuna}`}>
-              {comuna}
+            <Breadcrumb.Item to={`/regiones/${region}/comunas/${commune}`}>
+              {commune}
             </Breadcrumb.Item>
           </Breadcrumb.Container>
           {/* Chart */}
@@ -108,10 +108,10 @@ class Comuna extends Component {
           {/* Info Texts */}
           <InfoTextsContainer>
             <InfoText>
-              {`En ${comuna}, entre el ${formatter.dateFormatter(
-                previousActivos.date,
+              {`En ${commune}, entre el ${formatter.dateFormatter(
+                previousActive.date,
               )} y el ${formatter.dateFormatter(
-                currentActivos.date,
+                currentActive.date,
               )}, los casos activos `}
               {valueChangeText}
             </InfoText>
@@ -136,7 +136,7 @@ class Comuna extends Component {
   }
 }
 
-export default Comuna;
+export default Commune;
 
 const InfoTextsContainer = styled.div`
   background-color: white;
