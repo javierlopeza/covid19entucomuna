@@ -7,7 +7,7 @@ import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
 import BoxTitle from '../components/BoxTitle';
-import formatter from '../utils/formatter';
+import { dateFormatter, valueFormatter } from '../utils/formatter';
 import scrollToTop from '../utils/scrollToTop';
 import ValueChangeText from '../components/ValueChangeText';
 import Breadcrumb from '../components/Breadcrumb';
@@ -78,9 +78,9 @@ class Commune extends Component {
           <title>{`COVID-19 en tu comuna - ${commune}`}</title>
           <meta
             name="description"
-            content={`En ${commune} se registran ${formatter.valueFormatter(
+            content={`En ${commune} se registran ${valueFormatter(
               currentActive.value,
-            )} casos activos al ${formatter.dateFormatter(
+            )} casos activos al ${dateFormatter(
               currentActive.date,
             )}, con una tasa de ${tasaActivos.value.toFixed(
               0,
@@ -108,9 +108,9 @@ class Commune extends Component {
           {/* Info Texts */}
           <InfoTextsContainer>
             <InfoText>
-              {`En ${commune}, entre el ${formatter.dateFormatter(
+              {`En ${commune}, entre el ${dateFormatter(
                 previousActive.date,
-              )} y el ${formatter.dateFormatter(
+              )} y el ${dateFormatter(
                 currentActive.date,
               )}, los casos activos `}
               {valueChangeText}

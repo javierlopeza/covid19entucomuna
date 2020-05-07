@@ -10,7 +10,7 @@ import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
 import QuarantineRibbon from '../components/QuarantineRibbon';
 import scrollToTop from '../utils/scrollToTop';
-import formatter from '../utils/formatter';
+import { dateFormatter, valueFormatter } from '../utils/formatter';
 import MetricsCards from '../components/MetricsCards';
 import metricsIcons from '../assets/images/metrics';
 import Breadcrumb from '../components/Breadcrumb';
@@ -82,7 +82,7 @@ class Region extends Component {
       <>
         <Helmet onChangeClientState={handlePageChange}>
           <title>{`COVID-19 en tu comuna - ${completeName}`}</title>
-          <meta name="description" content={`En la ${completeName} se registran ${formatter.valueFormatter(activos.value)} casos activos al ${formatter.dateFormatter(activos.date)}.`} />
+          <meta name="description" content={`En la ${completeName} se registran ${valueFormatter(activos.value)} casos activos al ${dateFormatter(activos.date)}.`} />
         </Helmet>
         <CenteredContainer>
           {/* Navigation Breadcrumbs */}
@@ -102,7 +102,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Población</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(poblacion)}
+                  {valueFormatter(poblacion)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -111,7 +111,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Activos</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(activos.value)}
+                  {valueFormatter(activos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -120,7 +120,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Recuperados</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(recuperados.value)}
+                  {valueFormatter(recuperados.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
@@ -129,7 +129,7 @@ class Region extends Component {
               <MetricsCards.TextContainer>
                 <MetricsCards.Label>Fallecidos</MetricsCards.Label>
                 <MetricsCards.Value>
-                  {formatter.valueFormatter(fallecidos.value)}
+                  {valueFormatter(fallecidos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
