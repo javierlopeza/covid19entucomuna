@@ -40,9 +40,9 @@ class Home extends Component {
         chileData,
       };
       return (
-        <PlaceLink key={region} to={to}>
+        <PlaceLink.Button key={region} to={to}>
           {region}
-        </PlaceLink>
+        </PlaceLink.Button>
       );
     });
     const indexMetropolitana = _.findIndex(regiones, ['key', 'Metropolitana']);
