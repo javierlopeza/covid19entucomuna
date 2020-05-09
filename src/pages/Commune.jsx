@@ -15,6 +15,7 @@ import LoaderSpinner from '../components/LoaderSpinner';
 import getChileData from '../clients/chile-data-fetcher';
 import handlePageChange from '../utils/pageChangeHandler';
 import { CATEGORIES, ACTIONS } from '../ga/events';
+import { isDataFromToday } from '../utils/checkData';
 
 class Commune extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class Commune extends Component {
     scrollToTop();
     const { match: { params: { region, commune } } } = this.props;
     let { location: { chileData } } = this.props;
-    if (!chileData) {
+    if (!chileData || !isDataFromToday(chileData)) {
       chileData = await getChileData();
     }
     if (

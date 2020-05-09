@@ -17,6 +17,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import LoaderSpinner from '../components/LoaderSpinner';
 import getChileData from '../clients/chile-data-fetcher';
 import handlePageChange from '../utils/pageChangeHandler';
+import { isDataFromToday } from '../utils/checkData';
 
 class Region extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class Region extends Component {
     scrollToTop();
     const { match: { params: { region } } } = this.props;
     let { location: { chileData } } = this.props;
-    if (!chileData) {
+    if (!chileData || !isDataFromToday(chileData)) {
       chileData = await getChileData();
     }
     if (_.keys(chileData.regiones).includes(region)) {
