@@ -15,6 +15,7 @@ import BoxTitle from '../components/BoxTitle';
 import Breadcrumb from '../components/Breadcrumb';
 import LoaderSpinner from '../components/LoaderSpinner';
 import handlePageChange from '../utils/pageChangeHandler';
+import { isDataFromToday } from '../utils/checkData';
 
 class Home extends Component {
   constructor(props) {
@@ -24,7 +25,10 @@ class Home extends Component {
 
   async componentDidMount() {
     scrollToTop();
-    const chileData = await getChileData();
+    let { location: { chileData } } = this.props;
+    if (!chileData || !isDataFromToday(chileData)) {
+      chileData = await getChileData();
+    }
     this.setState({ loading: false, chileData });
   }
 

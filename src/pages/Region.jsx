@@ -88,7 +88,7 @@ class Region extends Component {
         <CenteredContainer>
           {/* Navigation Breadcrumbs */}
           <Breadcrumb.Container>
-            <Breadcrumb.Item to="/">
+            <Breadcrumb.Item to={{ pathname: '/', chileData }}>
                 Chile
             </Breadcrumb.Item>
             <Breadcrumb.Separator />

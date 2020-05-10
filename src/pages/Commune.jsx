@@ -91,9 +91,11 @@ class Commune extends Component {
         <CenteredContainer>
           {/* Navigation Breadcrumbs */}
           <Breadcrumb.Container>
-            <Breadcrumb.Item to="/">Chile</Breadcrumb.Item>
+            <Breadcrumb.Item to={{ pathname: '/', chileData }}>
+              Chile
+            </Breadcrumb.Item>
             <Breadcrumb.Separator />
-            <Breadcrumb.Item to={`/regiones/${region}`}>
+            <Breadcrumb.Item to={{ pathname: `/regiones/${region}`, chileData }}>
               {regionCompleteName}
             </Breadcrumb.Item>
             <Breadcrumb.Separator />
