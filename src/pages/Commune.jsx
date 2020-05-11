@@ -28,12 +28,12 @@ class Commune extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     scrollToTop();
     const { match: { params: { region, commune } } } = this.props;
     let { location: { chileData } } = this.props;
     if (!chileData || !isDataFromToday(chileData)) {
-      chileData = await getChileData();
+      chileData = getChileData();
     }
     if (
       _.keys(chileData.regiones).includes(region)

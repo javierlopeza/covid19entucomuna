@@ -29,12 +29,12 @@ class Region extends Component {
     };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     scrollToTop();
     const { match: { params: { region } } } = this.props;
     let { location: { chileData } } = this.props;
     if (!chileData || !isDataFromToday(chileData)) {
-      chileData = await getChileData();
+      chileData = getChileData();
     }
     if (_.keys(chileData.regiones).includes(region)) {
       this.setState({ region, chileData, loading: false });

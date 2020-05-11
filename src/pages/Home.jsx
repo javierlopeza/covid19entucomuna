@@ -23,11 +23,11 @@ class Home extends Component {
     this.state = { loading: true, chileData: {} };
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     scrollToTop();
     let { location: { chileData } } = this.props;
     if (!chileData || !isDataFromToday(chileData)) {
-      chileData = await getChileData();
+      chileData = getChileData();
     }
     this.setState({ loading: false, chileData });
   }

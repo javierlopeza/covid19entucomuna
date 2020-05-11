@@ -6,7 +6,7 @@ import { CATEGORIES, ACTIONS } from '../ga/events';
 
 const chileData = require('../data/chile-minified.json');
 
-async function getChileData() {
+function getChileData() {
   ReactGA.event({
     category: CATEGORIES.DATA,
     action: ACTIONS.FETCH,
