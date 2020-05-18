@@ -5,12 +5,7 @@ import env from '../environment';
 import regions from '../data/places/regions';
 import communes from '../data/places/communes';
 import { CATEGORIES, ACTIONS } from '../ga/events';
-import moment from '../utils/date';
-
-function withTimestamp(url) {
-  const ts = moment().unix();
-  return `${url}?timestamp=${ts}`;
-}
+import { withTimestamp } from '../utils/requests';
 
 async function getChileData() {
   const response = await axios.get(withTimestamp(env.chileDataJsonUrl));
