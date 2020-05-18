@@ -16,6 +16,7 @@ import getChileData from '../clients/chile-data-fetcher';
 import handlePageChange from '../utils/pageChangeHandler';
 import { CATEGORIES, ACTIONS } from '../ga/events';
 import { isDataFromToday } from '../utils/checkData';
+import notify from '../clients/notifier';
 
 class Commune extends Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class Commune extends Component {
       _.keys(chileData.regiones).includes(region)
       && _.keys(chileData.regiones[region].comunas).includes(commune)
     ) {
+      await notify();
       this.setState({
         commune,
         region,

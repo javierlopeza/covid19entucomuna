@@ -16,6 +16,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import LoaderSpinner from '../components/LoaderSpinner';
 import handlePageChange from '../utils/pageChangeHandler';
 import { isDataFromToday } from '../utils/checkData';
+import notify from '../clients/notifier';
 
 class Home extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class Home extends Component {
     if (!chileData || !isDataFromToday(chileData)) {
       chileData = await getChileData();
     }
+    await notify();
     this.setState({ loading: false, chileData });
   }
 
