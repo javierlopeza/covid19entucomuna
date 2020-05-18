@@ -2,8 +2,10 @@ import axios from 'axios';
 import camelcaseKeys from 'camelcase-keys';
 import { store as notifStore } from 'react-notifications-component';
 import _ from 'lodash';
+import ReactGA from 'react-ga';
 import env from '../environment';
 import { withTimestamp } from '../utils/requests';
+import { CATEGORIES, ACTIONS } from '../ga/events';
 
 async function notify() {
   const response = await axios.get(withTimestamp(env.currentNotificationJsonUrl));
@@ -24,6 +26,12 @@ async function notify() {
         onScreen: true,
         showIcon: true,
       },
+    });
+    ReactGA.event({
+      category: CATEGORIES.NOTIFICATION,
+      action: ACTIONS.SHOW,
+      label: timestamp,
+      nonInteraction: true,
     });
   }
 }
