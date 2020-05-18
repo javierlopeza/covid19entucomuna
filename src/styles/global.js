@@ -30,4 +30,10 @@ export default createGlobalStyle`
       background-color: ${theme.colors.blue.dark};
     }
   }
+  .notification-item .notification-close {
+    background-color: transparent;
+    ::after {
+      font-size: 14px;
+    }
+  }
 `;

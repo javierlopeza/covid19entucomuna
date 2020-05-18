@@ -22,6 +22,7 @@ async function notify() {
       dismiss: {
         duration: 8000,
         onScreen: true,
+        showIcon: true,
       },
     });
   }
