@@ -18,6 +18,7 @@ import LoaderSpinner from '../components/LoaderSpinner';
 import getChileData from '../clients/chile-data-fetcher';
 import handlePageChange from '../utils/pageChangeHandler';
 import { isDataFromToday } from '../utils/checkData';
+import notify from '../clients/notifier';
 
 class Region extends Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class Region extends Component {
       chileData = await getChileData();
     }
     if (_.keys(chileData.regiones).includes(region)) {
+      await notify();
       this.setState({ region, chileData, loading: false });
     } else {
       const { history } = this.props;
