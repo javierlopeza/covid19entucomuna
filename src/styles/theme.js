@@ -5,6 +5,7 @@ export default {
     blue: {
       light: '#f5fbff',
       normal: '#5b78ff',
+      dark: '#4d66dc',
     },
     red: {
       normal: '#ff788f',
