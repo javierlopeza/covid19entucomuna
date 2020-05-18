@@ -5,6 +5,9 @@
     "env": {
       "REACT_APP_CHILE_DATA_JSON_URL": {
         "value": "https://raw.githubusercontent.com/javierlopeza/datos-coronavirus-chile/master/data/chile-minified.json"
+      },
+      "REACT_APP_CURRENT_NOTIFICATION_JSON_URL": {
+        "value": "https://raw.githubusercontent.com/javierlopeza/datos-coronavirus-chile/master/notifications/current_notification.json"
       }
     },
     "formation": {
