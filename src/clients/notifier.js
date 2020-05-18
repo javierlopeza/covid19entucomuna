@@ -30,7 +30,7 @@ async function notify() {
     ReactGA.event({
       category: CATEGORIES.NOTIFICATION,
       action: ACTIONS.SHOW,
-      label: timestamp,
+      label: `${timestamp}`,
       nonInteraction: true,
     });
   }
