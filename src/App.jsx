@@ -6,6 +6,9 @@ import {
   BrowserRouter as Router, Route, Link, Switch, Redirect,
 } from 'react-router-dom';
 
+import ReactNotification from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
+
 import theme from './styles/theme';
 import GlobalStyle from './styles/global';
 
@@ -14,6 +17,7 @@ import Region from './pages/Region';
 import Commune from './pages/Commune';
 import CenteredContainer from './components/CenteredContainer';
 import Footer from './components/Footer';
+
 
 // Initialize Google Analytics
 const trackingId = 'UA-91729603-2';
@@ -24,6 +28,7 @@ const App = () => (
     <Router>
       <GlobalStyle />
       <Container>
+        <ReactNotification />
         <Content>
           <CenteredContainer>
             <LogoContainer>
