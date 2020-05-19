@@ -8,7 +8,7 @@ import CenteredContainer from '../components/CenteredContainer';
 import PlacesContainer from '../components/PlacesContainer';
 import PlaceLink from '../components/PlaceLink';
 import scrollToTop from '../utils/scrollToTop';
-import { formatDate, formatValue } from '../utils/formatter';
+import { formatDateForHumans, formatValue } from '../utils/formatter';
 import MetricsCards from '../components/MetricsCards';
 import metricsIcons from '../assets/images/metrics';
 import BoxTitle from '../components/BoxTitle';
@@ -65,7 +65,7 @@ class Home extends Component {
       <>
         <Helmet onChangeClientState={handlePageChange}>
           <title>COVID-19 en tu comuna</title>
-          <meta name="description" content={`En Chile se registran ${formatValue(activos.value)} casos activos al ${formatDate(activos.date)}.`} />
+          <meta name="description" content={`En Chile se registran ${formatValue(activos.value)} casos activos al ${formatDateForHumans(activos.date)}.`} />
         </Helmet>
         <CenteredContainer>
           {/* Navigation Breadcrumbs */}

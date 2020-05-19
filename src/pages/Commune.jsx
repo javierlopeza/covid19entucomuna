@@ -7,7 +7,7 @@ import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
 import CenteredContainer from '../components/CenteredContainer';
 import BoxTitle from '../components/BoxTitle';
-import { formatDate, formatValue } from '../utils/formatter';
+import { formatDateForHumans, formatValue } from '../utils/formatter';
 import scrollToTop from '../utils/scrollToTop';
 import ValueChangeText from '../components/ValueChangeText';
 import Breadcrumb from '../components/Breadcrumb';
@@ -83,7 +83,7 @@ class Commune extends Component {
             name="description"
             content={`En ${commune} se registran ${formatValue(
               currentActive.value,
-            )} casos activos al ${formatDate(
+            )} casos activos al ${formatDateForHumans(
               currentActive.date,
             )}, con una tasa de ${tasaActivos.value.toFixed(
               0,
@@ -113,16 +113,16 @@ class Commune extends Component {
           {/* Info Texts */}
           <InfoTextsContainer>
             <InfoText>
-              {`En ${commune}, entre el ${formatDate(
+              {`En ${commune}, entre el ${formatDateForHumans(
                 previousActive.date,
-              )} y el ${formatDate(
+              )} y el ${formatDateForHumans(
                 currentActive.date,
               )}, los casos activos `}
               {valueChangeText}
             </InfoText>
             {!!tasaActivos.value && (
               <InfoText>
-                {`Al ${formatDate(
+                {`Al ${formatDateForHumans(
                   currentActive.date,
                 )}, por cada 100 mil habitantes, hay ${tasaActivos.value.toFixed(0)} casos activos.`}
               </InfoText>
