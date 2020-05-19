@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sentry/browser": "^5.15.5",
     "axios": "^0.19.2",
     "camelcase-keys": "^6.2.2",
     "history": "^4.10.1",
