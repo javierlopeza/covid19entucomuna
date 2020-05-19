@@ -122,7 +122,9 @@ class Commune extends Component {
             </InfoText>
             {!!tasaActivos.value && (
               <InfoText>
-                {`Por cada 100 mil habitantes, hay ${tasaActivos.value.toFixed(0)} casos activos.`}
+                {`Al ${formatDate(
+                  currentActive.date,
+                )}, por cada 100 mil habitantes, hay ${tasaActivos.value.toFixed(0)} casos activos.`}
               </InfoText>
             )}
           </InfoTextsContainer>
