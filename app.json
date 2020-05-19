@@ -3,6 +3,9 @@
     "description": "Simple and user-friendly analysis of coronavirus cases by region and by comuna in Chile.",
     "scripts": {},
     "env": {
+      "REACT_APP_ENV": {
+        "value": "staging"
+      },
       "REACT_APP_CHILE_DATA_JSON_URL": {
         "value": "https://raw.githubusercontent.com/javierlopeza/datos-coronavirus-chile/master/data/chile-minified.json"
       },
