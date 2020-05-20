@@ -1,7 +1,9 @@
 import moment from './date';
 
 export function isDataFromToday(chileData) {
-  const dataDate = chileData.activos.date;
-  const today = moment().format('YYYY-MM-DD');
-  return dataDate === today;
+  // Is data from today if now is before data date's next day at 8 AM
+  const dataDate = moment(chileData.activos.date, 'YYYY-MM-DD');
+  const limitTime = moment(dataDate).add(1, 'days').hours(8);
+  const now = moment();
+  return now.isBefore(limitTime);
 }
