@@ -6,7 +6,9 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 const MetricCardTooltip = ({ children }) => (
   <Container>
     <Icon icon={faQuestionCircle} />
-    {/* <Content>{children}</Content> */}
+    <TextLimit>
+      <Text>{children}</Text>
+    </TextLimit>
   </Container>
 );
 
@@ -25,6 +27,20 @@ const Icon = styled(FontAwesomeIcon)`
   color: #bacbd7;
 `;
 
-const Content = styled.div`
+const TextLimit = styled.div`
+  z-index: 1;
   position: absolute;
+  top: 0;
+  right: 1em;
+  width: 9em;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const Text = styled.div`
+  background-color: white;
+  border: 1px solid #bacbd7;
+  border-radius: 3px;
+  padding: 0.5em;
+  font-size: 0.75em;
 `;
