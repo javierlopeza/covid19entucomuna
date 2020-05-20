@@ -37,8 +37,8 @@ class Commune extends Component {
       chileData = await getChileData();
     }
     if (
-      _.keys(chileData.regiones).includes(region)
-      && _.keys(chileData.regiones[region].comunas).includes(commune)
+      _.includes(_.keys(chileData.regiones), region)
+      && _.includes(_.keys(chileData.regiones[region].comunas), commune)
     ) {
       await notify();
       this.setState({

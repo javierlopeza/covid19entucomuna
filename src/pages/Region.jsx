@@ -37,7 +37,7 @@ class Region extends Component {
     if (!chileData || !isDataFromToday(chileData)) {
       chileData = await getChileData();
     }
-    if (_.keys(chileData.regiones).includes(region)) {
+    if (_.includes(_.keys(chileData.regiones), region)) {
       await notify();
       this.setState({ region, chileData, loading: false });
     } else {
