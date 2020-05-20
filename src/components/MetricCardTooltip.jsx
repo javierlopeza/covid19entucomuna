@@ -48,4 +48,6 @@ const Text = styled.div`
   border-radius: 3px;
   padding: 0.5em;
   font-size: 0.75em;
+  line-height: 1.2em;
+  text-align: center;
 `;

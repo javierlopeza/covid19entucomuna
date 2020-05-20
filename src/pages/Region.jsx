@@ -111,13 +111,13 @@ class Region extends Component {
               icon={metricsIcons.active}
               label="Activos"
               value={activos.value}
-              tooltip={`Informe Epidemilógico MINSAL (${formatDateForHumans(activos.date)})`}
+              tooltip={`Informe Epidemiológico MINSAL (${formatDateForHumans(activos.date)})`}
             />
             <MetricCard
               icon={metricsIcons.recovered}
               label="Recuperados"
               value={recuperados.value}
-              tooltip={`Informe Epidemilógico MINSAL (${formatDateForHumans(recuperados.date)})`}
+              tooltip={`Informe Epidemiológico MINSAL (${formatDateForHumans(recuperados.date)})`}
             />
             <MetricCard
               icon={metricsIcons.deaths}
