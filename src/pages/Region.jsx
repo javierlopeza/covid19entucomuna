@@ -19,6 +19,7 @@ import getChileData from '../clients/chile-data-fetcher';
 import handlePageChange from '../utils/pageChangeHandler';
 import { isDataFromToday } from '../utils/checkData';
 import notify from '../clients/notifier';
+import MetricCardTooltip from '../components/MetricCardTooltip';
 
 class Region extends Component {
   constructor(props) {
@@ -108,6 +109,9 @@ class Region extends Component {
                   {formatValue(poblacion)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
+              <MetricCardTooltip>
+                Proyección de población del año 2020 en base al CENSO 2017 (INE).
+              </MetricCardTooltip>
             </MetricsCards.Card>
             <MetricsCards.Card>
               <MetricsCards.Icon src={metricsIcons.active} />
@@ -117,6 +121,9 @@ class Region extends Component {
                   {formatValue(activos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
+              <MetricCardTooltip>
+                {`Informe Epidemilógico MINSAL (${formatDateForHumans(activos.date)})`}
+              </MetricCardTooltip>
             </MetricsCards.Card>
             <MetricsCards.Card>
               <MetricsCards.Icon src={metricsIcons.recovered} />
@@ -125,6 +132,9 @@ class Region extends Component {
                 <MetricsCards.Value>
                   {formatValue(recuperados.value)}
                 </MetricsCards.Value>
+                <MetricCardTooltip>
+                  {`Informe Epidemilógico MINSAL (${formatDateForHumans(recuperados.date)})`}
+                </MetricCardTooltip>
               </MetricsCards.TextContainer>
             </MetricsCards.Card>
             <MetricsCards.Card>
@@ -135,6 +145,9 @@ class Region extends Component {
                   {formatValue(fallecidos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
+              <MetricCardTooltip>
+                {`Reporte Diario MINSAL (${formatDateForHumans(fallecidos.date)})`}
+              </MetricCardTooltip>
             </MetricsCards.Card>
           </MetricsCards.Container>
           {/* Chart */}
