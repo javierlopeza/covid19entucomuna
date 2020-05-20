@@ -6,8 +6,12 @@ import axios from '../utils/axios';
 import env from '../environment';
 import { withTimestamp } from '../utils/requests';
 import { CATEGORIES, ACTIONS } from '../ga/events';
+import lsTest from '../utils/localStorageTester';
 
 async function notify() {
+  if (!lsTest()) {
+    return;
+  }
   const response = await axios.get(withTimestamp(env.currentNotificationJsonUrl));
   const { data } = response;
   const { timestamp, title, message } = camelcaseKeys(data);
