@@ -12,6 +12,7 @@ import QuarantineRibbon from '../components/QuarantineRibbon';
 import scrollToTop from '../utils/scrollToTop';
 import { formatDateForHumans, formatValue } from '../utils/formatter';
 import MetricsCards from '../components/MetricsCards';
+import MetricCard from '../components/MetricCard';
 import metricsIcons from '../assets/images/metrics';
 import Breadcrumb from '../components/Breadcrumb';
 import LoaderSpinner from '../components/LoaderSpinner';
@@ -19,7 +20,6 @@ import getChileData from '../clients/chile-data-fetcher';
 import handlePageChange from '../utils/pageChangeHandler';
 import { isDataFromToday } from '../utils/checkData';
 import notify from '../clients/notifier';
-import MetricCardTooltip from '../components/MetricCardTooltip';
 
 class Region extends Component {
   constructor(props) {
@@ -101,54 +101,30 @@ class Region extends Component {
           </Breadcrumb.Container>
           {/* Metrics */}
           <MetricsCards.Container>
-            <MetricsCards.Card>
-              <MetricsCards.Icon src={metricsIcons.population} />
-              <MetricsCards.TextContainer>
-                <MetricsCards.Label>Población</MetricsCards.Label>
-                <MetricsCards.Value>
-                  {formatValue(poblacion)}
-                </MetricsCards.Value>
-              </MetricsCards.TextContainer>
-              <MetricCardTooltip>
-                Proyección de población del año 2020 en base al CENSO 2017 (INE).
-              </MetricCardTooltip>
-            </MetricsCards.Card>
-            <MetricsCards.Card>
-              <MetricsCards.Icon src={metricsIcons.active} />
-              <MetricsCards.TextContainer>
-                <MetricsCards.Label>Activos</MetricsCards.Label>
-                <MetricsCards.Value>
-                  {formatValue(activos.value)}
-                </MetricsCards.Value>
-              </MetricsCards.TextContainer>
-              <MetricCardTooltip>
-                {`Informe Epidemilógico MINSAL (${formatDateForHumans(activos.date)})`}
-              </MetricCardTooltip>
-            </MetricsCards.Card>
-            <MetricsCards.Card>
-              <MetricsCards.Icon src={metricsIcons.recovered} />
-              <MetricsCards.TextContainer>
-                <MetricsCards.Label>Recuperados</MetricsCards.Label>
-                <MetricsCards.Value>
-                  {formatValue(recuperados.value)}
-                </MetricsCards.Value>
-                <MetricCardTooltip>
-                  {`Informe Epidemilógico MINSAL (${formatDateForHumans(recuperados.date)})`}
-                </MetricCardTooltip>
-              </MetricsCards.TextContainer>
-            </MetricsCards.Card>
-            <MetricsCards.Card>
-              <MetricsCards.Icon src={metricsIcons.deaths} />
-              <MetricsCards.TextContainer>
-                <MetricsCards.Label>Fallecidos</MetricsCards.Label>
-                <MetricsCards.Value>
-                  {formatValue(fallecidos.value)}
-                </MetricsCards.Value>
-              </MetricsCards.TextContainer>
-              <MetricCardTooltip>
-                {`Reporte Diario MINSAL (${formatDateForHumans(fallecidos.date)})`}
-              </MetricCardTooltip>
-            </MetricsCards.Card>
+            <MetricCard
+              icon={metricsIcons.population}
+              label="Población"
+              value={poblacion}
+              tooltip="Proyección de población del año 2020 en base al CENSO 2017 (INE)."
+            />
+            <MetricCard
+              icon={metricsIcons.active}
+              label="Activos"
+              value={activos.value}
+              tooltip={`Informe Epidemilógico MINSAL (${formatDateForHumans(activos.date)})`}
+            />
+            <MetricCard
+              icon={metricsIcons.recovered}
+              label="Recuperados"
+              value={recuperados.value}
+              tooltip={`Informe Epidemilógico MINSAL (${formatDateForHumans(recuperados.date)})`}
+            />
+            <MetricCard
+              icon={metricsIcons.deaths}
+              label="Fallecidos"
+              value={fallecidos.value}
+              tooltip={`Reporte Diario MINSAL (${formatDateForHumans(fallecidos.date)})`}
+            />
           </MetricsCards.Container>
           {/* Chart */}
           <ChartContainer>
