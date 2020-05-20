@@ -1,8 +1,8 @@
-import axios from 'axios';
 import camelcaseKeys from 'camelcase-keys';
 import { store as notifStore } from 'react-notifications-component';
 import _ from 'lodash';
 import ReactGA from 'react-ga';
+import axios from '../utils/axios';
 import env from '../environment';
 import { withTimestamp } from '../utils/requests';
 import { CATEGORIES, ACTIONS } from '../ga/events';

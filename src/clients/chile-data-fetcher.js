@@ -1,6 +1,6 @@
-import axios from 'axios';
 import camelcaseKeys from 'camelcase-keys';
 import ReactGA from 'react-ga';
+import axios from '../utils/axios';
 import env from '../environment';
 import regions from '../data/places/regions';
 import communes from '../data/places/communes';
