@@ -27,6 +27,7 @@ const Container = styled.div`
 `;
 
 const Card = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   background-color: white;
