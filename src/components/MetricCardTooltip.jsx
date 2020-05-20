@@ -23,8 +23,13 @@ const Container = styled.div`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
+  cursor: pointer;
   font-size: 0.8em;
   color: #bacbd7;
+
+  :hover + div {
+    display: flex;
+  }
 `;
 
 const TextLimit = styled.div`
@@ -33,7 +38,7 @@ const TextLimit = styled.div`
   top: 0;
   right: 1em;
   width: 9em;
-  display: flex;
+  display: none;
   justify-content: flex-end;
 `;
 
