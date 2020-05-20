@@ -17,6 +17,7 @@ import LoaderSpinner from '../components/LoaderSpinner';
 import handlePageChange from '../utils/pageChangeHandler';
 import { isDataFromToday } from '../utils/checkData';
 import notify from '../clients/notifier';
+import MetricCardTooltip from '../components/MetricCardTooltip';
 
 class Home extends Component {
   constructor(props) {
@@ -84,6 +85,9 @@ class Home extends Component {
                   {formatValue(poblacion)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
+              <MetricCardTooltip>
+                Proyección de población del año 2020 en base al CENSO 2017 (INE).
+              </MetricCardTooltip>
             </MetricsCards.Card>
             <MetricsCards.Card>
               <MetricsCards.Icon src={metricsIcons.active} />
@@ -93,6 +97,9 @@ class Home extends Component {
                   {formatValue(activos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
+              <MetricCardTooltip>
+                {`Reporte Diario MINSAL (${formatDateForHumans(activos.date)})`}
+              </MetricCardTooltip>
             </MetricsCards.Card>
             <MetricsCards.Card>
               <MetricsCards.Icon src={metricsIcons.recovered} />
@@ -102,6 +109,9 @@ class Home extends Component {
                   {formatValue(recuperados.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
+              <MetricCardTooltip>
+                {`Reporte Diario MINSAL (${formatDateForHumans(recuperados.date)})`}
+              </MetricCardTooltip>
             </MetricsCards.Card>
             <MetricsCards.Card>
               <MetricsCards.Icon src={metricsIcons.deaths} />
@@ -111,6 +121,9 @@ class Home extends Component {
                   {formatValue(fallecidos.value)}
                 </MetricsCards.Value>
               </MetricsCards.TextContainer>
+              <MetricCardTooltip>
+                {`Reporte Diario MINSAL (${formatDateForHumans(fallecidos.date)})`}
+              </MetricCardTooltip>
             </MetricsCards.Card>
           </MetricsCards.Container>
           {/* Chart */}
