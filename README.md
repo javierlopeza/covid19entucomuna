@@ -4,6 +4,8 @@ Simple and user-friendly analysis of active coronavirus cases by region and by c
 
 Publicly available at [COVID-19 en tu comuna](https://coronavirus-chile-production.herokuapp.com/).
 
+Data is fetched directly from [javierlopeza/datos-coronavirus-chile](https://github.com/javierlopeza/datos-coronavirus-chile). There you'll find the scripts that process PDF files published every day by the government.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
