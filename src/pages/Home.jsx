@@ -81,7 +81,7 @@ class Home extends Component {
               icon={metricsIcons.population}
               label="Población"
               value={poblacion}
-              tooltip="Proyección de población del año 2020 en base al CENSO 2017 (INE)."
+              tooltip="Proyección de población del año 2020 en base al CENSO 2017 (INE)"
             />
             <MetricCard
               icon={metricsIcons.active}
