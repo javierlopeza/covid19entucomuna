@@ -9,8 +9,8 @@ const Footer = () => (
     <Credit>
       Fuente:
       {' '}
-      <CreditLink href="http://www.minciencia.gob.cl/covid19">
-        Mesa de Datos COVID-19
+      <CreditLink href="https://www.gob.cl/coronavirus/cifrasoficiales/">
+        Cifras Oficiales, Gobierno de Chile
       </CreditLink>
     </Credit>
     <br />
