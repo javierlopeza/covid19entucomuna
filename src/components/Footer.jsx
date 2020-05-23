@@ -1,15 +1,11 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import GitHubMark from '../assets/images/github.svg';
 import LinkedIn from '../assets/images/linkedin.svg';
 import CreditLink from './CreditLink';
 
 const Footer = () => (
   <Container>
-    <LongCredit>
-      Los casos activos por región y por comuna son actualizados automáticamente a medida
-      que son publicados en los Informes Epidemiológicos del MINSAL (cada 3-4 días).
-    </LongCredit>
     <Credit>
       Fuente:
       {' '}
@@ -44,7 +40,7 @@ const Container = styled.div`
   bottom: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 9.5em;
+  height: 6em;
   padding-top: 1em;
   padding-bottom: 1em;
   display: flex;
@@ -61,25 +57,6 @@ const CreditWithIcon = styled.div`
 
 const Credit = styled.span`
   font-size: 0.65em;
-`;
-
-const LongCredit = styled.p`
-  font-style: italic;
-  font-size: 0.65em;
-  text-align: center;
-  width: 80%;
-
-  ${({ theme: { device } }) => css`
-    @media ${device.mobileM} {
-      width: 75%;
-    }
-    @media ${device.mobileL} {
-      width: 65%;
-    }
-    @media ${device.laptop} {
-      width: 30%;
-    }
-  `}
 `;
 
 const CreditIcon = styled.img`
