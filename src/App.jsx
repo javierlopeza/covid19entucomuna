@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import { hot } from 'react-hot-loader/root';
 import styled, { ThemeProvider } from 'styled-components';
 import {
-  BrowserRouter as Router, Route, Link, Switch, Redirect,
+  BrowserRouter as Router, Route, Switch, Redirect,
 } from 'react-router-dom';
 
 import ReactNotification from 'react-notifications-component';
@@ -12,6 +12,7 @@ import 'react-notifications-component/dist/theme.css';
 import theme from './styles/theme';
 import GlobalStyle from './styles/global';
 
+import Logo from './components/Logo';
 import Home from './pages/Home';
 import Region from './pages/Region';
 import Commune from './pages/Commune';
@@ -32,9 +33,7 @@ const App = () => (
         <ReactNotification />
         <Content>
           <CenteredContainer>
-            <LogoContainer>
-              <Logo to="/">COVID-19 en tu comuna</Logo>
-            </LogoContainer>
+            <Logo />
           </CenteredContainer>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -51,36 +50,6 @@ const App = () => (
 );
 
 export default process.env.NODE_ENV === 'development' ? hot(App) : App;
-
-const LogoContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  margin: 1em 0;
-  padding: 20px;
-  width: 95%;
-  @media ${theme.device.laptop} {
-    width: 75%;
-  }
-
-  ${theme.baseShadow}
-  background-color: ${theme.colors.red.normal};
-  border-radius: 10px;
-  text-align: center;
-`;
-
-const Logo = styled(Link)`
-  color: white;
-  font-weight: 400;
-  font-size: 1.2em;
-  @media ${theme.device.mobileM} {
-    font-size: 1.45em;
-  }
-  @media ${theme.device.laptop} {
-    font-size: 2em;
-  }
-`;
 
 const Container = styled.div`
   position: relative;
