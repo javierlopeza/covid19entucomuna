@@ -1,16 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import FAQButton from './FAQButton';
 
 const Logo = () => (
   <Container>
     <LogoLink to="/">COVID-19 en tu comuna</LogoLink>
+    <FAQButton />
   </Container>
 );
 
 export default Logo;
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
