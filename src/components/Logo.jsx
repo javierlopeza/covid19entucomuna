@@ -34,8 +34,8 @@ const Container = styled.div`
 const LogoLink = styled(Link)`
   color: white;
   font-weight: 400;
-  font-size: 1.2em;
-  @media ${({ theme }) => theme.device.mobileM} {
+  font-size: 1.1em;
+  @media ${({ theme }) => theme.device.mobileL} {
     font-size: 1.45em;
   }
   @media ${({ theme }) => theme.device.laptop} {

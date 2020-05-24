@@ -33,7 +33,7 @@ const Container = styled(Link)`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0.5em;
+  margin: 0.3em;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -48,7 +48,7 @@ const Text = styled.div`
 
   background-color: white;
   border-radius: 0.75em;
-  padding: 0.25em 0.5em;
+  padding: 0.3em 0.5em 0.2em;
   width: 11em;
   white-space: nowrap;
 
@@ -59,11 +59,17 @@ const Text = styled.div`
       transition: opacity 25ms linear 325ms, width 400ms ease-in-out;
     `}
 
-  :hover {
-    opacity: 1;
-    width: 11em;
-    transition: opacity 25ms linear, width 300ms ease-out;
-  }
+  ${({ theme: { device } }) => css`
+  visibility: hidden;
+    @media ${device.tablet} {
+      visibility: initial;
+      :hover {
+        opacity: 1;
+        width: 11em;
+        transition: opacity 25ms linear, width 300ms ease-out;
+      }
+    }
+  `}
 `;
 
 const Icon = styled(FontAwesomeIcon)`
@@ -71,10 +77,16 @@ const Icon = styled(FontAwesomeIcon)`
   right: 0;
 
   cursor: pointer;
-  font-size: 1.1em;
+  font-size: 0.88em;
   color: white;
 
   :hover + div {
     display: flex;
   }
+
+  ${({ theme: { device } }) => css`
+    @media ${device.tablet} {
+      font-size: 1.1em;
+    }
+  `}
 `;
