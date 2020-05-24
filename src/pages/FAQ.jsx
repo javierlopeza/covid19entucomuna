@@ -25,7 +25,9 @@ const FAQ = () => (
       <Answer>
         El Informe Epidemiológico se publica 2 veces por semana, lunes y viernes
         generalmente, por lo que los casos activos por comuna se están
-        actualizando cada 3-4 días aproximadamente.
+        actualizando cada 3-4 días aproximadamente. Ha medida que el Ministerio
+        de Salud aumente la frecuencia de publicación de estos informes, los
+        datos en la página también se verán actualizados.
       </Answer>
     </Container>
     <Container>
@@ -52,12 +54,17 @@ const FAQ = () => (
       <Answer>
         Los casos recuperados de Chile son obtenidos del Reporte Diario, que
         sobrestima los casos activos. Los casos recuperados por región y por
-        comuna son obtenidos del Informe Epidemiológico, que precisa los casos
-        activos posterior a la investigación epidemiológica. Esto produce
-        diferencias entre los casos recuperados (y activos) a nivel nacional y
-        regional, sin embargo, las cifras a nivel nacional publicadas
-        diariamente son sobrestimaciones correctas de los casos activos que
-        permiten una gestión eficaz de la Autoridad Sanitaria.
+        comuna son obtenidos del Informe Epidemiológico. El Reporte Diario usa
+        la fecha de notificación del examen PCR y el Informe EPI usa la fecha de
+        inicio de síntomas. Esto produce diferencias entre los casos recuperados
+        (y activos) a nivel nacional y regional, sin embargo, las cifras a nivel
+        nacional publicadas diariamente son sobrestimaciones correctas de los
+        casos activos que permiten una gestión eficaz de la Autoridad Sanitaria.
+        Por el momento, en la página se muestran las cifras a nivel país
+        obtenidas desde el Reporte Diario dado que son actualizadas diariamente.
+        Si el MINSAL comienza a publicar los Informes EPI con mayor frecuencia,
+        procederemos a usar dichos informes para mostrar las cifras a nivel
+        país.
       </Answer>
     </Container>
   </MainContainer>
