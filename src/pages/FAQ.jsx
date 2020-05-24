@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const FAQ = () => (
   <MainContainer>
+    <Title>Preguntas Frecuentes</Title>
     <Container>
       <Question>¿De dónde se obtienen los datos?</Question>
       <Answer>
@@ -68,6 +69,25 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const Title = styled.p`
+  font-weight: 400;
+  color: white;
+
+  margin: 0.5em 0;
+  background-color: ${({ theme }) => theme.colors.blue.normal};
+  ${({ theme }) => theme.baseShadow}
+  padding: 0.75em 1em;
+  border-radius: 0.5em;
+
+  font-size: 1.1em;
+  @media ${({ theme }) => theme.device.mobileL} {
+    font-size: 1.2em;
+  }
+  @media ${({ theme }) => theme.device.laptop} {
+    font-size: 1.25em;
+  }
 `;
 
 const Container = styled.div`
