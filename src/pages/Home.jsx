@@ -76,7 +76,7 @@ class Home extends Component {
             </Breadcrumb.Item>
           </Breadcrumb.Container>
           {/* Metrics */}
-          <MetricsCards.Container>
+          <MetricsCards.Container id="metricsContainer">
             <MetricCard
               icon={metricsIcons.population}
               label="Población"

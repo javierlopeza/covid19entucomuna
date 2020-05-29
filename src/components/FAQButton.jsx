@@ -19,7 +19,7 @@ class FAQButton extends Component {
   render() {
     const { showText } = this.state;
     return (
-      <Container to="/preguntas-frecuentes">
+      <Container to="/preguntas-frecuentes" id="faqButton">
         <Text show={showText}>Preguntas Frecuentes</Text>
         <Icon icon={faQuestionCircle} />
       </Container>
