@@ -20,7 +20,7 @@ class QuarantineRibbon extends Component {
       this.startTimeoutExplanation();
     }
     return (
-      <Container>
+      <Container className="quarantineRibbon">
         <LeftSegment />
         <TextArea id="text" explain={isVisible && !explained}>
           {text}
