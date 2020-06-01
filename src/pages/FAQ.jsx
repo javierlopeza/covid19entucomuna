@@ -35,7 +35,7 @@ const FAQ = () => (
         <Answer>
           El Informe Epidemiológico se publica 2 veces por semana, lunes y
           viernes generalmente, por lo que los casos activos por comuna se están
-          actualizando cada 3-4 días aproximadamente. Ha medida que el
+          actualizando cada 3-4 días aproximadamente. A medida que el
           Ministerio de Salud aumente la frecuencia de publicación de estos
           informes, los datos en la página también se verán actualizados.
         </Answer>
