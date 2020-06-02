@@ -1,8 +1,8 @@
-# Coronavirus Chile
+# COVID-19 en tu comuna
 
 Simple and user-friendly analysis of active coronavirus cases by region and by comuna in Chile.
 
-Publicly available at [COVID-19 en tu comuna](https://coronavirus-chile-production.herokuapp.com/).
+Publicly available at [COVID-19 en tu comuna](https://covid19entucomuna.cl/).
 
 Data is fetched directly from [javierlopeza/datos-coronavirus-chile](https://github.com/javierlopeza/datos-coronavirus-chile). There you'll find the scripts that process PDF files published every day by the government.
 
