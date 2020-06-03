@@ -78,7 +78,7 @@ class Region extends Component {
       completeName,
       poblacion,
       activos,
-      recuperados,
+      confirmados,
       fallecidos,
       series,
     } = chileData.regiones[region];
@@ -108,16 +108,16 @@ class Region extends Component {
               tooltip="Proyección de población del año 2020 en base al CENSO 2017 (INE)"
             />
             <MetricCard
+              icon={metricsIcons.confirmed}
+              label="Confirmados"
+              value={confirmados.value}
+              tooltip={`Informe Epidemiológico MINSAL (${formatDateForHumans(confirmados.date)})`}
+            />
+            <MetricCard
               icon={metricsIcons.active}
               label="Activos"
               value={activos.value}
               tooltip={`Informe Epidemiológico MINSAL (${formatDateForHumans(activos.date)})`}
-            />
-            <MetricCard
-              icon={metricsIcons.recovered}
-              label="Recuperados"
-              value={recuperados.value}
-              tooltip={`Informe Epidemiológico MINSAL (${formatDateForHumans(recuperados.date)})`}
             />
             <MetricCard
               icon={metricsIcons.deaths}

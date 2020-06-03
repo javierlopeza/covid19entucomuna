@@ -58,7 +58,7 @@ class Home extends Component {
     const {
       poblacion,
       activos,
-      recuperados,
+      confirmados,
       fallecidos,
       series,
     } = chileData;
@@ -84,16 +84,16 @@ class Home extends Component {
               tooltip="Proyección de población del año 2020 en base al CENSO 2017 (INE)"
             />
             <MetricCard
+              icon={metricsIcons.confirmed}
+              label="Confirmados"
+              value={confirmados.value}
+              tooltip={`Reporte Diario MINSAL (${formatDateForHumans(confirmados.date)})`}
+            />
+            <MetricCard
               icon={metricsIcons.active}
               label="Activos"
               value={activos.value}
               tooltip={`Reporte Diario MINSAL (${formatDateForHumans(activos.date)})`}
-            />
-            <MetricCard
-              icon={metricsIcons.recovered}
-              label="Recuperados"
-              value={recuperados.value}
-              tooltip={`Reporte Diario MINSAL (${formatDateForHumans(recuperados.date)})`}
             />
             <MetricCard
               icon={metricsIcons.deaths}
