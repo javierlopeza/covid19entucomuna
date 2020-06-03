@@ -9,25 +9,47 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import styled from 'styled-components';
-import { formatDate, formatValue } from '../utils/formatter';
 import theme from '../styles/theme';
+import {
+  formatValue,
+  formatDaysSinceEpoch,
+  formatDaysSinceEpochForHumans,
+} from '../utils/formatter';
+import { daysSinceEpoch } from '../utils/daysSinceEpoch';
 
 const CVLineChart = (props) => {
   const { data } = props;
+
+  // Numericalize x-axis dates
+  const chartData = data.map(dp => ({
+    ...dp,
+    date: daysSinceEpoch(dp.date),
+  }));
+
   const showDots = data.length < 30;
   return (
     <ResponsiveContainer>
-      <CustomChart data={data}>
+      <CustomChart data={chartData}>
         <defs>
           <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
             <stop offset="10%" stopColor="#7c97fc" stopOpacity={0.9} />
             <stop offset="300%" stopColor="#a9beff" stopOpacity={0.2} />
           </linearGradient>
         </defs>
-        <XAxis dataKey="date" tickFormatter={formatDate} />
+        <XAxis
+          dataKey="date"
+          type="number"
+          domain={['dataMin', 'dataMax']}
+          allowDecimals={false}
+          tickFormatter={formatDaysSinceEpoch}
+          tickCount={100}
+        />
         <YAxis tickFormatter={formatValue} />
         <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip labelFormatter={formatDate} formatter={formatValue} />
+        <Tooltip
+          labelFormatter={formatDaysSinceEpochForHumans}
+          formatter={formatValue}
+        />
         <Area
           dataKey="value"
           name="Casos Activos"
@@ -35,11 +57,19 @@ const CVLineChart = (props) => {
           type="monotone"
           stroke={theme.colors.blue.normal}
           strokeWidth={2.5}
-          dot={showDots && {
-            fill: 'white', r: 2.5, stroke: theme.colors.blue.normal, strokeWidth: 2,
-          }}
+          dot={
+            showDots && {
+              fill: 'white',
+              r: 2.5,
+              stroke: theme.colors.blue.normal,
+              strokeWidth: 2,
+            }
+          }
           activeDot={{
-            fill: theme.colors.blue.normal, r: 6, stroke: 'white', strokeWidth: 2,
+            fill: theme.colors.blue.normal,
+            r: 6,
+            stroke: 'white',
+            strokeWidth: 2,
           }}
           fillOpacity={1}
           fill="url(#chartGradient)"
