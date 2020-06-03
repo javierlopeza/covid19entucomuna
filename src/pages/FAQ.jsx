@@ -48,8 +48,29 @@ const FAQ = () => (
           <Quote>
             &nbsp;&quot;personas vivas confirmadas con COVID-19 cuya fecha de
             inicio de síntomas en la notificación es menor o igual a 14 días a
-            la fecha del reporte actual&quot;.
+            la fecha del reporte actual&quot;.&nbsp;
           </Quote>
+          De no notificarse la fecha de inicio de síntomas de un paciente, se
+          utiliza la fecha de notificación de su examen PCR.
+        </Answer>
+      </Container>
+      <Container>
+        <Question>
+          ¿Por qué hay variaciones de los casos activos publicados en los
+          últimos días?
+        </Question>
+        <Answer>
+          El Ministerio de Salud reporta los casos activos en base a la fecha de
+          inicio de síntomas de cada paciente, pero de no notificarse esta
+          fecha, se utiliza, en cambio, la fecha de confirmación de su examen
+          PCR. Esta fecha puede ser rectificada al notificarse el inicio del
+          cuadro clínico en días posteriores, produciendo desplazamientos de
+          los casos activos en el tiempo.
+        </Answer>
+        <Answer>
+          Por otro lado, los casos activos por comuna pueden verse modificados
+          al rectificar la comuna de residencia de un paciente producto de la
+          investigación epidemiológica.
         </Answer>
       </Container>
       <Container>
