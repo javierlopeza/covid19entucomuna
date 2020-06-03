@@ -17,8 +17,8 @@ const Footer = () => (
     <CreditWithIcon>
       <CreditIcon src={GitHubMark} alt="GitHub" />
       <Credit>
-        <CreditLink href="https://github.com/javierlopeza/coronavirus-chile">
-          javierlopeza/coronavirus-chile
+        <CreditLink href="https://github.com/javierlopeza/covid19entucomuna/">
+          javierlopeza/covid19entucomuna
         </CreditLink>
       </Credit>
     </CreditWithIcon>
