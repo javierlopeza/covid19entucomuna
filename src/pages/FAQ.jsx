@@ -35,20 +35,16 @@ const FAQ = () => (
         <Answer>
           El Informe Epidemiológico se publica 2 veces por semana, lunes y
           viernes generalmente, por lo que los casos activos por comuna se están
-          actualizando cada 3-4 días aproximadamente. A medida que el
-          Ministerio de Salud aumente la frecuencia de publicación de estos
-          informes, los datos en la página también se verán actualizados.
+          actualizando cada 3-4 días aproximadamente. A medida que el Ministerio
+          de Salud aumente la frecuencia de publicación de estos informes, los
+          datos en la página también se verán actualizados.
         </Answer>
       </Container>
       <Container>
         <Question>¿Cómo se contabilizan los casos activos?</Question>
         <Answer>
-          El Reporte Diario proyecta la recuperación en 14 días desde la fecha
-          de notificación del examen PCR, es decir, contabiliza como activos los
-          casos confirmados en los últimos 14 días.
-        </Answer>
-        <Answer>
-          El Informe Epidemiológico define los casos activos como:
+          El Reporte Diario y el Informe Epidemiológico definen los casos
+          activos como:
           <Quote>
             &nbsp;&quot;personas vivas confirmadas con COVID-19 cuya fecha de
             inicio de síntomas en la notificación es menor o igual a 14 días a
@@ -58,23 +54,29 @@ const FAQ = () => (
       </Container>
       <Container>
         <Question>
-          ¿Por qué hay inconsistencias entre los recuperados de Chile y la suma
-          de los recuperados por región?
+          ¿Por qué el 2 de junio cambiaron retroactivamente los casos activos a
+          nivel nacional?
         </Question>
         <Answer>
-          Los casos recuperados de Chile son obtenidos del Reporte Diario, que
-          sobrestima los casos activos. Los casos recuperados por región y por
-          comuna son obtenidos del Informe Epidemiológico. El Reporte Diario usa
-          la fecha de notificación del examen PCR y el Informe EPI usa la fecha
-          de inicio de síntomas. Esto produce diferencias entre los casos
-          recuperados (y activos) a nivel nacional y regional, sin embargo, las
-          cifras a nivel nacional publicadas diariamente son sobrestimaciones
-          correctas de los casos activos que permiten una gestión eficaz de la
-          Autoridad Sanitaria. Por el momento, en la página se muestran las
-          cifras a nivel país obtenidas desde el Reporte Diario dado que son
-          actualizadas diariamente. Si el MINSAL comienza a publicar los
-          Informes EPI con mayor frecuencia, procederemos a usar dichos informes
-          para mostrar las cifras a nivel país.
+          Previo al 2 de junio, los casos activos a nivel nacional publicados en
+          el Reporte Diario eran contabilizados usando la fecha de notificación
+          del examen PCR. Desde el 2 de junio, el Reporte Diario cambió la
+          metodología de conteo de casos activos por la misma que utiliza el
+          Informe Epidemiológico, es decir, la fecha de inicio de síntomas.
+        </Answer>
+        <Answer>
+          El 2 de junio, calculamos retroactivamente los casos activos a nivel
+          nacional utilizando los Informes Epidemiológicos publicados en las
+          semanas anteriores para ser consistentes en la información
+          visualizada. De esta manera, toda cifra de casos activos que
+          presentamos en esta página, es calculada utilizando la fecha de inicio
+          de síntomas.
+        </Answer>
+        <Answer>
+          El mayor efecto de este cambio es que la información a nivel nacional,
+          entregada diariamente por el Ministerio de Salud, será más precisa,
+          por usar la fecha de inicio de síntomas para calcular el período en
+          que una persona infectada puede contagiar.
         </Answer>
       </Container>
     </MainContainer>
