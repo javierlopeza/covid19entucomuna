@@ -51,7 +51,10 @@ const FAQ = () => (
             la fecha del reporte actual&quot;.&nbsp;
           </Quote>
           De no notificarse la fecha de inicio de síntomas de un paciente, se
-          utiliza la fecha de notificación de su examen PCR.
+          utiliza la fecha de notificación de su examen PCR. Estos 14 días son
+          los que se han definido como el período en que una persona infectada
+          puede contagiar a otros, en ningún caso significa una recuperación
+          clínica.
         </Answer>
       </Container>
       <Container>
@@ -64,8 +67,8 @@ const FAQ = () => (
           inicio de síntomas de cada paciente, pero de no notificarse esta
           fecha, se utiliza, en cambio, la fecha de confirmación de su examen
           PCR. Esta fecha puede ser rectificada al notificarse el inicio del
-          cuadro clínico en días posteriores, produciendo desplazamientos de
-          los casos activos en el tiempo.
+          cuadro clínico en días posteriores, produciendo desplazamientos de los
+          casos activos en el tiempo.
         </Answer>
         <Answer>
           Por otro lado, los casos activos por comuna pueden verse modificados
