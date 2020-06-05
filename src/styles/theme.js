@@ -15,6 +15,7 @@ export default {
       dark: '#00a500',
     },
     gray: {
+      light: '#d8d8d8',
       normal: '#6b6b6b',
     },
   },

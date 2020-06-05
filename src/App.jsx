@@ -16,6 +16,7 @@ import Logo from './components/Logo';
 import Home from './pages/Home';
 import Region from './pages/Region';
 import Commune from './pages/Commune';
+import Rankings from './pages/Rankings';
 import FAQ from './pages/FAQ';
 import CenteredContainer from './components/CenteredContainer';
 import Footer from './components/Footer';
@@ -39,6 +40,7 @@ const App = () => (
             <Route exact path="/" component={Home} />
             <Route exact path="/regiones/:region" component={Region} />
             <Route exact path="/regiones/:region/comunas/:commune" component={Commune} />
+            <Route exact path="/rankings" component={Rankings} />
             <Route exact path="/preguntas-frecuentes" component={FAQ} />
             <Redirect to="/" />
           </Switch>
