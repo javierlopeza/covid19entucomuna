@@ -1,20 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 import _ from 'lodash';
 import { formatValue } from '../utils/formatter';
 
 const Row = (props) => {
-  const { data, headers } = props;
+  const history = useHistory();
+  const { data, path, headers } = props;
   const rowValues = data.map((value, i) => {
     const key = `${data[0]}_${headers[i]}_${value}`;
     const formattedValue = _.isNumber(value) ? formatValue(value) : value;
     return <Td key={key}>{formattedValue}</Td>;
   });
-  return <Tr>{rowValues}</Tr>;
+  return <Tr onClick={() => history.push(path)}>{rowValues}</Tr>;
 };
 
 const Table = (props) => {
-  const { headers, data } = props;
+  const { headers, rows } = props;
   const headerRow = (
     <Tr>
       {headers.map(header => (
@@ -22,8 +24,13 @@ const Table = (props) => {
       ))}
     </Tr>
   );
-  const dataRows = data.map(row => (
-    <Row key={row[0]} data={row} headers={headers} />
+  const dataRows = rows.map(({ data, path }) => (
+    <Row
+      key={data[0]}
+      data={data}
+      path={path}
+      headers={headers}
+    />
   ));
   return (
     <Container>
@@ -46,6 +53,7 @@ const THead = styled.thead``;
 
 const TBody = styled.tbody`
   tr:hover {
+    cursor: pointer;
     color: white;
     background-color: ${({ theme }) => theme.colors.blue.normal};
   }

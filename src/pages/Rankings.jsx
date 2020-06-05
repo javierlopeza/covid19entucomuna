@@ -35,12 +35,15 @@ class Rankings extends Component {
     }
     const { chileData } = this.state;
     const comunasRM = chileData.regiones.Metropolitana.comunas;
-    const tableData = _.toPairs(comunasRM).map(([comuna, { poblacion, activos, tasaActivos }]) => [
-      comuna,
-      poblacion,
-      activos.value,
-      Math.floor(tasaActivos.value),
-    ]);
+    const rows = _.toPairs(comunasRM).map(([comuna, { poblacion, activos, tasaActivos }]) => ({
+      data: [
+        comuna,
+        poblacion,
+        activos.value,
+        Math.floor(tasaActivos.value),
+      ],
+      path: `/regiones/Metropolitana/comunas/${comuna}`,
+    }));
     return (
       <>
         <Helmet onChangeClientState={handlePageChange}>
@@ -54,7 +57,7 @@ class Rankings extends Component {
         <TableContainer>
           <Table
             headers={['Comuna', 'Población', 'Casos Activos', 'Tasa Activos']}
-            data={tableData}
+            rows={rows}
           />
         </TableContainer>
       </>
