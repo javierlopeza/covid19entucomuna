@@ -38,6 +38,7 @@ class Rankings extends Component {
     const rows = _.toPairs(comunasRM).map(([comuna, { poblacion, activos, tasaActivos }]) => ({
       data: [
         comuna,
+        'Metropolitana',
         poblacion,
         activos.value,
         Math.floor(tasaActivos.value),
@@ -56,7 +57,7 @@ class Rankings extends Component {
 
         <TableContainer>
           <Table
-            headers={['Comuna', 'Población', 'Casos Activos', 'Tasa Activos']}
+            headers={['Comuna', 'Región', 'Población', 'Casos Activos', 'Tasa Activos']}
             rows={rows}
           />
         </TableContainer>

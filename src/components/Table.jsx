@@ -9,8 +9,9 @@ const Row = (props) => {
   const { data, path, headers } = props;
   const rowValues = data.map((value, i) => {
     const key = `${data[0]}_${headers[i]}_${value}`;
-    const formattedValue = _.isNumber(value) ? formatValue(value) : value;
-    return <Td key={key}>{formattedValue}</Td>;
+    const isNumber = _.isNumber(value);
+    const formattedValue = isNumber ? formatValue(value) : value;
+    return <Td key={key} isNumber={isNumber}>{formattedValue}</Td>;
   });
   return <Tr onClick={() => history.push(path)}>{rowValues}</Tr>;
 };
@@ -77,10 +78,9 @@ const Th = styled.th`
 const Td = styled.td`
   padding: 0.5em 2em;
   border-top: 1px solid ${({ theme }) => theme.colors.gray.light};
-  text-align: right;
+  text-align: ${({ isNumber }) => (isNumber ? 'right' : 'left')};
 
   :first-child {
-    text-align: left;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
