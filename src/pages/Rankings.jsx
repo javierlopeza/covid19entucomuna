@@ -9,6 +9,10 @@ import { isDataFromToday } from '../utils/checkData';
 import getChileData from '../clients/chile-data-fetcher';
 import LoaderSpinner from '../components/LoaderSpinner';
 import Table from '../components/Table';
+import {
+  mostAbsoluteActiveCases,
+  mostRelativeActiveCases,
+} from '../utils/rankingStrategies';
 
 class Rankings extends Component {
   constructor(props) {
@@ -42,27 +46,9 @@ class Rankings extends Component {
     this.setState({ communes });
   }
 
-  mostAbsoluteActiveCases() {
+  getRanking(strategy) {
     const { communes } = this.state;
-    // Sort by Activos
-    let selectedCommunes = _.sortBy(communes, commune => commune.activos.value);
-    // Reverse
-    _.reverse(selectedCommunes);
-    // Get top 10
-    selectedCommunes = _.take(selectedCommunes, 10);
-
-    this.setState({ selectedCommunes });
-  }
-
-  mostRelativeActiveCases() {
-    const { communes } = this.state;
-    // Sort by Tasa Activos
-    let selectedCommunes = _.sortBy(communes, commune => commune.tasaActivos.value);
-    // Reverse
-    _.reverse(selectedCommunes);
-    // Get top 10
-    selectedCommunes = _.take(selectedCommunes, 10);
-
+    const selectedCommunes = strategy(communes);
     this.setState({ selectedCommunes });
   }
 
@@ -96,8 +82,12 @@ class Rankings extends Component {
           />
         </Helmet>
 
-        <div onClick={() => this.mostAbsoluteActiveCases()}>Comunas con más casos activos</div>
-        <div onClick={() => this.mostRelativeActiveCases()}>Comunas con más casos activos cada 100 mil habitantes</div>
+        <button onClick={() => this.getRanking(mostAbsoluteActiveCases)}>
+          Comunas con más casos activos
+        </button>
+        <button onClick={() => this.getRanking(mostRelativeActiveCases)}>
+          Comunas con más casos activos cada 100 mil habitantes
+        </button>
 
         <TableContainer>
           <Table

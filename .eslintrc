@@ -3,5 +3,6 @@
   "rules": {
     "react/prop-types": 0,
     "react/button-has-type": 0,
+    "react/sort-comp": 0
   }
 }
