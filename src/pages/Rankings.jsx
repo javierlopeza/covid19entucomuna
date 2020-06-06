@@ -13,7 +13,12 @@ import Table from '../components/Table';
 class Rankings extends Component {
   constructor(props) {
     super(props);
-    this.state = { loading: true, chileData: {} };
+    this.state = {
+      loading: true,
+      chileData: {},
+      communes: [],
+      selectedCommunes: [],
+    };
   }
 
   async componentDidMount() {
@@ -24,8 +29,41 @@ class Rankings extends Component {
     if (!chileData || !isDataFromToday(chileData)) {
       chileData = await getChileData();
     }
-    await notify();
     this.setState({ loading: false, chileData });
+    this.buildCommunesList();
+    await notify();
+  }
+
+  buildCommunesList() {
+    const { chileData } = this.state;
+    const communesNestedObjects = _.map(chileData.regiones, ({ comunas }) => comunas);
+    const communesNested = communesNestedObjects.map(_.values);
+    const communes = _.flatten(communesNested);
+    this.setState({ communes });
+  }
+
+  mostAbsoluteActiveCases() {
+    const { communes } = this.state;
+    // Sort by Activos
+    let selectedCommunes = _.sortBy(communes, commune => commune.activos.value);
+    // Reverse
+    _.reverse(selectedCommunes);
+    // Get top 10
+    selectedCommunes = _.take(selectedCommunes, 10);
+
+    this.setState({ selectedCommunes });
+  }
+
+  mostRelativeActiveCases() {
+    const { communes } = this.state;
+    // Sort by Tasa Activos
+    let selectedCommunes = _.sortBy(communes, commune => commune.tasaActivos.value);
+    // Reverse
+    _.reverse(selectedCommunes);
+    // Get top 10
+    selectedCommunes = _.take(selectedCommunes, 10);
+
+    this.setState({ selectedCommunes });
   }
 
   render() {
@@ -33,18 +71,21 @@ class Rankings extends Component {
     if (loading) {
       return <LoaderSpinner />;
     }
-    const { chileData } = this.state;
-    const comunasRM = chileData.regiones.Metropolitana.comunas;
-    const rows = _.toPairs(comunasRM).map(([comuna, { poblacion, activos, tasaActivos }]) => ({
-      data: [
-        comuna,
-        'Metropolitana',
-        poblacion,
-        activos.value,
-        Math.floor(tasaActivos.value),
-      ],
-      path: `/regiones/Metropolitana/comunas/${comuna}`,
-    }));
+    const { selectedCommunes } = this.state;
+    const rows = selectedCommunes.map(
+      ({
+        name: comuna, region, poblacion, activos, tasaActivos,
+      }) => ({
+        data: [
+          comuna,
+          region,
+          poblacion,
+          activos.value,
+          Math.floor(tasaActivos.value),
+        ],
+        path: `/regiones/${region}/comunas/${comuna}`,
+      }),
+    );
     return (
       <>
         <Helmet onChangeClientState={handlePageChange}>
@@ -55,9 +96,18 @@ class Rankings extends Component {
           />
         </Helmet>
 
+        <div onClick={() => this.mostAbsoluteActiveCases()}>Comunas con más casos activos</div>
+        <div onClick={() => this.mostRelativeActiveCases()}>Comunas con más casos activos cada 100 mil habitantes</div>
+
         <TableContainer>
           <Table
-            headers={['Comuna', 'Región', 'Población', 'Casos Activos', 'Tasa Activos']}
+            headers={[
+              'Comuna',
+              'Región',
+              'Población',
+              'Casos Activos',
+              'Tasa Activos',
+            ]}
             rows={rows}
           />
         </TableContainer>
