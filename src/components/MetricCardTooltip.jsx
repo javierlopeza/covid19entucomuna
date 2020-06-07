@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 const MetricCardTooltip = ({ children }) => (
-  <Container>
+  <Container className="metricCardTooltip">
     <Icon icon={faQuestionCircle} />
     <TextLimit>
       <Text>{children}</Text>
