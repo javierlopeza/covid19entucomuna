@@ -94,13 +94,13 @@ class Rankings extends Component {
           <button onClick={() => this.getRanking('activos.value', { activos: 'Casos activos' })}>
           Comunas con más casos activos
           </button>
-          <button onClick={() => this.getRanking('tasaActivos.value', { tasaActivos: 'Casos activos cada 100 mil habitantes' })}>
+          <button onClick={() => this.getRanking('tasaActivos.value', { tasaActivos: 'Casos activos c/ 100 mil' })}>
           Comunas con más casos activos cada 100 mil habitantes
           </button>
           <button onClick={() => this.getRanking('delta.activos.value', { deltaActivos: 'Cambio en casos activos' })}>
           Delta activos absolutos
           </button>
-          <button onClick={() => this.getRanking('delta.tasaActivos.value', { deltaTasaActivos: 'Cambio en casos activos cada 100 mil habitantes' })}>
+          <button onClick={() => this.getRanking('delta.tasaActivos.value', { deltaTasaActivos: 'Cambio en casos activos c/ 100 mil' })}>
           Delta activos cada 100 mil habitantes
           </button>
 
