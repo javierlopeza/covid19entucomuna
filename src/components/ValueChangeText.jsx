@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { formatValue } from '../utils/formatter';
 
 const ValueChangeText = ({ data }) => {
   const [prev, curr] = data;
@@ -7,7 +8,7 @@ const ValueChangeText = ({ data }) => {
     return (
       <>
         <Colored color="red">aumentaron</Colored>
-        {` de ${prev} a ${curr}.`}
+        {` de ${formatValue(prev)} a ${formatValue(curr)}.`}
       </>
     );
   }
@@ -15,7 +16,7 @@ const ValueChangeText = ({ data }) => {
     return (
       <>
         <Colored color="green">disminuyeron</Colored>
-        {` de ${prev} a ${curr}.`}
+        {` de ${formatValue(prev)} a ${formatValue(curr)}.`}
       </>
     );
   }
