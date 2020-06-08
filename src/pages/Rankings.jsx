@@ -19,14 +19,11 @@ class Rankings extends Component {
       chileData: {},
       communes: [],
       selectedCommunes: [],
-      desktopColumns: [
-        'Comuna',
-        'Población',
-        'Casos activos',
-        'Activos cada 100 mil habitantes',
-        'Cambio en activos',
-        'Cambio en activos cada 100 mil habitantes',
-      ],
+      baseColumns: {
+        comuna: 'Comuna',
+        poblacion: 'Población',
+      },
+      extraColumns: {},
     };
   }
 
@@ -51,10 +48,10 @@ class Rankings extends Component {
     this.setState({ communes });
   }
 
-  getRanking(sortKeyPath) {
+  getRanking(sortKeyPath, extraColumns) {
     const { communes } = this.state;
     const selectedCommunes = rank(communes, sortKeyPath);
-    this.setState({ selectedCommunes });
+    this.setState({ selectedCommunes, extraColumns });
   }
 
   render() {
@@ -62,8 +59,9 @@ class Rankings extends Component {
     if (loading) {
       return <LoaderSpinner />;
     }
-    const { selectedCommunes, desktopColumns } = this.state;
-    const rows = selectedCommunes.map(
+    const { selectedCommunes, baseColumns, extraColumns } = this.state;
+    const columns = { ...baseColumns, ...extraColumns };
+    const completeRows = selectedCommunes.map(
       ({
         name: comuna, region, poblacion, activos, tasaActivos, delta,
       }) => ({
@@ -78,6 +76,10 @@ class Rankings extends Component {
         path: `/regiones/${region}/comunas/${comuna}`,
       }),
     );
+    const rows = completeRows.map(row => ({
+      ...row,
+      data: _.pick(row.data, _.keys(columns)),
+    }));
     return (
       <>
         <Helmet onChangeClientState={handlePageChange}>
@@ -88,21 +90,21 @@ class Rankings extends Component {
           />
         </Helmet>
 
-        <button onClick={() => this.getRanking('activos.value')}>
+        <button onClick={() => this.getRanking('activos.value', { activos: 'Casos activos' })}>
           Comunas con más casos activos
         </button>
-        <button onClick={() => this.getRanking('tasaActivos.value')}>
+        <button onClick={() => this.getRanking('tasaActivos.value', { tasaActivos: 'Casos activos cada 100 mil habitantes' })}>
           Comunas con más casos activos cada 100 mil habitantes
         </button>
-        <button onClick={() => this.getRanking('delta.activos.value')}>
+        <button onClick={() => this.getRanking('delta.activos.value', { deltaActivos: 'Cambio en casos activos' })}>
           Delta activos absolutos
         </button>
-        <button onClick={() => this.getRanking('delta.tasaActivos.value')}>
+        <button onClick={() => this.getRanking('delta.tasaActivos.value', { deltaTasaActivos: 'Cambio en casos activos cada 100 mil habitantes' })}>
           Delta activos cada 100 mil habitantes
         </button>
 
         <TableContainer>
-          <Table headers={desktopColumns} rows={rows} />
+          <Table headers={_.values(columns)} rows={rows} />
         </TableContainer>
       </>
     );
