@@ -67,14 +67,14 @@ class Rankings extends Component {
       ({
         name: comuna, region, poblacion, activos, tasaActivos, delta,
       }) => ({
-        data: [
+        data: {
           comuna,
           poblacion,
-          activos.value,
-          Math.floor(tasaActivos.value),
-          delta.activos.value,
-          Math.floor(delta.tasaActivos.value),
-        ],
+          activos: activos.value,
+          tasaActivos: Math.floor(tasaActivos.value),
+          deltaActivos: delta.activos.value,
+          deltaTasaActivos: Math.floor(delta.tasaActivos.value),
+        },
         path: `/regiones/${region}/comunas/${comuna}`,
       }),
     );

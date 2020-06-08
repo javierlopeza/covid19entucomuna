@@ -6,9 +6,9 @@ import { formatValue } from '../utils/formatter';
 
 const Row = (props) => {
   const history = useHistory();
-  const { data, path, headers } = props;
-  const rowValues = data.map((value, i) => {
-    const key = `${data[0]}_${headers[i]}_${value}`;
+  const { data, path } = props;
+  const rowValues = _.toPairs(data).map(([header, value]) => {
+    const key = `${data.comuna}_${header}_${value}`;
     const isNumber = _.isNumber(value);
     const formattedValue = isNumber ? formatValue(value) : value;
     return <Td key={key} isNumber={isNumber}>{formattedValue}</Td>;
@@ -27,10 +27,9 @@ const Table = (props) => {
   );
   const dataRows = rows.map(({ data, path }) => (
     <Row
-      key={data[0]}
+      key={data.comuna}
       data={data}
       path={path}
-      headers={headers}
     />
   ));
   return (
