@@ -68,20 +68,27 @@ const Tr = styled.tr`
 `;
 
 const Th = styled.th`
-  line-height: 1.2em;
-  padding: 1em 2em;
-  text-align: left;
+  padding: 1em 2em 1em 0;
   color: ${({ theme }) => theme.colors.blue.normal};
   font-weight: 400;
+  text-align: center;
+  line-height: 1.2em;
+  max-width: 5em;
+
+  :first-child {
+    padding-left: 2em;
+  }
 `;
 
 const Td = styled.td`
-  line-height: 1.2em;
-  padding: 0.5em 2em;
+  padding: 0.5em 2em 0.5em 0;
   border-top: 1px solid ${({ theme }) => theme.colors.gray.light};
-  text-align: ${({ isNumber }) => (isNumber ? 'right' : 'left')};
+  text-align: center;
+  line-height: 1.2em;
+  max-width: 10em;
 
   :first-child {
+    padding-left: 2em;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
