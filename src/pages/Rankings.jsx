@@ -103,30 +103,33 @@ class Rankings extends Component {
           />
         </Helmet>
         <CenteredContainer>
-          <NavBubbleButton
-            path="/rankings/mas-casos-activos"
-            onClick={() => this.getRanking(...rankingParameters['mas-casos-activos'])}
-          >
+          <ButtonsContainer>
+            <NavBubbleButton
+              path="/rankings/mas-casos-activos"
+              onClick={() => this.getRanking(...rankingParameters['mas-casos-activos'])}
+            >
             Comunas con más casos activos
-          </NavBubbleButton>
-          <NavBubbleButton
-            path="/rankings/mayores-tasas-de-activos"
-            onClick={() => this.getRanking(...rankingParameters['mayores-tasas-de-activos'])}
-          >
+            </NavBubbleButton>
+            <NavBubbleButton
+              path="/rankings/mayores-tasas-de-activos"
+              onClick={() => this.getRanking(...rankingParameters['mayores-tasas-de-activos'])}
+            >
             Comunas con más casos activos cada 100 mil habitantes
-          </NavBubbleButton>
-          <NavBubbleButton
-            path="/rankings/mayores-cambios-en-casos-activos"
-            onClick={() => this.getRanking(...rankingParameters['mayores-cambios-en-casos-activos'])}
-          >
+            </NavBubbleButton>
+            <NavBubbleButton
+              path="/rankings/mayores-cambios-en-casos-activos"
+              onClick={() => this.getRanking(...rankingParameters['mayores-cambios-en-casos-activos'])}
+            >
             Delta activos absolutos
-          </NavBubbleButton>
-          <NavBubbleButton
-            path="/rankings/mayores-cambios-en-tasa-de-activos"
-            onClick={() => this.getRanking(...rankingParameters['mayores-cambios-en-tasa-de-activos'])}
-          >
+            </NavBubbleButton>
+            <NavBubbleButton
+              path="/rankings/mayores-cambios-en-tasa-de-activos"
+              onClick={() => this.getRanking(...rankingParameters['mayores-cambios-en-tasa-de-activos'])}
+            >
             Delta activos cada 100 mil habitantes
-          </NavBubbleButton>
+            </NavBubbleButton>
+          </ButtonsContainer>
+
           <TableContainer>
             <Table headers={_.values(columns)} rows={rows} />
           </TableContainer>
@@ -143,4 +146,29 @@ const TableContainer = styled.div`
   justify-content: center;
 
   margin-top: 1em;
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+
+  @media ${({ theme }) => theme.device.mobileL} {
+    width: 75%;
+  }
+
+  @media ${({ theme }) => theme.device.tablet} {
+    width: 95%;
+    flex-direction: row;
+    a {
+      margin-left: 1em;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  @media ${({ theme }) => theme.device.laptop} {
+    width: 75%;
+  }
 `;
