@@ -19,6 +19,14 @@ class Rankings extends Component {
       chileData: {},
       communes: [],
       selectedCommunes: [],
+      desktopColumns: [
+        'Comuna',
+        'Población',
+        'Casos activos',
+        'Activos cada 100 mil habitantes',
+        'Cambio en activos',
+        'Cambio en activos cada 100 mil habitantes',
+      ],
     };
   }
 
@@ -54,14 +62,13 @@ class Rankings extends Component {
     if (loading) {
       return <LoaderSpinner />;
     }
-    const { selectedCommunes } = this.state;
+    const { selectedCommunes, desktopColumns } = this.state;
     const rows = selectedCommunes.map(
       ({
         name: comuna, region, poblacion, activos, tasaActivos, delta,
       }) => ({
         data: [
           comuna,
-          region,
           poblacion,
           activos.value,
           Math.floor(tasaActivos.value),
@@ -95,18 +102,7 @@ class Rankings extends Component {
         </button>
 
         <TableContainer>
-          <Table
-            headers={[
-              'Comuna',
-              'Región',
-              'Población',
-              'Casos Activos',
-              'Tasa Activos',
-              'Delta Activos',
-              'Delta Tasa Activos',
-            ]}
-            rows={rows}
-          />
+          <Table headers={desktopColumns} rows={rows} />
         </TableContainer>
       </>
     );
