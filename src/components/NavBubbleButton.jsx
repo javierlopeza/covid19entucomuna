@@ -16,10 +16,12 @@ export default NavBubbleButton;
 const Container = styled(NavLink)`
   padding: 0.5em 0.75em;
   border-radius: 8px;
+  text-align: center;
   background-color: white;
   ${({ theme }) => theme.baseShadow}
   color: ${({ theme }) => theme.colors.gray.normal};
   font-weight: 200;
+  margin-bottom: 0.75em;
 
   :active, :visited {
     color: ${({ theme }) => theme.colors.gray.normal};

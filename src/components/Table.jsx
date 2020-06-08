@@ -11,7 +11,7 @@ const Row = (props) => {
     const key = `${data.comuna}_${header}_${value}`;
     const isNumber = _.isNumber(value);
     const formattedValue = isNumber ? formatValue(value) : value;
-    return <Td key={key} isNumber={isNumber}>{formattedValue}</Td>;
+    return <Td key={key}>{formattedValue}</Td>;
   });
   return <Tr onClick={() => history.push(path)}>{rowValues}</Tr>;
 };
@@ -26,11 +26,7 @@ const Table = (props) => {
     </Tr>
   );
   const dataRows = rows.map(({ data, path }) => (
-    <Row
-      key={data.comuna}
-      data={data}
-      path={path}
-    />
+    <Row key={data.comuna} data={data} path={path} />
   ));
   return (
     <Container>
@@ -59,17 +55,22 @@ const Container = styled.table`
 const THead = styled.thead``;
 
 const TBody = styled.tbody`
-  tr:hover {
-    cursor: pointer;
-    color: white;
-    background-color: ${({ theme }) => theme.colors.blue.normal};
+  @media (hover: hover) {
+    tr:hover {
+      cursor: pointer;
+      color: white;
+      background-color: ${({ theme }) => theme.colors.blue.normal};
+    }
   }
 `;
 
 const Tr = styled.tr`
-  :hover {
-    td, & + tr > td {
-      border-color: transparent;
+  @media (hover: hover) {
+    :hover {
+      td,
+      & + tr > td {
+        border-color: transparent;
+      }
     }
   }
 `;
