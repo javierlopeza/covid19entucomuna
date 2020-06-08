@@ -17,3 +17,11 @@ export function mostAbsoluteActiveCases(communes) {
 export function mostRelativeActiveCases(communes) {
   return baseStrategy(communes, 'tasaActivos.value');
 }
+
+export function deltaAbsoluteActiveCases(communes) {
+  return baseStrategy(communes, 'delta.activos.value');
+}
+
+export function deltaRelativeActiveCases(communes) {
+  return baseStrategy(communes, 'delta.tasaActivos.value');
+}

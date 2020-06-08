@@ -12,6 +12,8 @@ import Table from '../components/Table';
 import {
   mostAbsoluteActiveCases,
   mostRelativeActiveCases,
+  deltaAbsoluteActiveCases,
+  deltaRelativeActiveCases,
 } from '../utils/rankingStrategies';
 
 class Rankings extends Component {
@@ -60,7 +62,7 @@ class Rankings extends Component {
     const { selectedCommunes } = this.state;
     const rows = selectedCommunes.map(
       ({
-        name: comuna, region, poblacion, activos, tasaActivos,
+        name: comuna, region, poblacion, activos, tasaActivos, delta,
       }) => ({
         data: [
           comuna,
@@ -68,6 +70,8 @@ class Rankings extends Component {
           poblacion,
           activos.value,
           Math.floor(tasaActivos.value),
+          delta.activos.value,
+          Math.floor(delta.tasaActivos.value),
         ],
         path: `/regiones/${region}/comunas/${comuna}`,
       }),
@@ -88,6 +92,12 @@ class Rankings extends Component {
         <button onClick={() => this.getRanking(mostRelativeActiveCases)}>
           Comunas con más casos activos cada 100 mil habitantes
         </button>
+        <button onClick={() => this.getRanking(deltaAbsoluteActiveCases)}>
+          Delta activos absolutos
+        </button>
+        <button onClick={() => this.getRanking(deltaRelativeActiveCases)}>
+          Delta activos cada 100 mil habitantes
+        </button>
 
         <TableContainer>
           <Table
@@ -97,6 +107,8 @@ class Rankings extends Component {
               'Población',
               'Casos Activos',
               'Tasa Activos',
+              'Delta Activos',
+              'Delta Tasa Activos',
             ]}
             rows={rows}
           />
