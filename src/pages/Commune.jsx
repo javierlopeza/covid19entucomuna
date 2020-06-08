@@ -169,4 +169,5 @@ const InfoTextsContainer = styled.div`
 const InfoText = styled.p`
   margin: 10px;
   text-align: center;
+  line-height: 1.25em;
 `;
