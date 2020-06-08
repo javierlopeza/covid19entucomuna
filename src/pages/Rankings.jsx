@@ -10,6 +10,7 @@ import getChileData from '../clients/chile-data-fetcher';
 import LoaderSpinner from '../components/LoaderSpinner';
 import Table from '../components/Table';
 import rank from '../utils/ranking';
+import CenteredContainer from '../components/CenteredContainer';
 
 class Rankings extends Component {
   constructor(props) {
@@ -89,23 +90,24 @@ class Rankings extends Component {
             content="Análisis simple y amigable de los casos activos de coronavirus por región y por comuna en Chile."
           />
         </Helmet>
-
-        <button onClick={() => this.getRanking('activos.value', { activos: 'Casos activos' })}>
+        <CenteredContainer>
+          <button onClick={() => this.getRanking('activos.value', { activos: 'Casos activos' })}>
           Comunas con más casos activos
-        </button>
-        <button onClick={() => this.getRanking('tasaActivos.value', { tasaActivos: 'Casos activos cada 100 mil habitantes' })}>
+          </button>
+          <button onClick={() => this.getRanking('tasaActivos.value', { tasaActivos: 'Casos activos cada 100 mil habitantes' })}>
           Comunas con más casos activos cada 100 mil habitantes
-        </button>
-        <button onClick={() => this.getRanking('delta.activos.value', { deltaActivos: 'Cambio en casos activos' })}>
+          </button>
+          <button onClick={() => this.getRanking('delta.activos.value', { deltaActivos: 'Cambio en casos activos' })}>
           Delta activos absolutos
-        </button>
-        <button onClick={() => this.getRanking('delta.tasaActivos.value', { deltaTasaActivos: 'Cambio en casos activos cada 100 mil habitantes' })}>
+          </button>
+          <button onClick={() => this.getRanking('delta.tasaActivos.value', { deltaTasaActivos: 'Cambio en casos activos cada 100 mil habitantes' })}>
           Delta activos cada 100 mil habitantes
-        </button>
+          </button>
 
-        <TableContainer>
-          <Table headers={_.values(columns)} rows={rows} />
-        </TableContainer>
+          <TableContainer>
+            <Table headers={_.values(columns)} rows={rows} />
+          </TableContainer>
+        </CenteredContainer>
       </>
     );
   }
