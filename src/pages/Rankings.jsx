@@ -13,6 +13,7 @@ import rank from '../utils/ranking';
 import CenteredContainer from '../components/CenteredContainer';
 import NavBubbleButton from '../components/NavBubbleButton';
 
+
 const rankingParameters = {
   'mas-casos-activos': ['activos.value', { activos: 'Casos activos' }],
   'mayores-tasas-de-activos': ['tasaActivos.value', { tasaActivos: 'Casos activos c/ 100 mil' }],
@@ -91,10 +92,11 @@ class Rankings extends Component {
       ...row,
       data: _.pick(row.data, _.keys(columns)),
     }));
+    const { location: { pathname } } = document;
     return (
       <>
-        <Helmet onChangeClientState={handlePageChange}>
-          <title>COVID-19 en tu comuna - Preguntas Frecuentes</title>
+        <Helmet onChangeClientState={handlePageChange} currentPath={pathname}>
+          <title>COVID-19 en tu comuna - Rankings</title>
           <meta
             name="description"
             content="Análisis simple y amigable de los casos activos de coronavirus por región y por comuna en Chile."
