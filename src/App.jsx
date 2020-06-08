@@ -40,8 +40,8 @@ const App = () => (
             <Route exact path="/" component={Home} />
             <Route exact path="/regiones/:region" component={Region} />
             <Route exact path="/regiones/:region/comunas/:commune" component={Commune} />
-            <Route exact path="/rankings" component={Rankings} />
             <Route exact path="/preguntas-frecuentes" component={FAQ} />
+            <Route exact path="/rankings/:rankingName" component={Rankings} />
             <Redirect to="/" />
           </Switch>
         </Content>

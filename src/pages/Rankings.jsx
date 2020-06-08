@@ -11,6 +11,14 @@ import LoaderSpinner from '../components/LoaderSpinner';
 import Table from '../components/Table';
 import rank from '../utils/ranking';
 import CenteredContainer from '../components/CenteredContainer';
+import NavBubbleButton from '../components/NavBubbleButton';
+
+const rankingParameters = {
+  'mas-casos-activos': ['activos.value', { activos: 'Casos activos' }],
+  'mayores-tasas-de-activos': ['tasaActivos.value', { tasaActivos: 'Casos activos c/ 100 mil' }],
+  'mayores-cambios-en-casos-activos': ['delta.activos.value', { deltaActivos: 'Cambio en casos activos' }],
+  'mayores-cambios-en-tasa-de-activos': ['delta.tasaActivos.value', { deltaTasaActivos: 'Cambio en casos activos c/ 100 mil' }],
+};
 
 class Rankings extends Component {
   constructor(props) {
@@ -30,6 +38,7 @@ class Rankings extends Component {
 
   async componentDidMount() {
     scrollToTop();
+    const { match: { params: { rankingName } } } = this.props;
     let {
       location: { chileData },
     } = this.props;
@@ -38,6 +47,7 @@ class Rankings extends Component {
     }
     this.setState({ loading: false, chileData });
     this.buildCommunesList();
+    this.getRanking(...rankingParameters[rankingName]);
     await notify();
   }
 
@@ -91,19 +101,30 @@ class Rankings extends Component {
           />
         </Helmet>
         <CenteredContainer>
-          <button onClick={() => this.getRanking('activos.value', { activos: 'Casos activos' })}>
-          Comunas con más casos activos
-          </button>
-          <button onClick={() => this.getRanking('tasaActivos.value', { tasaActivos: 'Casos activos c/ 100 mil' })}>
-          Comunas con más casos activos cada 100 mil habitantes
-          </button>
-          <button onClick={() => this.getRanking('delta.activos.value', { deltaActivos: 'Cambio en casos activos' })}>
-          Delta activos absolutos
-          </button>
-          <button onClick={() => this.getRanking('delta.tasaActivos.value', { deltaTasaActivos: 'Cambio en casos activos c/ 100 mil' })}>
-          Delta activos cada 100 mil habitantes
-          </button>
-
+          <NavBubbleButton
+            path="/rankings/mas-casos-activos"
+            onClick={() => this.getRanking(...rankingParameters['mas-casos-activos'])}
+          >
+            Comunas con más casos activos
+          </NavBubbleButton>
+          <NavBubbleButton
+            path="/rankings/mayores-tasas-de-activos"
+            onClick={() => this.getRanking(...rankingParameters['mayores-tasas-de-activos'])}
+          >
+            Comunas con más casos activos cada 100 mil habitantes
+          </NavBubbleButton>
+          <NavBubbleButton
+            path="/rankings/mayores-cambios-en-casos-activos"
+            onClick={() => this.getRanking(...rankingParameters['mayores-cambios-en-casos-activos'])}
+          >
+            Delta activos absolutos
+          </NavBubbleButton>
+          <NavBubbleButton
+            path="/rankings/mayores-cambios-en-tasa-de-activos"
+            onClick={() => this.getRanking(...rankingParameters['mayores-cambios-en-tasa-de-activos'])}
+          >
+            Delta activos cada 100 mil habitantes
+          </NavBubbleButton>
           <TableContainer>
             <Table headers={_.values(columns)} rows={rows} />
           </TableContainer>
