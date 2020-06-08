@@ -9,12 +9,7 @@ import { isDataFromToday } from '../utils/checkData';
 import getChileData from '../clients/chile-data-fetcher';
 import LoaderSpinner from '../components/LoaderSpinner';
 import Table from '../components/Table';
-import {
-  mostAbsoluteActiveCases,
-  mostRelativeActiveCases,
-  deltaAbsoluteActiveCases,
-  deltaRelativeActiveCases,
-} from '../utils/rankingStrategies';
+import rank from '../utils/ranking';
 
 class Rankings extends Component {
   constructor(props) {
@@ -48,9 +43,9 @@ class Rankings extends Component {
     this.setState({ communes });
   }
 
-  getRanking(strategy) {
+  getRanking(sortKeyPath) {
     const { communes } = this.state;
-    const selectedCommunes = strategy(communes);
+    const selectedCommunes = rank(communes, sortKeyPath);
     this.setState({ selectedCommunes });
   }
 
@@ -86,16 +81,16 @@ class Rankings extends Component {
           />
         </Helmet>
 
-        <button onClick={() => this.getRanking(mostAbsoluteActiveCases)}>
+        <button onClick={() => this.getRanking('activos.value')}>
           Comunas con más casos activos
         </button>
-        <button onClick={() => this.getRanking(mostRelativeActiveCases)}>
+        <button onClick={() => this.getRanking('tasaActivos.value')}>
           Comunas con más casos activos cada 100 mil habitantes
         </button>
-        <button onClick={() => this.getRanking(deltaAbsoluteActiveCases)}>
+        <button onClick={() => this.getRanking('delta.activos.value')}>
           Delta activos absolutos
         </button>
-        <button onClick={() => this.getRanking(deltaRelativeActiveCases)}>
+        <button onClick={() => this.getRanking('delta.tasaActivos.value')}>
           Delta activos cada 100 mil habitantes
         </button>
 
