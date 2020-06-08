@@ -68,6 +68,7 @@ const Tr = styled.tr`
 `;
 
 const Th = styled.th`
+  line-height: 1.2em;
   padding: 1em 2em;
   text-align: left;
   color: ${({ theme }) => theme.colors.blue.normal};
@@ -75,6 +76,7 @@ const Th = styled.th`
 `;
 
 const Td = styled.td`
+  line-height: 1.2em;
   padding: 0.5em 2em;
   border-top: 1px solid ${({ theme }) => theme.colors.gray.light};
   text-align: ${({ isNumber }) => (isNumber ? 'right' : 'left')};
