@@ -160,12 +160,7 @@ const ButtonsContainer = styled.div`
   @media ${({ theme }) => theme.device.tablet} {
     width: 95%;
     flex-direction: row;
-    a {
-      margin-left: 1em;
-      &:first-child {
-        margin-left: 0;
-      }
-    }
+    align-items: stretch;
   }
 
   @media ${({ theme }) => theme.device.laptop} {
