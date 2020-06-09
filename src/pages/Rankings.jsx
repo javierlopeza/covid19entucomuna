@@ -16,9 +16,9 @@ import NavBubbleButton from '../components/NavBubbleButton';
 
 const rankingParameters = {
   'mas-casos-activos': ['activos.value', { activos: 'Casos activos' }],
-  'mayores-tasas-de-activos': ['tasaActivos.value', { tasaActivos: 'Casos activos c/ 100 mil' }],
-  'mayores-cambios-en-casos-activos': ['delta.activos.value', { deltaActivos: 'Cambio en casos activos' }],
-  'mayores-cambios-en-tasa-de-activos': ['delta.tasaActivos.value', { deltaTasaActivos: 'Cambio en casos activos c/ 100 mil' }],
+  'mayores-tasas-de-activos': ['tasaActivos.value', { tasaActivos: 'Activos c/100 mil habitantes' }],
+  'mayores-cambios-en-casos-activos': ['delta.activos.value', { deltaActivos: 'Cambio +/-' }],
+  'mayores-cambios-en-tasa-de-activos': ['delta.tasaActivos.value', { deltaTasaActivos: 'Cambio +/-' }],
 };
 
 class Rankings extends Component {
@@ -120,13 +120,13 @@ class Rankings extends Component {
               path="/rankings/mayores-cambios-en-casos-activos"
               onClick={() => this.getRanking(...rankingParameters['mayores-cambios-en-casos-activos'])}
             >
-            Delta activos absolutos
+            Mayores cambios en casos activos
             </NavBubbleButton>
             <NavBubbleButton
               path="/rankings/mayores-cambios-en-tasa-de-activos"
               onClick={() => this.getRanking(...rankingParameters['mayores-cambios-en-tasa-de-activos'])}
             >
-            Delta activos cada 100 mil habitantes
+            Mayores cambios en casos activos cada 100 mil habitantes
             </NavBubbleButton>
           </ButtonsContainer>
 
