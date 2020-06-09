@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import _ from 'lodash';
 import { formatValue, formatDeltaValue } from '../utils/formatter';
-
 
 const Row = (props) => {
   const history = useHistory();
@@ -18,15 +17,15 @@ const Row = (props) => {
     }
     return <Td key={key}>{formattedValue}</Td>;
   });
-  return <Tr onClick={() => history.push(path)}>{rowValues}</Tr>;
+  return (
+    <Tr onClick={() => history.push(path)} highlightOnHover>
+      {rowValues}
+    </Tr>
+  );
 };
 
 const Table = (props) => {
-  const {
-    headers,
-    rows,
-    footerText,
-  } = props;
+  const { headers, rows, topHeaderText } = props;
   const headerRow = (
     <Tr>
       {headers.map(header => (
@@ -37,18 +36,18 @@ const Table = (props) => {
   const dataRows = rows.map(({ data, path }) => (
     <Row key={data.comuna} data={data} path={path} />
   ));
-  const footer = (
+  const topHeader = (
     <Tr>
-      <Footer colSpan="100">{footerText}</Footer>
+      <TopHeader colSpan="100">{topHeaderText}</TopHeader>
     </Tr>
   );
   return (
     <Container>
-      <THead>{headerRow}</THead>
-      <TBody>
-        {dataRows}
-        {footerText && footer}
-      </TBody>
+      <THead>
+        {topHeaderText && topHeader}
+        {headerRow}
+      </THead>
+      <TBody>{dataRows}</TBody>
     </Container>
   );
 };
@@ -67,18 +66,21 @@ const THead = styled.thead``;
 const TBody = styled.tbody``;
 
 const Tr = styled.tr`
-  @media (hover: hover) {
-    :hover:not(:last-child) {
-      cursor: pointer;
-      color: white;
-      background-color: ${({ theme }) => theme.colors.blue.normal};
+  ${({ highlightOnHover }) => highlightOnHover
+    && css`
+      @media (hover: hover) {
+        :hover {
+          cursor: pointer;
+          color: white;
+          background-color: ${({ theme }) => theme.colors.blue.normal};
 
-      td,
-      & + tr > td {
-        border-color: transparent;
+          td,
+          & + tr > td {
+            border-color: transparent;
+          }
+        }
       }
-    }
-  }
+    `}
 `;
 
 const Th = styled.th`
@@ -136,12 +138,12 @@ const Td = styled.td`
   }
 `;
 
-const Footer = styled.td`
-  border-top: 1px solid ${({ theme }) => theme.colors.gray.light};
-  padding: 0.75em 0.75em;
+const TopHeader = styled.th`
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray.light};
+  padding: 1em 1.5em;
   color: ${({ theme }) => theme.colors.blue.normal};
   text-align: center;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 0.7em;
   @media ${({ theme }) => theme.device.tablet} {
     font-size: 0.8em;

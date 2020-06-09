@@ -106,9 +106,9 @@ class Rankings extends Component {
       ...row,
       data: _.pick(row.data, _.keys(columns)),
     }));
-    const footerChange = `Cálculo del ${formatDateForHumans(fromDate)} al ${formatDateForHumans(toDate)}`;
-    const footerStock = `Datos al ${formatDateForHumans(toDate)}`;
-    const footerText = _.some(_.keys(columns), k => _.includes(k, 'delta')) ? footerChange : footerStock;
+    const topHeaderChange = `Calculados entre el ${formatDateForHumans(fromDate)} y el ${formatDateForHumans(toDate)}`;
+    const topHeaderStock = `Cifras al ${formatDateForHumans(toDate)}`;
+    const topHeaderText = _.some(_.keys(columns), k => _.includes(k, 'delta')) ? topHeaderChange : topHeaderStock;
     const { location: { pathname } } = document;
     return (
       <>
@@ -151,7 +151,7 @@ class Rankings extends Component {
             <Table
               headers={_.values(columns)}
               rows={rows}
-              footerText={footerText}
+              topHeaderText={topHeaderText}
             />
           </TableContainer>
         </CenteredContainer>
