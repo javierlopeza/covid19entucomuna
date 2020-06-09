@@ -22,7 +22,11 @@ const Row = (props) => {
 };
 
 const Table = (props) => {
-  const { headers, rows } = props;
+  const {
+    headers,
+    rows,
+    footerText,
+  } = props;
   const headerRow = (
     <Tr>
       {headers.map(header => (
@@ -33,10 +37,18 @@ const Table = (props) => {
   const dataRows = rows.map(({ data, path }) => (
     <Row key={data.comuna} data={data} path={path} />
   ));
+  const footer = (
+    <Tr>
+      <Footer colSpan="100">{footerText}</Footer>
+    </Tr>
+  );
   return (
     <Container>
       <THead>{headerRow}</THead>
-      <TBody>{dataRows}</TBody>
+      <TBody>
+        {dataRows}
+        {footerText && footer}
+      </TBody>
     </Container>
   );
 };
@@ -48,30 +60,19 @@ const Container = styled.table`
   border-radius: 10px;
   border-collapse: collapse;
   ${({ theme }) => theme.baseShadow}
-
-  th, td {
-    font-size: 0.85em;
-    @media ${({ theme }) => theme.device.tablet} {
-      font-size: 0.9em;
-    }
-  }
 `;
 
 const THead = styled.thead``;
 
-const TBody = styled.tbody`
-  @media (hover: hover) {
-    tr:hover {
-      cursor: pointer;
-      color: white;
-      background-color: ${({ theme }) => theme.colors.blue.normal};
-    }
-  }
-`;
+const TBody = styled.tbody``;
 
 const Tr = styled.tr`
   @media (hover: hover) {
-    :hover {
+    :hover:not(:last-child) {
+      cursor: pointer;
+      color: white;
+      background-color: ${({ theme }) => theme.colors.blue.normal};
+
       td,
       & + tr > td {
         border-color: transparent;
@@ -98,6 +99,11 @@ const Th = styled.th`
       padding-left: 2em;
     }
   }
+
+  font-size: 0.85em;
+  @media ${({ theme }) => theme.device.tablet} {
+    font-size: 0.9em;
+  }
 `;
 
 const Td = styled.td`
@@ -122,5 +128,22 @@ const Td = styled.td`
     :first-child {
       padding-left: 2em;
     }
+  }
+
+  font-size: 0.85em;
+  @media ${({ theme }) => theme.device.tablet} {
+    font-size: 0.9em;
+  }
+`;
+
+const Footer = styled.td`
+  border-top: 1px solid ${({ theme }) => theme.colors.gray.light};
+  padding: 0.75em 0.75em;
+  color: ${({ theme }) => theme.colors.blue.normal};
+  text-align: center;
+  font-weight: 200;
+  font-size: 0.7em;
+  @media ${({ theme }) => theme.device.tablet} {
+    font-size: 0.8em;
   }
 `;

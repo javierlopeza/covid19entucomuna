@@ -12,6 +12,7 @@ import Table from '../components/Table';
 import rank from '../utils/ranking';
 import CenteredContainer from '../components/CenteredContainer';
 import NavBubbleButton from '../components/NavBubbleButton';
+import { formatDateForHumans } from '../utils/formatter';
 
 
 const rankingParameters = {
@@ -28,6 +29,8 @@ class Rankings extends Component {
       loading: true,
       chileData: {},
       communes: [],
+      fromDate: null,
+      toDate: null,
       selectedCommunes: [],
       baseColumns: {
         comuna: 'Comuna',
@@ -48,6 +51,7 @@ class Rankings extends Component {
     }
     this.setState({ loading: false, chileData });
     this.buildCommunesList();
+    this.getDates();
     this.getRanking(...rankingParameters[rankingName]);
     await notify();
   }
@@ -58,6 +62,12 @@ class Rankings extends Component {
     const communesNested = communesNestedObjects.map(_.values);
     const communes = _.flatten(communesNested);
     this.setState({ communes });
+  }
+
+  getDates() {
+    const { communes } = this.state;
+    const { delta: { activos: { fromDate, toDate } } } = _.head(communes);
+    this.setState({ fromDate, toDate });
   }
 
   getRanking(sortKeyPath, extraColumns) {
@@ -71,7 +81,11 @@ class Rankings extends Component {
     if (loading) {
       return <LoaderSpinner />;
     }
-    const { selectedCommunes, baseColumns, extraColumns } = this.state;
+    const {
+      selectedCommunes,
+      baseColumns, extraColumns,
+      fromDate, toDate,
+    } = this.state;
     const columns = { ...baseColumns, ...extraColumns };
     const completeRows = selectedCommunes.map(
       ({
@@ -92,6 +106,9 @@ class Rankings extends Component {
       ...row,
       data: _.pick(row.data, _.keys(columns)),
     }));
+    const footerChange = `Cálculo del ${formatDateForHumans(fromDate)} al ${formatDateForHumans(toDate)}`;
+    const footerStock = `Datos al ${formatDateForHumans(toDate)}`;
+    const footerText = _.some(_.keys(columns), k => _.includes(k, 'delta')) ? footerChange : footerStock;
     const { location: { pathname } } = document;
     return (
       <>
@@ -131,7 +148,11 @@ class Rankings extends Component {
           </ButtonsContainer>
 
           <TableContainer>
-            <Table headers={_.values(columns)} rows={rows} />
+            <Table
+              headers={_.values(columns)}
+              rows={rows}
+              footerText={footerText}
+            />
           </TableContainer>
         </CenteredContainer>
       </>
