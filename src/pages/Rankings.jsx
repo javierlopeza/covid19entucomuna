@@ -113,10 +113,10 @@ class Rankings extends Component {
     return (
       <>
         <Helmet onChangeClientState={handlePageChange} currentPath={pathname}>
-          <title>COVID-19 en tu comuna - Rankings</title>
+          <title>COVID-19 en tu comuna - Comunas más afectadas</title>
           <meta
             name="description"
-            content="Análisis simple y amigable de los casos activos de coronavirus por región y por comuna en Chile."
+            content="Revisa las comunas más afectadas por el coronavirus en Chile."
           />
         </Helmet>
         <CenteredContainer>
