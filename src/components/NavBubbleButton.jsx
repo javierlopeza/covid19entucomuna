@@ -34,14 +34,19 @@ const ButtonLink = styled(NavLink)`
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  padding: 0.5em 0.75em;
+  padding: 0.75em 0.75em;
   border-radius: 8px;
   text-align: center;
-  line-height: 1.1em;
+  line-height: 1.25em;
   background-color: white;
   ${({ theme }) => theme.baseShadow}
   color: ${({ theme }) => theme.colors.gray.normal};
   font-weight: 200;
+  font-size: 0.85em;
+
+  @media ${({ theme }) => theme.device.tablet} {
+    font-size: 0.9em;
+  }
 
   :active, :visited {
     color: ${({ theme }) => theme.colors.gray.normal};
@@ -62,7 +67,7 @@ const ButtonLink = styled(NavLink)`
         white 50%,
         ${({ theme }) => theme.colors.blue.normal} 50%
       );
-      background-size: 201% 100%;
+      background-size: 201% 101%;
       background-position: right bottom;
 
       :hover {
