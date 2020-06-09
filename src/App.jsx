@@ -41,6 +41,7 @@ const App = () => (
             <Route exact path="/regiones/:region" component={Region} />
             <Route exact path="/regiones/:region/comunas/:commune" component={Commune} />
             <Route exact path="/preguntas-frecuentes" component={FAQ} />
+            <Route exact path="/rankings" component={() => <Redirect to="/rankings/mas-casos-activos" />} />
             <Route exact path="/rankings/:rankingName" component={Rankings} />
             <Redirect to="/" />
           </Switch>
