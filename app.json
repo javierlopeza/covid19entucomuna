@@ -1,5 +1,5 @@
 {
-    "name": "coronavirus-chile",
+    "name": "covid19entucomuna",
     "description": "Simple and user-friendly analysis of coronavirus cases by region and by comuna in Chile.",
     "scripts": {},
     "env": {

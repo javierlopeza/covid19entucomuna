@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import _ from 'lodash';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import getChileData from '../clients/chile-data-fetcher';
 import CVLineChart from '../components/CVLineChart';
 import ChartContainer from '../components/ChartContainer';
@@ -109,6 +111,10 @@ class Home extends Component {
             </BoxTitle>
             <CVLineChart data={series.activos} />
           </ChartContainer>
+          {/* Rankings Link */}
+          <RankingsButton to="/rankings">
+            Revisa las comunas más afectadas
+          </RankingsButton>
           {/* Regions */}
           <PlacesContainer totalPlaces={regionsButtons.length}>
             {regionsButtons}
@@ -120,3 +126,18 @@ class Home extends Component {
 }
 
 export default Home;
+
+const RankingsButton = styled(Link)`
+  font-size: 0.85em;
+  text-align: center;
+  background-color: ${({ theme }) => theme.colors.blue.normal};
+  color: white;
+  ${({ theme }) => theme.baseShadow}
+  border-radius: 10px;
+  padding: 0.5em 0.75em;
+  margin-bottom: 1em;
+
+  @media ${({ theme }) => theme.device.mobileM} {
+    font-size: 1em;
+  }
+`;
