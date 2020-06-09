@@ -47,7 +47,7 @@ const Container = styled.table`
   th, td {
     font-size: 0.85em;
     @media ${({ theme }) => theme.device.tablet} {
-      font-size: 1em;
+      font-size: 0.9em;
     }
   }
 `;
