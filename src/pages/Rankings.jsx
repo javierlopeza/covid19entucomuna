@@ -16,7 +16,7 @@ import NavBubbleButton from '../components/NavBubbleButton';
 
 const rankingParameters = {
   'mas-casos-activos': ['activos.value', { activos: 'Casos activos' }],
-  'mayores-tasas-de-activos': ['tasaActivos.value', { tasaActivos: 'Activos c/100 mil habitantes' }],
+  'mayores-tasas-de-activos': ['tasaActivos.value', { tasaActivos: 'Tasa activos' }],
   'mayores-cambios-en-casos-activos': ['delta.activos.value', { deltaActivos: 'Cambio +/-' }],
   'mayores-cambios-en-tasa-de-activos': ['delta.tasaActivos.value', { deltaTasaActivos: 'Cambio +/-' }],
 };
