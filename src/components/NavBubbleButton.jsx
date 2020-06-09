@@ -57,24 +57,4 @@ const ButtonLink = styled(NavLink)`
     color: white;
     font-weight: 400;
   }
-
-  :not(.active) {
-    transition: all 0.3s ease-in-out;
-
-    @media (hover: hover) {
-      background: linear-gradient(
-        to left,
-        white 50%,
-        ${({ theme }) => theme.colors.blue.normal} 50%
-      );
-      background-size: 201% 101%;
-      background-position: right bottom;
-
-      :hover {
-        color: white;
-        background-position: left bottom;
-        transition: all 0.3s ease-in-out;
-      }
-    }
-  }
 `;
