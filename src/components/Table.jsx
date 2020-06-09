@@ -18,7 +18,11 @@ const Row = (props) => {
     return <Td key={key}>{formattedValue}</Td>;
   });
   return (
-    <Tr onClick={() => history.push(path)} highlightOnHover>
+    <Tr
+      onClick={() => history.push(path)}
+      highlightOnHover
+      clickable
+    >
       {rowValues}
     </Tr>
   );
@@ -78,6 +82,18 @@ const Tr = styled.tr`
           & + tr > td {
             border-color: transparent;
           }
+        }
+      }
+    `}
+
+    ${({ clickable }) => clickable && css`
+      :active {
+        background-color: ${({ theme }) => theme.colors.blue.normal};
+        color: white;
+
+        td,
+        & + tr > td {
+          border-color: transparent;
         }
       }
     `}
