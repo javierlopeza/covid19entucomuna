@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import _ from 'lodash';
-import { formatValue } from '../utils/formatter';
+import { formatValue, formatDeltaValue } from '../utils/formatter';
+
 
 const Row = (props) => {
   const history = useHistory();
@@ -10,7 +11,11 @@ const Row = (props) => {
   const rowValues = _.toPairs(data).map(([header, value]) => {
     const key = `${data.comuna}_${header}_${value}`;
     const isNumber = _.isNumber(value);
-    const formattedValue = isNumber ? formatValue(value) : value;
+    let formattedValue = isNumber ? formatValue(value) : value;
+    const isChange = _.includes(header, 'delta');
+    if (isChange) {
+      formattedValue = formatDeltaValue(formattedValue);
+    }
     return <Td key={key}>{formattedValue}</Td>;
   });
   return <Tr onClick={() => history.push(path)}>{rowValues}</Tr>;
