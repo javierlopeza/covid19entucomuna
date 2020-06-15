@@ -135,7 +135,7 @@ class Commune extends Component {
               icon={metricsIcons.deaths}
               label="Fallecidos"
               value={fallecidos.value}
-              tooltip={`Reporte Diario MINSAL (${formatDateForHumans(fallecidos.date)})`}
+              tooltip={`Informe Epidemiológico MINSAL (${formatDateForHumans(fallecidos.date)})`}
             />
           </MetricsCards.Container>
           {/* Chart */}
