@@ -18,7 +18,7 @@ import {
 import { daysSinceEpoch } from '../utils/daysSinceEpoch';
 
 const CVLineChart = (props) => {
-  const { data } = props;
+  const { data, color, title } = props;
 
   // Numericalize x-axis dates
   const chartData = data.map(dp => ({
@@ -32,8 +32,8 @@ const CVLineChart = (props) => {
       <CustomChart data={chartData}>
         <defs>
           <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="10%" stopColor="#7c97fc" stopOpacity={0.9} />
-            <stop offset="300%" stopColor="#a9beff" stopOpacity={0.2} />
+            <stop offset="10%" stopColor={color} stopOpacity={0.9} />
+            <stop offset="300%" stopColor={color} stopOpacity={0.2} />
           </linearGradient>
         </defs>
         <XAxis
@@ -52,21 +52,21 @@ const CVLineChart = (props) => {
         />
         <Area
           dataKey="value"
-          name="Casos Activos"
+          name={title}
           legendType="line"
           type="monotone"
-          stroke={theme.colors.blue.normal}
+          stroke={color}
           strokeWidth={2.5}
           dot={
             showDots && {
               fill: 'white',
               r: 2.5,
-              stroke: theme.colors.blue.normal,
+              stroke: color,
               strokeWidth: 2,
             }
           }
           activeDot={{
-            fill: theme.colors.blue.normal,
+            fill: color,
             r: 6,
             stroke: 'white',
             strokeWidth: 2,

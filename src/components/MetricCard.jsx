@@ -4,9 +4,9 @@ import MetricCardTooltip from './MetricCardTooltip';
 import { formatValue } from '../utils/formatter';
 
 const MetricCard = ({
-  icon, label, value, tooltip,
+  icon, label, value, tooltip, onClick,
 }) => (
-  <MetricsCards.Card>
+  <MetricsCards.Card onClick={onClick}>
     <MetricsCards.Icon src={icon} />
     <MetricsCards.TextContainer>
       <MetricsCards.Label>{label}</MetricsCards.Label>

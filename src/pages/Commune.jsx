@@ -20,6 +20,7 @@ import handlePageChange from '../utils/pageChangeHandler';
 import { CATEGORIES, ACTIONS } from '../ga/events';
 import { isDataFromToday } from '../utils/checkData';
 import notify from '../clients/notifier';
+import theme from '../styles/theme';
 
 class Commune extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class Commune extends Component {
       region: null,
       chileData: {},
       loading: true,
+      selectedData: 'activos',
     };
   }
 
@@ -62,7 +64,7 @@ class Commune extends Component {
   }
 
   render() {
-    const { loading } = this.state;
+    const { loading, selectedData } = this.state;
     if (loading) {
       return <LoaderSpinner />;
     }
@@ -81,6 +83,18 @@ class Commune extends Component {
     const valueChangeText = (
       <ValueChangeText data={[previousActive.value, currentActive.value]} />
     );
+    const cases = {
+      confirmados: {
+        color: theme.colors.green.dark,
+        data: series.confirmados,
+        title: 'Casos Confirmados',
+      },
+      activos: {
+        color: theme.colors.yellow.normal,
+        data: series.activos,
+        title: 'Casos Activos',
+      },
+    };
     return (
       <>
         <Helmet onChangeClientState={handlePageChange}>
@@ -124,12 +138,14 @@ class Commune extends Component {
               label="Confirmados"
               value={confirmados.value}
               tooltip={`Informe Epidemiológico MINSAL (${formatDateForHumans(confirmados.date)})`}
+              onClick={() => this.setState({ selectedData: 'confirmados' })}
             />
             <MetricCard
               icon={metricsIcons.active}
               label="Activos"
               value={currentActive.value}
               tooltip={`Informe Epidemiológico MINSAL (${formatDateForHumans(currentActive.date)})`}
+              onClick={() => this.setState({ selectedData: 'activos' })}
             />
             <MetricCard
               icon={metricsIcons.deaths}
@@ -140,8 +156,12 @@ class Commune extends Component {
           </MetricsCards.Container>
           {/* Chart */}
           <ChartContainer>
-            <BoxTitle>Casos Activos</BoxTitle>
-            <CVLineChart data={series.activos} />
+            <BoxTitle color={cases[selectedData].color}>{cases[selectedData].title}</BoxTitle>
+            <CVLineChart
+              data={cases[selectedData].data}
+              color={cases[selectedData].color}
+              title={cases[selectedData].title}
+            />
           </ChartContainer>
           {/* Info Texts */}
           <InfoTextsContainer>

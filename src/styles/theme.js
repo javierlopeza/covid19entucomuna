@@ -18,6 +18,9 @@ export default {
       light: '#d8d8d8',
       normal: '#6b6b6b',
     },
+    yellow: {
+      normal: '#ffa900',
+    },
   },
 
   baseShadow: `

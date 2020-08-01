@@ -20,6 +20,7 @@ import getChileData from '../clients/chile-data-fetcher';
 import handlePageChange from '../utils/pageChangeHandler';
 import { isDataFromToday } from '../utils/checkData';
 import notify from '../clients/notifier';
+import theme from '../styles/theme';
 
 class Region extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class Region extends Component {
       region: null,
       chileData: {},
       loading: true,
+      selectedData: 'activos',
     };
   }
 
@@ -48,7 +50,7 @@ class Region extends Component {
   }
 
   render() {
-    const { loading } = this.state;
+    const { loading, selectedData } = this.state;
     if (loading) {
       return <LoaderSpinner />;
     }
@@ -82,6 +84,23 @@ class Region extends Component {
       fallecidos,
       series,
     } = chileData.regiones[region];
+    const cases = {
+      fallecidos: {
+        color: theme.colors.red.dark,
+        data: series.fallecidos,
+        title: 'Casos Fallecidos',
+      },
+      confirmados: {
+        color: theme.colors.green.dark,
+        data: series.confirmados,
+        title: 'Casos Confirmados',
+      },
+      activos: {
+        color: theme.colors.yellow.normal,
+        data: series.activos,
+        title: 'Casos Activos',
+      },
+    };
     return (
       <>
         <Helmet onChangeClientState={handlePageChange}>
@@ -112,26 +131,31 @@ class Region extends Component {
               label="Confirmados"
               value={confirmados.value}
               tooltip={`Informe Epidemiológico MINSAL (${formatDateForHumans(confirmados.date)})`}
+              onClick={() => this.setState({ selectedData: 'confirmados' })}
             />
             <MetricCard
               icon={metricsIcons.active}
               label="Activos"
               value={activos.value}
               tooltip={`Informe Epidemiológico MINSAL (${formatDateForHumans(activos.date)})`}
+              onClick={() => this.setState({ selectedData: 'activos' })}
             />
             <MetricCard
               icon={metricsIcons.deaths}
               label="Fallecidos"
               value={fallecidos.value}
               tooltip={`Reporte Diario MINSAL (${formatDateForHumans(fallecidos.date)})`}
+              onClick={() => this.setState({ selectedData: 'fallecidos' })}
             />
           </MetricsCards.Container>
           {/* Chart */}
           <ChartContainer>
-            <BoxTitle>
-              Casos Activos
-            </BoxTitle>
-            <CVLineChart data={series.activos} />
+            <BoxTitle color={cases[selectedData].color}>{cases[selectedData].title}</BoxTitle>
+            <CVLineChart
+              data={cases[selectedData].data}
+              color={cases[selectedData].color}
+              title={cases[selectedData].title}
+            />
           </ChartContainer>
           {/* Comunas */}
           <PlacesContainer totalPlaces={communesButtons.length}>
