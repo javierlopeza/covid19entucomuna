@@ -6,7 +6,7 @@ const ChartContainer = styled.div`
   align-items: center;
 
   box-sizing: border-box;
-  height: 320px;
+  height: 350px;
   width: 95%;
   @media ${({ theme }) => theme.device.laptop} {
     width: 75%;

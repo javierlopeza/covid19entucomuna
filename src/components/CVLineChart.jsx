@@ -2,6 +2,7 @@ import React from 'react';
 import {
   AreaChart,
   Area,
+  Brush,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -14,6 +15,7 @@ import {
   formatValue,
   formatDaysSinceEpoch,
   formatDaysSinceEpochForHumans,
+  formatDaysSinceEpochShort,
 } from '../utils/formatter';
 import { daysSinceEpoch } from '../utils/daysSinceEpoch';
 
@@ -29,7 +31,8 @@ const CVLineChart = (props) => {
   const showDots = data.length < 30;
   return (
     <ResponsiveContainer>
-      <CustomChart data={chartData}>
+      <CustomChart data={chartData}
+                   margin={{left: 10}}>
         <defs>
           <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
             <stop offset="10%" stopColor="#7c97fc" stopOpacity={0.9} />
@@ -74,6 +77,14 @@ const CVLineChart = (props) => {
           fillOpacity={1}
           fill="url(#chartGradient)"
         />
+        <Brush
+          tickFormatter={() => ""}
+          height={30}
+          stroke={theme.colors.gray.normal}>
+          <AreaChart>
+            <Area dataKey="value" stroke={theme.colors.gray.light} fill={theme.colors.gray.light} dot={false} />
+          </AreaChart>
+        </Brush>
       </CustomChart>
     </ResponsiveContainer>
   );
